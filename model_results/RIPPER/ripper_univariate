@@ -1,0 +1,77 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 20.0 -O 2 -S 1
+Relation:     warnings_winter_2023_2026_univariate
+Instances:    13190
+Attributes:   9
+              risk
+              publish_month
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              temperature_min
+              temperature_max
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(rainfall_most_exposed_area >= 25) and (publish_month <= 3) => risk=High (773.0/112.0)
+(temperature_min <= -4) and (rainfall_most_exposed_area >= 38) => risk=High (157.0/14.0)
+(publish_month <= 3) and (rainfall_average >= 13) and (temperature_max <= -2) => risk=High (30.0/4.0)
+(rainfall_most_exposed_area >= 18) and (temperature_min <= -11) => risk=High (231.0/69.0)
+(rainfall_most_exposed_area >= 15) and (wind_speed = Moderate gale) and (publish_month <= 4) => risk=High (128.0/39.0)
+(publish_month <= 4) and (rainfall_most_exposed_area >= 22) => risk=High (117.0/53.0)
+(rainfall_most_exposed_area >= 10) and (rainfall_average >= 8) and (temperature_max <= -4) and (wind_shift_speed = Strong breeze) => risk=High (46.0/10.0)
+(rainfall_most_exposed_area >= 15) and (rainfall_average >= 10) and (temperature_max <= -4) => risk=High (42.0/10.0)
+(rainfall_average >= 4) and (rainfall_most_exposed_area >= 15) and (publish_month <= 4) and (wind_speed = Gale) => risk=High (37.0/10.0)
+(publish_month >= 12) and (temperature_min <= -5) and (rainfall_most_exposed_area >= 28) => risk=High (66.0/24.0)
+(publish_month <= 3) and (rainfall_average >= 7) and (wind_speed = Strong breeze) and (temperature_max <= 0) => risk=High (95.0/41.0)
+(publish_month >= 5) and (temperature_max >= 9) => risk=Low (624.0/86.0)
+(temperature_max >= 2) and (publish_month >= 5) and (rainfall_most_exposed_area <= 10) => risk=Low (965.0/302.0)
+(rainfall_most_exposed_area <= 3) and (publish_month >= 4) and (cloud_cover = Clear skies) and (temperature_max >= 4) => risk=Low (140.0/43.0)
+(temperature_max >= -2) and (publish_month >= 12) and (rainfall_most_exposed_area <= 0) => risk=Low (96.0/20.0)
+(rainfall_most_exposed_area <= 3) and (publish_month >= 4) and (cloud_cover = Partly cloudy) and (temperature_max >= 6) => risk=Low (121.0/42.0)
+(temperature_max >= 0) and (rainfall_average <= 4) and (publish_month >= 5) => risk=Low (270.0/119.0)
+(publish_month >= 4) and (temperature_min <= -7) and (temperature_max >= -1) and (rainfall_most_exposed_area <= 3) => risk=Low (448.0/198.0)
+(rainfall_most_exposed_area <= 4) and (temperature_max >= -3) and (publish_month >= 12) and (temperature_min >= -8) => risk=Low (32.0/9.0)
+(rainfall_most_exposed_area <= 1) and (temperature_max >= -4) and (wind_shift_speed = Breeze) and (cloud_cover = Clear skies) => risk=Low (151.0/66.0)
+(temperature_max >= 3) and (rainfall_most_exposed_area <= 20) and (publish_month >= 5) and (temperature_min >= -2) => risk=Low (89.0/32.0)
+ => risk=Medium (8532.0/2843.0)
+
+Number of Rules : 22
+
+
+Time taken to build model: 1.45 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        8851               67.1039 %
+Incorrectly Classified Instances      4339               32.8961 %
+Kappa statistic                          0.4315
+Mean absolute error                      0.3118
+Root mean squared error                  0.3975
+Relative absolute error                 76.6486 %
+Root relative squared error             88.1384 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.497    0.049    0.726      0.497    0.590      0.520    0.789     0.591     High
+                 0.796    0.451    0.660      0.796    0.722      0.356    0.688     0.650     Medium
+                 0.562    0.103    0.667      0.562    0.610      0.486    0.779     0.602     Low
+Weighted Avg.    0.671    0.274    0.676      0.671    0.664      0.425    0.733     0.625     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1360 1305   71 |    a = High
+  491 5501  923 |    b = Medium
+   22 1527 1990 |    c = Low
+

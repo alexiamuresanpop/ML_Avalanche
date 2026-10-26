@@ -23,8 +23,5 @@ for region in regions[:3]:
     print(region)
 
 df_regions = pd.DataFrame(regions)
-
 print(df_regions.head())
-print("\n",df_regions["TypeName"].value_counts(dropna=False))
-
 df_regions.to_csv("regions.csv", index=False)

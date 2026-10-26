@@ -1,0 +1,84 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 20.0 -O 2 -S 1
+Relation:     warnings_winter_2023_2026-weka.filters.unsupervised.attribute.Remove-R1-2,6,8-9,11,13-16,18-20,22-23
+Instances:    13190
+Attributes:   8
+              risk
+              publish_hour
+              publish_month
+              rainfall_most_exposed_area
+              wind_shift_speed
+              wind_shift_direction
+              temperature_max
+              rain_snow_line_altitude_masl
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(rainfall_most_exposed_area >= 25) and (publish_month <= 3) => risk=High (773.0/112.0)
+(rainfall_most_exposed_area >= 25) and (temperature_max <= 0) => risk=High (266.0/60.0)
+(rainfall_most_exposed_area >= 18) and (temperature_max <= -4) and (wind_shift_direction = NW) => risk=High (53.0/6.0)
+(publish_month <= 4) and (rainfall_most_exposed_area >= 20) and (rain_snow_line_altitude_masl <= 700) => risk=High (255.0/102.0)
+(publish_month <= 4) and (rainfall_most_exposed_area >= 30) => risk=High (52.0/19.0)
+(rainfall_most_exposed_area >= 15) and (publish_month <= 4) and (rain_snow_line_altitude_masl <= 300) and (publish_month >= 3) => risk=High (97.0/37.0)
+(publish_month >= 12) and (rainfall_most_exposed_area >= 25) => risk=High (198.0/88.0)
+(publish_month <= 3) and (rainfall_most_exposed_area >= 13) and (wind_shift_speed = Moderate gale) => risk=High (74.0/36.0)
+(rainfall_most_exposed_area >= 18) and (temperature_max <= -4) => risk=High (47.0/21.0)
+(rainfall_most_exposed_area >= 8) and (publish_month <= 4) and (publish_hour <= 14) => risk=High (97.0/42.0)
+(publish_month <= 3) and (rainfall_most_exposed_area >= 9) and (wind_shift_speed = Gale) => risk=High (44.0/14.0)
+(publish_month >= 5) and (temperature_max >= 11) => risk=Low (432.0/35.0)
+(temperature_max >= 1) and (publish_month >= 5) and (rainfall_most_exposed_area <= 8) and (rain_snow_line_altitude_masl >= 400) and (rain_snow_line_altitude_masl <= 1500) => risk=Low (501.0/99.0)
+(temperature_max >= 0) and (rainfall_most_exposed_area <= 8) and (publish_month >= 5) and (rain_snow_line_altitude_masl >= 400) and (rain_snow_line_altitude_masl <= 1400) => risk=Low (81.0/23.0)
+(temperature_max >= 8) and (wind_shift_direction = W) => risk=Low (58.0/7.0)
+(temperature_max >= 0) and (publish_month >= 4) and (rainfall_most_exposed_area <= 3) and (wind_shift_direction = NW) => risk=Low (233.0/62.0)
+(temperature_max >= -1) and (rainfall_most_exposed_area <= 2) and (publish_month >= 4) and (wind_shift_direction = N) => risk=Low (115.0/26.0)
+(temperature_max >= -2) and (publish_month >= 12) and (rainfall_most_exposed_area <= 0) => risk=Low (82.0/19.0)
+(publish_month >= 5) and (temperature_max >= 8) and (rain_snow_line_altitude_masl >= 2200) => risk=Low (79.0/18.0)
+(publish_month >= 4) and (temperature_max >= 4) and (rain_snow_line_altitude_masl <= 900) => risk=Low (475.0/194.0)
+(temperature_max >= -1) and (rainfall_most_exposed_area <= 3) and (publish_month >= 4) and (rain_snow_line_altitude_masl <= 800) and (wind_shift_direction = NE) => risk=Low (61.0/26.0)
+(temperature_max >= 0) and (rainfall_most_exposed_area <= 4) and (publish_month >= 4) and (wind_shift_speed = Calm/light breeze) and (rainfall_most_exposed_area >= 1) => risk=Low (28.0/6.0)
+(wind_shift_speed = Breeze) and (rain_snow_line_altitude_masl <= 800) and (temperature_max >= 1) and (rain_snow_line_altitude_masl >= 400) and (rainfall_most_exposed_area <= 0) => risk=Low (30.0/7.0)
+(rainfall_most_exposed_area <= 4) and (temperature_max >= -4) and (publish_month >= 4) and (publish_hour >= 15) and (rain_snow_line_altitude_masl <= 800) and (rain_snow_line_altitude_masl >= 400) and (wind_shift_speed = Fresh breeze) => risk=Low (42.0/14.0)
+(temperature_max >= -1) and (wind_shift_speed = Breeze) and (rain_snow_line_altitude_masl <= 800) and (rainfall_most_exposed_area <= 0) and (temperature_max <= 0) and (publish_hour >= 15) and (publish_hour <= 15) and (publish_month <= 4) and (publish_month >= 2) => risk=Low (69.0/24.0)
+(temperature_max >= -4) and (rainfall_most_exposed_area <= 10) and (publish_month >= 5) and (rain_snow_line_altitude_masl >= 700) and (rain_snow_line_altitude_masl <= 1000) => risk=Low (80.0/25.0)
+(rainfall_most_exposed_area <= 15) and (publish_month >= 5) and (rain_snow_line_altitude_masl >= 600) and (rainfall_most_exposed_area >= 3) and (temperature_max >= 6) => risk=Low (74.0/28.0)
+(rainfall_most_exposed_area <= 5) and (publish_month >= 4) and (publish_hour >= 15) and (rain_snow_line_altitude_masl <= 900) and (temperature_max >= 2) and (rainfall_most_exposed_area >= 1) => risk=Low (65.0/24.0)
+(rainfall_most_exposed_area <= 3) and (temperature_max >= -4) and (wind_shift_speed = Calm/light breeze) and (rain_snow_line_altitude_masl <= 400) and (publish_month >= 3) => risk=Low (55.0/19.0)
+ => risk=Medium (8674.0/2899.0)
+
+Number of Rules : 30
+
+
+Time taken to build model: 2.27 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        8802               66.7324 %
+Incorrectly Classified Instances      4388               33.2676 %
+Kappa statistic                          0.4206
+Mean absolute error                      0.3115
+Root mean squared error                  0.3978
+Relative absolute error                 76.5921 %
+Root relative squared error             88.2049 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.492    0.052    0.711      0.492    0.581      0.508    0.785     0.579     High
+                 0.808    0.475    0.652      0.808    0.721      0.348    0.683     0.643     Medium
+                 0.529    0.089    0.686      0.529    0.597      0.481    0.772     0.604     Low
+Weighted Avg.    0.667    0.284    0.673      0.667    0.659      0.417    0.728     0.619     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1345 1348   43 |    a = High
+  515 5584  816 |    b = Medium
+   31 1635 1873 |    c = Low
+

@@ -1,0 +1,123 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -B -C 0.01 -M 100
+Relation:     warnings_winter_2023_2026-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    13190
+Attributes:   23
+              RegionName
+              geographical_region
+              risk
+              publish_hour
+              publish_month
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              wind_direction
+              wind_shift_direction
+              wind_direction_change
+              wind_shift_start
+              wind_shift_end
+              temperature_min
+              temperature_max
+              freezing_level_masl
+              freezing_level_start
+              freezing_level_end
+              rain_snow_line_altitude_masl
+              rain_snow_line_start
+              rain_snow_line_end
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 14.0
+|   temperature_max <= 2.0
+|   |   publish_hour <= 14.0
+|   |   |   wind_speed = Breeze: Medium (130.0/58.0)
+|   |   |   wind_speed != Breeze
+|   |   |   |   temperature_min <= -12.0: Medium (116.0/52.0)
+|   |   |   |   temperature_min > -12.0: High (105.0/36.0)
+|   |   publish_hour > 14.0
+|   |   |   rainfall_most_exposed_area <= 8.0
+|   |   |   |   temperature_max <= -4.0: Medium (3468.0/1000.0)
+|   |   |   |   temperature_max > -4.0
+|   |   |   |   |   publish_month <= 3.0: Medium (1480.0/570.0)
+|   |   |   |   |   publish_month > 3.0
+|   |   |   |   |   |   geographical_region = Eastern Norway: Low (123.0/37.0)
+|   |   |   |   |   |   geographical_region != Eastern Norway
+|   |   |   |   |   |   |   wind_direction = N: Low (112.0/41.0)
+|   |   |   |   |   |   |   wind_direction != N
+|   |   |   |   |   |   |   |   rain_snow_line_altitude_masl <= 300.0
+|   |   |   |   |   |   |   |   |   rainfall_average <= 0.0
+|   |   |   |   |   |   |   |   |   |   temperature_max <= -1.0: Medium (188.0/86.0)
+|   |   |   |   |   |   |   |   |   |   temperature_max > -1.0: Low (186.0/83.0)
+|   |   |   |   |   |   |   |   |   rainfall_average > 0.0: Medium (256.0/78.0)
+|   |   |   |   |   |   |   |   rain_snow_line_altitude_masl > 300.0
+|   |   |   |   |   |   |   |   |   publish_month <= 4.0: Medium (241.0/111.0)
+|   |   |   |   |   |   |   |   |   publish_month > 4.0: Low (304.0/90.0)
+|   |   |   rainfall_most_exposed_area > 8.0: Medium (1278.0/416.0)
+|   temperature_max > 2.0
+|   |   publish_month <= 4.0
+|   |   |   wind_direction = NW: Low (127.0/33.0)
+|   |   |   wind_direction != NW
+|   |   |   |   wind_shift_direction = W: Low (131.0/46.0)
+|   |   |   |   wind_shift_direction != W
+|   |   |   |   |   cloud_cover = Clear skies: Low (123.0/55.0)
+|   |   |   |   |   cloud_cover != Clear skies: Medium (589.0/252.0)
+|   |   publish_month > 4.0: Low (1446.0/366.0)
+rainfall_most_exposed_area > 14.0
+|   rainfall_most_exposed_area <= 24.0
+|   |   wind_speed = Breeze: Medium (237.0/85.0)
+|   |   wind_speed != Breeze
+|   |   |   wind_speed = Fresh breeze: Medium (471.0/189.0)
+|   |   |   wind_speed != Fresh breeze
+|   |   |   |   temperature_max <= -4.0: High (164.0/35.0)
+|   |   |   |   temperature_max > -4.0
+|   |   |   |   |   publish_month <= 4.0: High (337.0/141.0)
+|   |   |   |   |   publish_month > 4.0: Medium (150.0/62.0)
+|   rainfall_most_exposed_area > 24.0
+|   |   publish_month <= 3.0: High (773.0/112.0)
+|   |   publish_month > 3.0
+|   |   |   temperature_min <= -5.0: High (362.0/90.0)
+|   |   |   temperature_min > -5.0
+|   |   |   |   rain_snow_line_start <= 0.0: Medium (148.0/61.0)
+|   |   |   |   rain_snow_line_start > 0.0: High (145.0/61.0)
+
+Number of Leaves  : 	27
+
+Size of the tree : 	53
+
+
+Time taken to build model: 0.1 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        8778               66.5504 %
+Incorrectly Classified Instances      4412               33.4496 %
+Kappa statistic                          0.4126
+Mean absolute error                      0.3147
+Root mean squared error                  0.3989
+Relative absolute error                 77.3752 %
+Root relative squared error             88.4469 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.493    0.053    0.710      0.493    0.582      0.509    0.819     0.600     High
+                 0.825    0.495    0.647      0.825    0.726      0.350    0.697     0.672     Medium
+                 0.486    0.078    0.696      0.486    0.573      0.464    0.797     0.593     Low
+Weighted Avg.    0.666    0.292    0.673      0.666    0.655      0.413    0.749     0.636     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1350 1342   44 |    a = High
+  500 5707  708 |    b = Medium
+   52 1766 1721 |    c = Low
+

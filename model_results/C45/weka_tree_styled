@@ -1,0 +1,138 @@
+// Formatted Decision Tree
+digraph Weka_Tree {
+	rankdir=TB ratio=fill size="16,10!"
+	node [color="#333333" fontname=Helvetica fontsize=10 shape=ellipse style=filled]
+	edge [color="#555555" fontname=Helvetica fontsize=9]
+	n0 [label=<b>rainfall_most_exposed_area</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n1 [label=<b>temperature_max</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n2 [label=<b>rainfall_most_exposed_area</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n3 [label=<b>publish_hour</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n4 [label=<b>publish_month</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n5 [label=<b>wind_speed</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n6 [label=<b>publish_month</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n7 [label=<b>wind_speed</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n8 [label=<b>rainfall_most_exposed_area</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n9 [label=<b>wind_direction</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_low1 [label=<b>Low</b>
+<font point-size='8'>1446.0/366.0</font> color="#666666" fillcolor="#D4EDDA" shape=box style="filled,rounded"]
+	l_med1 [label=<b>Medium</b>
+<font point-size='8'>237.0/85.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	n10 [label=<b>wind_speed</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_high1 [label=<b>High</b>
+<font point-size='8'>773.0/112.0</font> color="#666666" fillcolor="#F8D7DA" shape=box style="filled,rounded"]
+	n11 [label=<b>temperature_min</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_med2 [label=<b>Medium</b>
+<font point-size='8'>130.0/58.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	n12 [label=<b>temperature_min</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n13 [label=<b>temperature_max</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_med3 [label=<b>Medium</b>
+<font point-size='8'>1278.0/416.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	l_low2 [label=<b>Low</b>
+<font point-size='8'>127.0/33.0</font> color="#666666" fillcolor="#D4EDDA" shape=box style="filled,rounded"]
+	n14 [label=<b>wind_shift_direction</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_med4 [label=<b>Medium</b>
+<font point-size='8'>471.0/189.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	n15 [label=<b>temperature_max</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_high2 [label=<b>High</b>
+<font point-size='8'>362.0/90.0</font> color="#666666" fillcolor="#F8D7DA" shape=box style="filled,rounded"]
+	n16 [label=<b>rain_snow_line_start</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_med5 [label=<b>Medium</b>
+<font point-size='8'>116.0/52.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	l_high3 [label=<b>High</b>
+<font point-size='8'>105.0/36.0</font> color="#666666" fillcolor="#F8D7DA" shape=box style="filled,rounded"]
+	l_med6 [label=<b>Medium</b>
+<font point-size='8'>3468.0/1000.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	n17 [label=<b>publish_month</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_low3 [label=<b>Low</b>
+<font point-size='8'>131.0/46.0</font> color="#666666" fillcolor="#D4EDDA" shape=box style="filled,rounded"]
+	n18 [label=<b>cloud_cover</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_high4 [label=<b>High</b>
+<font point-size='8'>164.0/35.0</font> color="#666666" fillcolor="#F8D7DA" shape=box style="filled,rounded"]
+	n19 [label=<b>publish_month</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_med7 [label=<b>Medium</b>
+<font point-size='8'>148.0/61.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	l_high5 [label=<b>High</b>
+<font point-size='8'>145.0/61.0</font> color="#666666" fillcolor="#F8D7DA" shape=box style="filled,rounded"]
+	l_med8 [label=<b>Medium</b>
+<font point-size='8'>1480.0/570.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	n20 [label=<b>geographical_region</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_low4 [label=<b>Low</b>
+<font point-size='8'>123.0/55.0</font> color="#666666" fillcolor="#D4EDDA" shape=box style="filled,rounded"]
+	l_med9 [label=<b>Medium</b>
+<font point-size='8'>589.0/252.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	l_high6 [label=<b>High</b>
+<font point-size='8'>337.0/141.0</font> color="#666666" fillcolor="#F8D7DA" shape=box style="filled,rounded"]
+	l_med10 [label=<b>Medium</b>
+<font point-size='8'>150.0/62.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	l_low5 [label=<b>Low</b>
+<font point-size='8'>123.0/37.0</font> color="#666666" fillcolor="#D4EDDA" shape=box style="filled,rounded"]
+	n21 [label=<b>wind_direction</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_low6 [label=<b>Low</b>
+<font point-size='8'>112.0/41.0</font> color="#666666" fillcolor="#D4EDDA" shape=box style="filled,rounded"]
+	n22 [label=<b>rain_snow_line_altitude_masl</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n23 [label=<b>rainfall_average</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n24 [label=<b>publish_month</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	n25 [label=<b>temperature_max</b> color="#4B6584" fillcolor="#EBF4F6" shape=ellipse]
+	l_med11 [label=<b>Medium</b>
+<font point-size='8'>256.0/78.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	l_med12 [label=<b>Medium</b>
+<font point-size='8'>241.0/111.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	l_low7 [label=<b>Low</b>
+<font point-size='8'>304.0/90.0</font> color="#666666" fillcolor="#D4EDDA" shape=box style="filled,rounded"]
+	l_med13 [label=<b>Medium</b>
+<font point-size='8'>188.0/86.0</font> color="#666666" fillcolor="#FFF3CD" shape=box style="filled,rounded"]
+	l_low8 [label=<b>Low</b>
+<font point-size='8'>186.0/83.0</font> color="#666666" fillcolor="#D4EDDA" shape=box style="filled,rounded"]
+	n0 -> n1 [label="<= 14.0"]
+	n0 -> n2 [label="> 14.0"]
+	n1 -> n3 [label="<= 2.0"]
+	n1 -> n4 [label="> 2.0"]
+	n2 -> n5 [label="<= 24.0"]
+	n2 -> n6 [label="> 24.0"]
+	n3 -> n7 [label="<= 14.0"]
+	n3 -> n8 [label="> 14.0"]
+	n4 -> n9 [label="<= 4.0"]
+	n4 -> l_low1 [label="> 4.0"]
+	n5 -> l_med1 [label="= Breeze"]
+	n5 -> n10 [label="!= Breeze"]
+	n6 -> l_high1 [label="<= 3.0"]
+	n6 -> n11 [label="> 3.0"]
+	n7 -> l_med2 [label="= Breeze"]
+	n7 -> n12 [label="!= Breeze"]
+	n8 -> n13 [label="<= 8.0"]
+	n8 -> l_med3 [label="> 8.0"]
+	n9 -> l_low2 [label="= NW"]
+	n9 -> n14 [label="!= NW"]
+	n10 -> l_med4 [label="= Fresh breeze"]
+	n10 -> n15 [label="!= Fresh breeze"]
+	n11 -> l_high2 [label="<= -5.0"]
+	n11 -> n16 [label="> -5.0"]
+	n12 -> l_med5 [label="<= -12.0"]
+	n12 -> l_high3 [label="> -12.0"]
+	n13 -> l_med6 [label="<= -4.0"]
+	n13 -> n17 [label="> -4.0"]
+	n14 -> l_low3 [label="= W"]
+	n14 -> n18 [label="!= W"]
+	n15 -> l_high4 [label="<= -4.0"]
+	n15 -> n19 [label="> -4.0"]
+	n16 -> l_med7 [label="<= 0.0"]
+	n16 -> l_high5 [label="> 0.0"]
+	n17 -> l_med8 [label="<= 3.0"]
+	n17 -> n20 [label="> 3.0"]
+	n18 -> l_low4 [label="= Clear skies"]
+	n18 -> l_med9 [label="!= Clear skies"]
+	n19 -> l_high6 [label="<= 4.0"]
+	n19 -> l_med10 [label="> 4.0"]
+	n20 -> l_low5 [label="= Eastern Norway"]
+	n20 -> n21 [label="!= Eastern Norway"]
+	n21 -> l_low6 [label="= N"]
+	n21 -> n22 [label="!= N"]
+	n22 -> n23 [label="<= 300.0"]
+	n22 -> n24 [label="> 300.0"]
+	n23 -> n25 [label="<= 0.0"]
+	n23 -> l_med11 [label="> 0.0"]
+	n24 -> l_med12 [label="<= 4.0"]
+	n24 -> l_low7 [label="> 4.0"]
+	n25 -> l_med13 [label="<= -1.0"]
+	n25 -> l_low8 [label="> -1.0"]
+}

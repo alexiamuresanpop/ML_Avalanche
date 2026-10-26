@@ -1,0 +1,105 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 20.0 -O 2 -S 1
+Relation:     warnings_winter_2023_2026
+Instances:    13190
+Attributes:   23
+              ﻿RegionName
+              geographical_region
+              risk
+              publish_hour
+              publish_month
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              wind_direction
+              wind_shift_direction
+              wind_direction_change
+              wind_shift_start
+              wind_shift_end
+              temperature_min
+              temperature_max
+              freezing_level_masl
+              freezing_level_start
+              freezing_level_end
+              rain_snow_line_altitude_masl
+              rain_snow_line_start
+              rain_snow_line_end
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(rainfall_most_exposed_area >= 25) and (publish_month <= 3) => risk=High (773.0/112.0)
+(rainfall_most_exposed_area >= 25) and (freezing_level_masl <= 700) and (rainfall_average >= 20) and (rain_snow_line_start >= 6) => risk=High (94.0/4.0)
+(rainfall_most_exposed_area >= 25) and (temperature_min <= -4) and (rainfall_average >= 23) => risk=High (75.0/6.0)
+(rainfall_most_exposed_area >= 18) and (freezing_level_masl <= 600) and (temperature_min <= -11) => risk=High (218.0/55.0)
+(publish_month <= 3) and (rainfall_most_exposed_area >= 20) and (wind_speed = Strong breeze) and (freezing_level_end >= 12) and (temperature_max <= -2) => risk=High (14.0/1.0)
+(rainfall_most_exposed_area >= 15) and (publish_month <= 4) and (wind_speed = Moderate gale) => risk=High (133.0/39.0)
+(rainfall_most_exposed_area >= 10) and (rainfall_average >= 8) and (publish_month <= 4) and (freezing_level_masl <= 600) and (publish_hour <= 14) => risk=High (30.0/3.0)
+(rainfall_most_exposed_area >= 14) and (wind_shift_end >= 6) and (temperature_max <= -4) and (freezing_level_masl >= 500) and (publish_month >= 4) => risk=High (32.0/5.0)
+(rainfall_most_exposed_area >= 15) and (rainfall_average >= 10) and (temperature_max <= -4) => risk=High (55.0/17.0)
+(rainfall_most_exposed_area >= 18) and (wind_speed = Moderate gale) and (wind_direction = W) => risk=High (34.0/11.0)
+(publish_month <= 4) and (rainfall_average >= 7) and (wind_speed = Strong breeze) and (wind_direction = SW) and (geographical_region = Northern Norway) => risk=High (42.0/12.0)
+(rainfall_most_exposed_area >= 10) and (rainfall_average >= 8) and (freezing_level_masl <= 600) and (temperature_max <= -4) and (wind_shift_speed = Strong breeze) => risk=High (18.0/2.0)
+(rainfall_average >= 4) and (rainfall_most_exposed_area >= 15) and (publish_month <= 4) and (wind_speed = Gale) => risk=High (42.0/11.0)
+(publish_month <= 3) and (wind_shift_end >= 6) and (rainfall_average >= 6) and (wind_shift_start >= 18) => risk=High (92.0/44.0)
+(rainfall_most_exposed_area >= 15) and (freezing_level_masl <= 600) and (freezing_level_masl >= 500) and (rain_snow_line_start >= 6) and (rainfall_average >= 8) => risk=High (87.0/40.0)
+(publish_month <= 3) and (rainfall_average >= 3) and (wind_shift_speed = Moderate gale) and (geographical_region = Western Norway) => risk=High (59.0/24.0)
+(temperature_max >= 7) => risk=Low (1064.0/244.0)
+(temperature_max >= 0) and (publish_month >= 5) and (rainfall_most_exposed_area <= 9) and (rain_snow_line_altitude_masl <= 1400) and (rain_snow_line_altitude_masl >= 400) and (rain_snow_line_end <= 0) and (temperature_min >= -3) => risk=Low (66.0/3.0)
+(temperature_max >= 1) and (publish_month >= 5) and (rainfall_most_exposed_area <= 14) and (freezing_level_masl >= 1000) and (freezing_level_masl <= 1200) and (rain_snow_line_altitude_masl <= 1200) => risk=Low (109.0/11.0)
+(temperature_max >= -1) and (rainfall_most_exposed_area <= 4) and (publish_month >= 4) and (wind_direction = NW) => risk=Low (225.0/69.0)
+(temperature_max >= 0) and (publish_month >= 5) and (rainfall_average <= 5) and (wind_speed = Breeze) and (rainfall_most_exposed_area >= 1) => risk=Low (288.0/84.0)
+(temperature_max >= 0) and (rainfall_most_exposed_area <= 9) and (publish_month >= 5) and (rain_snow_line_start >= 6) and (rain_snow_line_altitude_masl <= 1700) => risk=Low (125.0/39.0)
+(temperature_max >= 1) and (rainfall_most_exposed_area <= 9) and (publish_month >= 5) and (temperature_max <= 5) and (rain_snow_line_end <= 0) and (rain_snow_line_altitude_masl >= 100) => risk=Low (68.0/18.0)
+(rainfall_average <= 2) and (publish_month >= 4) and (wind_direction = W) and (temperature_max >= 5) => risk=Low (28.0/7.0)
+(temperature_max >= -1) and (rainfall_most_exposed_area <= 3) and (publish_month >= 4) and (wind_direction = N) => risk=Low (89.0/20.0)
+(rainfall_most_exposed_area <= 1) and (temperature_max >= -4) and (cloud_cover = Clear skies) and (freezing_level_masl <= 600) => risk=Low (214.0/89.0)
+(temperature_max >= -3) and (rainfall_most_exposed_area <= 7) and (publish_month >= 5) and (freezing_level_masl >= 400) and (rain_snow_line_altitude_masl <= 900) and (wind_shift_speed = Fresh breeze) and (temperature_max <= 4) => risk=Low (78.0/20.0)
+(temperature_max >= 0) and (wind_shift_speed = Breeze) and (publish_month >= 4) and (rain_snow_line_altitude_masl <= 900) and (temperature_min >= -5) and (freezing_level_end <= 12) and (freezing_level_masl >= 700) => risk=Low (40.0/11.0)
+(temperature_max >= -1) and (rainfall_most_exposed_area <= 9) and (publish_month >= 4) and (wind_shift_speed = Calm/light breeze) => risk=Low (90.0/39.0)
+(temperature_max >= -1) and (rainfall_average <= 3) and (wind_shift_speed = Breeze) and (rainfall_most_exposed_area <= 0) and (temperature_min <= -10) and (rain_snow_line_altitude_masl >= 400) => risk=Low (71.0/29.0)
+(freezing_level_masl >= 300) and (rainfall_most_exposed_area <= 6) and (freezing_level_end <= 6) and (wind_shift_end <= 0) and (temperature_max >= -3) and (rain_snow_line_end <= 0) and (wind_speed = Breeze) => risk=Low (181.0/67.0)
+(rainfall_most_exposed_area <= 4) and (freezing_level_masl >= 700) and (publish_month >= 12) and (freezing_level_masl <= 1100) => risk=Low (99.0/30.0)
+(rainfall_most_exposed_area <= 5) and (temperature_max >= -4) and (publish_month >= 4) and (﻿RegionName = Finnmarkskysten) => risk=Low (49.0/17.0)
+(rainfall_most_exposed_area <= 1) and (temperature_max >= -1) and (wind_shift_direction = NE) and (temperature_min >= -9) => risk=Low (31.0/7.0)
+(rainfall_most_exposed_area <= 1) and (freezing_level_masl >= 200) and (freezing_level_masl <= 500) and (temperature_min >= -19) and (wind_speed = Calm/light breeze) => risk=Low (60.0/26.0)
+ => risk=Medium (8417.0/2648.0)
+
+Number of Rules : 36
+
+
+Time taken to build model: 4.35 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        9010               68.3093 %
+Incorrectly Classified Instances      4180               31.6907 %
+Kappa statistic                          0.4485
+Mean absolute error                      0.2999
+Root mean squared error                  0.3934
+Relative absolute error                 73.736  %
+Root relative squared error             87.2349 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.501    0.046    0.739      0.501    0.597      0.530    0.795     0.597     High
+                 0.819    0.457    0.664      0.819    0.733      0.378    0.697     0.656     Medium
+                 0.558    0.086    0.705      0.558    0.623      0.512    0.788     0.623     Low
+Weighted Avg.    0.683    0.272    0.690      0.683    0.675      0.446    0.742     0.635     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1371 1318   47 |    a = High
+  471 5665  779 |    b = Medium
+   14 1551 1974 |    c = Low
+

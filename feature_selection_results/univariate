@@ -1,0 +1,68 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.InfoGainAttributeEval 
+Search:       weka.attributeSelection.Ranker -T -1.7976931348623157E308 -N -1
+Relation:     warnings_winter_2023_2026-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    13190
+Attributes:   23
+              RegionName
+              geographical_region
+              risk
+              publish_hour
+              publish_month
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              wind_direction
+              wind_shift_direction
+              wind_direction_change
+              wind_shift_start
+              wind_shift_end
+              temperature_min
+              temperature_max
+              freezing_level_masl
+              freezing_level_start
+              freezing_level_end
+              rain_snow_line_altitude_masl
+              rain_snow_line_start
+              rain_snow_line_end
+Evaluation mode:    evaluate on all training data
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Attribute ranking.
+
+Attribute Evaluator (supervised, Class (nominal): 3 risk):
+	Information Gain Ranking Filter
+
+Ranked attributes:
+ 0.19893    7 rainfall_most_exposed_area
+ 0.19059    8 rainfall_average
+ 0.14495   10 wind_shift_speed
+ 0.14047    9 wind_speed
+ 0.13566    5 publish_month
+ 0.13166   17 temperature_max
+ 0.08384   16 temperature_min
+ 0.08176    6 cloud_cover
+ 0.06668   18 freezing_level_masl
+ 0.06235    1 RegionName
+ 0.05484   21 rain_snow_line_altitude_masl
+ 0.04979    4 publish_hour
+ 0.03485   15 wind_shift_end
+ 0.03399   14 wind_shift_start
+ 0.02765    2 geographical_region
+ 0.02757   11 wind_direction
+ 0.02221   12 wind_shift_direction
+ 0.01912   13 wind_direction_change
+ 0.01833   23 rain_snow_line_end
+ 0.01227   22 rain_snow_line_start
+ 0.00541   20 freezing_level_end
+ 0.00407   19 freezing_level_start
+
+Selected attributes: 7,8,10,9,5,17,16,6,18,1,21,4,15,14,2,11,12,13,23,22,20,19 : 22
+

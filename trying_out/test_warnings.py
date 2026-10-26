@@ -16,12 +16,8 @@ url = (
     f"{region_id}/{language}/{start_date}/{end_date}"
 )
 
-# Send the request
 response = requests.get(url, timeout=30)
-
 print("Status code:", response.status_code)
-
-# Check for HTTP errors
 response.raise_for_status()
 
 # Convert JSON response to Python objects

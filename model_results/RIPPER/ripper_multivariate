@@ -1,0 +1,83 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.rules.JRip -F 3 -N 20.0 -O 2 -S 1
+Relation:     warnings_winter_2023_2026_multivariate
+Instances:    13190
+Attributes:   10
+              risk
+              publish_hour
+              publish_month
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              temperature_max
+              freezing_level_masl
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+JRIP rules:
+===========
+
+(rainfall_most_exposed_area >= 30) and (publish_month <= 3) => risk=High (535.0/48.0)
+(rainfall_most_exposed_area >= 25) and (freezing_level_masl <= 700) => risk=High (493.0/119.0)
+(rainfall_most_exposed_area >= 20) and (temperature_max <= -3) => risk=High (200.0/57.0)
+(rainfall_most_exposed_area >= 25) and (temperature_max <= 2) and (rainfall_average >= 25) => risk=High (45.0/11.0)
+(rainfall_most_exposed_area >= 14) and (wind_speed = Moderate gale) and (rainfall_average >= 8) and (publish_month <= 4) => risk=High (116.0/36.0)
+(rainfall_most_exposed_area >= 18) and (publish_month <= 3) and (wind_speed = Strong breeze) => risk=High (99.0/33.0)
+(publish_month <= 3) and (rainfall_average >= 7) and (publish_hour <= 14) => risk=High (37.0/4.0)
+(rainfall_average >= 4) and (rainfall_most_exposed_area >= 13) and (publish_month <= 3) and (wind_speed = Gale) => risk=High (41.0/10.0)
+(rainfall_most_exposed_area >= 15) and (rainfall_average >= 8) and (temperature_max <= -4) => risk=High (95.0/39.0)
+(publish_month <= 4) and (wind_shift_speed = Strong breeze) and (freezing_level_masl <= 800) and (wind_speed = Strong breeze) and (rainfall_average >= 8) => risk=High (44.0/14.0)
+(rainfall_average >= 4) and (publish_month <= 3) and (wind_shift_speed = Moderate gale) and (publish_month >= 3) => risk=High (61.0/23.0)
+(publish_month >= 5) and (temperature_max >= 8) => risk=Low (742.0/123.0)
+(temperature_max >= 0) and (rainfall_most_exposed_area <= 9) and (publish_month >= 5) and (rainfall_most_exposed_area >= 1) => risk=Low (784.0/233.0)
+(temperature_max >= 1) and (publish_month >= 5) and (rainfall_average <= 4) and (rainfall_most_exposed_area >= 2) => risk=Low (34.0/14.0)
+(temperature_max >= 8) and (freezing_level_masl >= 900) => risk=Low (73.0/17.0)
+(rainfall_most_exposed_area <= 1) and (temperature_max >= -3) and (publish_month >= 12) and (freezing_level_masl >= 600) => risk=Low (100.0/8.0)
+(rainfall_average <= 0) and (publish_month >= 4) and (freezing_level_masl <= 400) and (temperature_max >= 2) and (publish_hour >= 15) => risk=Low (84.0/18.0)
+(temperature_max >= 1) and (rainfall_most_exposed_area <= 6) and (publish_month >= 5) and (freezing_level_masl <= 1200) => risk=Low (168.0/67.0)
+(rainfall_most_exposed_area <= 3) and (temperature_max >= -2) and (publish_month >= 4) and (cloud_cover = Clear skies) and (temperature_max <= 5) and (freezing_level_masl >= 1100) => risk=Low (48.0/8.0)
+(temperature_max >= -1) and (rainfall_average <= 0) and (publish_month >= 4) and (publish_hour >= 15) and (wind_shift_speed = Calm/light breeze) => risk=Low (100.0/34.0)
+(temperature_max >= -1) and (wind_shift_speed = Breeze) and (rainfall_most_exposed_area <= 1) and (temperature_max <= 0) and (publish_month >= 4) => risk=Low (82.0/32.0)
+(rainfall_most_exposed_area <= 4) and (publish_month >= 4) and (wind_speed = Breeze) and (freezing_level_masl >= 800) and (temperature_max >= 5) and (publish_month <= 4) => risk=Low (80.0/31.0)
+(temperature_max >= -1) and (rainfall_most_exposed_area <= 1) and (wind_shift_speed = Breeze) and (temperature_max <= 5) and (cloud_cover = Clear skies) => risk=Low (89.0/37.0)
+(rainfall_most_exposed_area <= 4) and (temperature_max >= -4) and (publish_month >= 12) and (freezing_level_masl >= 700) => risk=Low (52.0/15.0)
+(temperature_max >= 0) and (rainfall_average <= 2) and (cloud_cover = Partly cloudy) and (freezing_level_masl <= 900) and (publish_month >= 4) and (freezing_level_masl >= 700) => risk=Low (98.0/45.0)
+(freezing_level_masl >= 300) and (rainfall_most_exposed_area <= 0) and (temperature_max >= -5) and (freezing_level_masl <= 500) and (cloud_cover = Clear skies) and (publish_month <= 3) => risk=Low (45.0/12.0)
+ => risk=Medium (8845.0/2986.0)
+
+Number of Rules : 27
+
+
+Time taken to build model: 1.46 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        8894               67.4299 %
+Incorrectly Classified Instances      4296               32.5701 %
+Kappa statistic                          0.4329
+Mean absolute error                      0.3082
+Root mean squared error                  0.3959
+Relative absolute error                 75.7767 %
+Root relative squared error             87.7861 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.487    0.046    0.735      0.487    0.586      0.519    0.786     0.590     High
+                 0.812    0.466    0.657      0.812    0.726      0.361    0.688     0.647     Medium
+                 0.551    0.092    0.687      0.551    0.611      0.494    0.777     0.619     Low
+Weighted Avg.    0.674    0.279    0.681      0.674    0.666      0.430    0.732     0.628     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1332 1356   48 |    a = High
+  461 5613  841 |    b = Medium
+   19 1571 1949 |    c = Low
+

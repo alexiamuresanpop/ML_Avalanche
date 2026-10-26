@@ -1,0 +1,100 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -B -C 0.01 -M 100
+Relation:     warnings_winter_2023_2026-weka.filters.unsupervised.attribute.Remove-R1-weka.filters.unsupervised.attribute.Remove-R1,4,6,8,11-15,17-22
+Instances:    13190
+Attributes:   8
+              geographical_region
+              risk
+              publish_month
+              rainfall_most_exposed_area
+              wind_speed
+              wind_shift_speed
+              temperature_min
+              rain_snow_line_end
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 14.0
+|   publish_month <= 3.0: Medium (5053.0/1749.0)
+|   publish_month > 3.0
+|   |   geographical_region = Svalbard / Arctic: Medium (284.0/71.0)
+|   |   geographical_region != Svalbard / Arctic
+|   |   |   temperature_min <= -12.0
+|   |   |   |   temperature_min <= -16.0: Medium (768.0/190.0)
+|   |   |   |   temperature_min > -16.0
+|   |   |   |   |   rainfall_most_exposed_area <= 0.0: Low (256.0/115.0)
+|   |   |   |   |   rainfall_most_exposed_area > 0.0: Medium (470.0/152.0)
+|   |   |   temperature_min > -12.0
+|   |   |   |   publish_month <= 4.0
+|   |   |   |   |   wind_speed = Calm/light breeze: Low (101.0/25.0)
+|   |   |   |   |   wind_speed != Calm/light breeze
+|   |   |   |   |   |   rainfall_most_exposed_area <= 1.0
+|   |   |   |   |   |   |   geographical_region = Northern Norway: Medium (208.0/87.0)
+|   |   |   |   |   |   |   geographical_region != Northern Norway: Low (294.0/122.0)
+|   |   |   |   |   |   rainfall_most_exposed_area > 1.0: Medium (685.0/287.0)
+|   |   |   |   publish_month > 4.0
+|   |   |   |   |   temperature_min <= -3.0
+|   |   |   |   |   |   rainfall_most_exposed_area <= 8.0
+|   |   |   |   |   |   |   temperature_min <= -8.0
+|   |   |   |   |   |   |   |   geographical_region = Northern Norway
+|   |   |   |   |   |   |   |   |   publish_month <= 5.0: Low (120.0/45.0)
+|   |   |   |   |   |   |   |   |   publish_month > 5.0: Medium (104.0/28.0)
+|   |   |   |   |   |   |   |   geographical_region != Northern Norway: Low (198.0/61.0)
+|   |   |   |   |   |   |   temperature_min > -8.0: Low (664.0/203.0)
+|   |   |   |   |   |   rainfall_most_exposed_area > 8.0: Medium (246.0/104.0)
+|   |   |   |   |   temperature_min > -3.0: Low (952.0/196.0)
+rainfall_most_exposed_area > 14.0
+|   temperature_min <= -3.0
+|   |   rainfall_most_exposed_area <= 24.0
+|   |   |   wind_speed = Breeze: Medium (194.0/56.0)
+|   |   |   wind_speed != Breeze
+|   |   |   |   wind_speed = Fresh breeze: Medium (399.0/149.0)
+|   |   |   |   wind_speed != Fresh breeze
+|   |   |   |   |   publish_month <= 4.0: High (428.0/145.0)
+|   |   |   |   |   publish_month > 4.0: Medium (159.0/74.0)
+|   |   rainfall_most_exposed_area > 24.0: High (1168.0/245.0)
+|   temperature_min > -3.0
+|   |   publish_month <= 3.0: High (116.0/37.0)
+|   |   publish_month > 3.0
+|   |   |   rainfall_most_exposed_area <= 20.0: Low (138.0/63.0)
+|   |   |   rainfall_most_exposed_area > 20.0: Medium (185.0/95.0)
+
+Number of Leaves  : 	23
+
+Size of the tree : 	45
+
+
+Time taken to build model: 0.18 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        8746               66.3078 %
+Incorrectly Classified Instances      4444               33.6922 %
+Kappa statistic                          0.4099
+Mean absolute error                      0.3156
+Root mean squared error                  0.3986
+Relative absolute error                 77.5983 %
+Root relative squared error             88.3812 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.481    0.048    0.726      0.481    0.579      0.511    0.813     0.583     High
+                 0.815    0.491    0.647      0.815    0.721      0.342    0.696     0.673     Medium
+                 0.507    0.090    0.674      0.507    0.578      0.460    0.801     0.610     Low
+Weighted Avg.    0.663    0.291    0.670      0.663    0.653      0.409    0.749     0.637     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1317 1357   62 |    a = High
+  474 5636  805 |    b = Medium
+   24 1722 1793 |    c = Low
+

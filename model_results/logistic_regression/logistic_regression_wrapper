@@ -1,0 +1,193 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4
+Relation:     warnings_winter_2023_2026_wrapper_LOGISTIC
+Instances:    13190
+Attributes:   16
+              ﻿RegionName
+              risk
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              temperature_min
+              temperature_max
+              publish_hour_sin
+              publish_hour_cos
+              publish_month_sin
+              publish_month_cos
+              wind_shift_start_sin
+              freezing_level_start_sin
+              freezing_level_end_sin
+              rain_snow_line_end_cos
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                        Class
+Variable                                                 High                 Medium
+====================================================================================
+﻿RegionName=Svalbard øst                           17.8306                -7.2225
+﻿RegionName=Svalbard vest                             17.88                -6.5186
+﻿RegionName=Nordenskiöld Land                       1.6714                 1.3039
+﻿RegionName=Svalbard sør                           30.5428                 4.4243
+﻿RegionName=Øst-Finnmark                          -13.0727               -26.5846
+﻿RegionName=Finnmarkskysten                         -1.6286                -0.9434
+﻿RegionName=Vest-Finnmark                            0.0591                 0.3827
+﻿RegionName=Nord-Troms                               1.5292                 1.1169
+﻿RegionName=Lyngen                                   1.8411                 1.2305
+﻿RegionName=Tromsø                                  0.7706                  0.461
+﻿RegionName=Sør-Troms                               0.4385                 0.2953
+﻿RegionName=Indre Troms                              1.4981                 1.2657
+﻿RegionName=Lofoten og Vesterålen                   -0.807                -0.4059
+﻿RegionName=Ofoten                                   -0.149                -0.0167
+﻿RegionName=Salten                                  -0.1207                -0.1268
+﻿RegionName=Svartisen                               -0.3587                -0.1915
+﻿RegionName=Helgeland                               -1.1918                -0.6052
+﻿RegionName=Nord-Trøndelag                          32.155                15.2822
+﻿RegionName=Trollheimen                             -0.6293                -0.3765
+﻿RegionName=Romsdal                                 -0.6215                -0.3384
+﻿RegionName=Sunnmøre                               -0.4638                -0.2113
+﻿RegionName=Nord-Gudbrandsdalen                     13.7385                -1.3513
+﻿RegionName=Indre Fjordane                          -0.7264                -0.2245
+﻿RegionName=Jotunheimen                               1.992                 1.1818
+﻿RegionName=Indre Sogn                               0.0755                -0.0961
+﻿RegionName=Voss                                    -0.4296                -0.0889
+﻿RegionName=Hallingdal                              -0.7728                -0.8694
+﻿RegionName=Hordalandskysten                        10.8408                -8.5726
+﻿RegionName=Hardanger                               -1.3229                -0.6162
+﻿RegionName=Vest-Telemark                           -0.6072                -0.6764
+﻿RegionName=Rogalandskysten                          8.3264               -11.0781
+﻿RegionName=Heiane                                  -2.4641                -1.1906
+rainfall_most_exposed_area                             0.1699                 0.1066
+rainfall_average                                       0.0458                -0.0148
+wind_speed=No Wind                                     0.6324                 -0.883
+wind_speed=Strong gale                                 1.5615                 0.6881
+wind_speed=Gale                                        1.0563                 0.4785
+wind_speed=Moderate gale                               0.8015                 0.3944
+wind_speed=Strong breeze                               0.4227                 0.2213
+wind_speed=Fresh breeze                               -0.1676                -0.1421
+wind_speed=Storm                                      29.1066                26.5003
+wind_speed=Breeze                                      -0.768                -0.2888
+wind_speed=Calm/light breeze                          -0.0981                -0.5502
+wind_shift_speed=No Wind                               0.6324                 -0.883
+wind_shift_speed=Moderate gale                         0.5969                 0.2325
+wind_shift_speed=Gale                                  1.0198                 0.4406
+wind_shift_speed=Strong breeze                         0.2833                 -0.001
+wind_shift_speed=Fresh breeze                          -0.188                 0.0439
+wind_shift_speed=Storm                                26.8431                -4.4575
+wind_shift_speed=Strong gale                           2.6387                 1.1466
+wind_shift_speed=Breeze                               -0.4075                -0.1067
+wind_shift_speed=Calm/light breeze                    -1.7848                -0.3069
+temperature_min                                       -0.0382                -0.0342
+temperature_max                                       -0.1011                -0.0727
+publish_hour_sin                                       1.5393                 0.5993
+publish_hour_cos                                       1.3961                 1.1137
+publish_month_sin                                      3.1838                 1.3826
+publish_month_cos                                      1.6591                 0.7275
+wind_shift_start_sin                                  -0.1694                 0.0371
+freezing_level_start_sin                               0.1196                 0.2311
+freezing_level_end_sin                                -0.1912                -0.1573
+rain_snow_line_end_cos                                -0.0247                -0.1049
+Intercept                                             -2.3982                 0.4874
+
+
+Odds Ratios...
+                                                        Class
+Variable                                                 High                 Medium
+====================================================================================
+﻿RegionName=Svalbard øst                     55427676.2302                 0.0007
+﻿RegionName=Svalbard vest                      58236277.615                 0.0015
+﻿RegionName=Nordenskiöld Land                       5.3198                 3.6836
+﻿RegionName=Svalbard sør             1.8388656369330004E13                83.4531
+﻿RegionName=Øst-Finnmark                                 0                      0
+﻿RegionName=Finnmarkskysten                          0.1962                 0.3893
+﻿RegionName=Vest-Finnmark                            1.0608                 1.4663
+﻿RegionName=Nord-Troms                               4.6144                 3.0552
+﻿RegionName=Lyngen                                   6.3034                 3.4228
+﻿RegionName=Tromsø                                   2.161                 1.5857
+﻿RegionName=Sør-Troms                               1.5504                 1.3435
+﻿RegionName=Indre Troms                              4.4732                 3.5457
+﻿RegionName=Lofoten og Vesterålen                   0.4462                 0.6664
+﻿RegionName=Ofoten                                   0.8615                 0.9834
+﻿RegionName=Salten                                   0.8863                 0.8809
+﻿RegionName=Svartisen                                0.6986                 0.8257
+﻿RegionName=Helgeland                                0.3037                  0.546
+﻿RegionName=Nord-Trøndelag            9.220546352803422E13           4334880.9482
+﻿RegionName=Trollheimen                               0.533                 0.6863
+﻿RegionName=Romsdal                                  0.5371                 0.7129
+﻿RegionName=Sunnmøre                                0.6289                 0.8095
+﻿RegionName=Nord-Gudbrandsdalen                 925896.1426                 0.2589
+﻿RegionName=Indre Fjordane                           0.4836                 0.7989
+﻿RegionName=Jotunheimen                              7.3303                 3.2602
+﻿RegionName=Indre Sogn                               1.0784                 0.9084
+﻿RegionName=Voss                                     0.6508                 0.9149
+﻿RegionName=Hallingdal                               0.4617                 0.4192
+﻿RegionName=Hordalandskysten                     51060.7978                 0.0002
+﻿RegionName=Hardanger                                0.2664                   0.54
+﻿RegionName=Vest-Telemark                            0.5449                 0.5085
+﻿RegionName=Rogalandskysten                       4131.3586                      0
+﻿RegionName=Heiane                                   0.0851                  0.304
+rainfall_most_exposed_area                             1.1852                 1.1124
+rainfall_average                                       1.0469                 0.9853
+wind_speed=No Wind                                     1.8822                 0.4136
+wind_speed=Strong gale                                 4.7658                   1.99
+wind_speed=Gale                                        2.8756                 1.6137
+wind_speed=Moderate gale                                2.229                 1.4834
+wind_speed=Strong breeze                               1.5261                 1.2477
+wind_speed=Fresh breeze                                0.8457                 0.8676
+wind_speed=Storm                         4.373682177832345E12   3.228029576686714E11
+wind_speed=Breeze                                      0.4639                 0.7492
+wind_speed=Calm/light breeze                           0.9066                 0.5768
+wind_shift_speed=No Wind                               1.8822                 0.4136
+wind_shift_speed=Moderate gale                         1.8164                 1.2618
+wind_shift_speed=Gale                                  2.7727                 1.5536
+wind_shift_speed=Strong breeze                         1.3275                  0.999
+wind_shift_speed=Fresh breeze                          0.8286                 1.0449
+wind_shift_speed=Storm                  4.5479269017630707E11                 0.0116
+wind_shift_speed=Strong gale                           13.995                 3.1474
+wind_shift_speed=Breeze                                0.6653                 0.8988
+wind_shift_speed=Calm/light breeze                     0.1678                 0.7358
+temperature_min                                        0.9625                 0.9664
+temperature_max                                        0.9038                 0.9299
+publish_hour_sin                                       4.6612                 1.8208
+publish_hour_cos                                       4.0395                 3.0457
+publish_month_sin                                     24.1387                 3.9854
+publish_month_cos                                      5.2544                 2.0699
+wind_shift_start_sin                                   0.8441                 1.0378
+freezing_level_start_sin                                1.127                   1.26
+freezing_level_end_sin                                  0.826                 0.8545
+rain_snow_line_end_cos                                 0.9756                 0.9004
+
+
+Time taken to build model: 2.16 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        9185               69.6361 %
+Incorrectly Classified Instances      4005               30.3639 %
+Kappa statistic                          0.4708
+Mean absolute error                      0.2816
+Root mean squared error                  0.3758
+Relative absolute error                 69.2309 %
+Root relative squared error             83.3205 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.524    0.040    0.776      0.524    0.626      0.566    0.885     0.730     High
+                 0.835    0.447    0.673      0.835    0.746      0.407    0.748     0.727     Medium
+                 0.558    0.082    0.715      0.558    0.627      0.519    0.865     0.709     Low
+Weighted Avg.    0.696    0.264    0.706      0.696    0.689      0.470    0.808     0.723     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1434 1260   42 |    a = High
+  393 5777  745 |    b = Medium
+   22 1543 1974 |    c = Low
+

@@ -1,0 +1,60 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.WrapperSubsetEval -B weka.classifiers.trees.J48 -F 5 -T 0.01 -R 1 -E DEFAULT -- -C 0.01 -M 100
+Search:       weka.attributeSelection.GreedyStepwise -T -1.7976931348623157E308 -N -1 -num-slots 1
+Relation:     warnings_winter_2023_2026-weka.filters.unsupervised.attribute.Remove-R1
+Instances:    13190
+Attributes:   23
+              RegionName
+              geographical_region
+              risk
+              publish_hour
+              publish_month
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              wind_direction
+              wind_shift_direction
+              wind_direction_change
+              wind_shift_start
+              wind_shift_end
+              temperature_min
+              temperature_max
+              freezing_level_masl
+              freezing_level_start
+              freezing_level_end
+              rain_snow_line_altitude_masl
+              rain_snow_line_start
+              rain_snow_line_end
+Evaluation mode:    10-fold cross-validation
+
+
+
+=== Attribute selection 10 fold cross-validation (stratified), seed: 1 ===
+
+number of folds (%)  attribute
+           0(  0 %)     1 RegionName
+          10(100 %)     2 geographical_region
+           1( 10 %)     4 publish_hour
+          10(100 %)     5 publish_month
+           0(  0 %)     6 cloud_cover
+           9( 90 %)     7 rainfall_most_exposed_area
+           3( 30 %)     8 rainfall_average
+           8( 80 %)     9 wind_speed
+           4( 40 %)    10 wind_shift_speed
+           2( 20 %)    11 wind_direction
+           0(  0 %)    12 wind_shift_direction
+           1( 10 %)    13 wind_direction_change
+           0(  0 %)    14 wind_shift_start
+           0(  0 %)    15 wind_shift_end
+           4( 40 %)    16 temperature_min
+           1( 10 %)    17 temperature_max
+           0(  0 %)    18 freezing_level_masl
+           1( 10 %)    19 freezing_level_start
+           0(  0 %)    20 freezing_level_end
+           3( 30 %)    21 rain_snow_line_altitude_masl
+           1( 10 %)    22 rain_snow_line_start
+           4( 40 %)    23 rain_snow_line_end
+

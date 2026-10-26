@@ -1,0 +1,94 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -B -C 0.01 -M 100
+Relation:     warnings_winter_2023_2026_multivariate
+Instances:    13190
+Attributes:   10
+              risk
+              publish_hour
+              publish_month
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              temperature_max
+              freezing_level_masl
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 14.0
+|   temperature_max <= 2.0
+|   |   rainfall_most_exposed_area <= 8.0
+|   |   |   temperature_max <= -4.0: Medium (3598.0/1051.0)
+|   |   |   temperature_max > -4.0
+|   |   |   |   publish_month <= 3.0: Medium (1542.0/609.0)
+|   |   |   |   publish_month > 3.0
+|   |   |   |   |   publish_month <= 4.0
+|   |   |   |   |   |   rainfall_most_exposed_area <= 1.0
+|   |   |   |   |   |   |   wind_shift_speed = Breeze: Low (166.0/72.0)
+|   |   |   |   |   |   |   wind_shift_speed != Breeze: Medium (160.0/72.0)
+|   |   |   |   |   |   rainfall_most_exposed_area > 1.0: Medium (363.0/153.0)
+|   |   |   |   |   publish_month > 4.0
+|   |   |   |   |   |   freezing_level_masl <= 300.0: Medium (268.0/118.0)
+|   |   |   |   |   |   freezing_level_masl > 300.0: Low (544.0/180.0)
+|   |   rainfall_most_exposed_area > 8.0: Medium (1346.0/454.0)
+|   temperature_max > 2.0
+|   |   publish_month <= 4.0
+|   |   |   rainfall_average <= 0.0
+|   |   |   |   publish_month <= 3.0: Medium (117.0/50.0)
+|   |   |   |   publish_month > 3.0: Low (477.0/203.0)
+|   |   |   rainfall_average > 0.0: Medium (376.0/167.0)
+|   |   publish_month > 4.0: Low (1446.0/366.0)
+rainfall_most_exposed_area > 14.0
+|   temperature_max <= 3.0
+|   |   rainfall_most_exposed_area <= 24.0
+|   |   |   wind_speed = Breeze: Medium (191.0/56.0)
+|   |   |   wind_speed != Breeze
+|   |   |   |   wind_speed = Fresh breeze: Medium (407.0/148.0)
+|   |   |   |   wind_speed != Fresh breeze: High (594.0/240.0)
+|   |   rainfall_most_exposed_area > 24.0: High (1212.0/271.0)
+|   temperature_max > 3.0
+|   |   rainfall_most_exposed_area <= 33.0
+|   |   |   publish_month <= 4.0: Medium (118.0/65.0)
+|   |   |   publish_month > 4.0: Low (156.0/73.0)
+|   |   rainfall_most_exposed_area > 33.0: High (109.0/39.0)
+
+Number of Leaves  : 	19
+
+Size of the tree : 	37
+
+
+Time taken to build model: 0.06 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        8718               66.0955 %
+Incorrectly Classified Instances      4472               33.9045 %
+Kappa statistic                          0.4098
+Mean absolute error                      0.3173
+Root mean squared error                  0.3999
+Relative absolute error                 77.9963 %
+Root relative squared error             88.6653 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.487    0.054    0.702      0.487    0.575      0.500    0.820     0.583     High
+                 0.802    0.479    0.649      0.802    0.717      0.338    0.693     0.668     Medium
+                 0.519    0.093    0.671      0.519    0.585      0.465    0.798     0.593     Low
+Weighted Avg.    0.661    0.287    0.666      0.661    0.652      0.406    0.747     0.630     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1332 1349   55 |    a = High
+  520 5549  846 |    b = Medium
+   45 1657 1837 |    c = Low
+

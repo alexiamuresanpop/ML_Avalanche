@@ -1,4 +1,3 @@
-# Import dependencies
 import json
 import re
 from pathlib import Path
@@ -104,6 +103,7 @@ for warning in warnings:
     # Create initial dictionary with top-level metadata fields
     row = {field: warning.get(field) for field in metadata_columns}
 
+    #Obtain weather measurements
     weather = warning.get("MountainWeather") or {}
 
     # Cloud cover
@@ -137,8 +137,6 @@ for warning in warnings:
     # Wind shift
     row["wind_shift_speed"] = measurements.get("weather_wind_shift_to_speed")
     row["wind_shift_direction"] = measurements.get("weather_wind_shift_to_direction")
-
-    # Wind-shift time endpoints
     row["wind_shift_start"] = measurements.get("weather_wind_shift_to_timeperiode_start")
     row["wind_shift_end"] = measurements.get("weather_wind_shift_to_timeperiode_end")
 
@@ -146,7 +144,7 @@ for warning in warnings:
 
 df = pd.DataFrame(rows)
 
-# Derive features for published time
+# Derive features from published time
 df["publish_month"] = pd.to_datetime(df["PublishTime"], format="mixed", errors="coerce").dt.month
 df["publish_hour"] = pd.to_datetime(df["PublishTime"], format="mixed", errors="coerce").dt.hour
 
@@ -158,11 +156,11 @@ for column in time_columns:
 # Replace null values with zero
 df[time_columns] = df[time_columns].fillna(0)
 
-
 # Convert numeric columns to actual numbers
 for column in numeric_columns:
     df[column] = pd.to_numeric(df[column], errors="coerce")
 
+# Replace null values with zero
 df[numeric_columns] = df[numeric_columns].fillna(0)
 
 
@@ -188,19 +186,14 @@ direction_degrees = {
 }
 
 df["wind_direction_degrees"] = df["wind_direction"].map(direction_degrees)
-df["wind_shift_direction_degrees"] = df["wind_shift_direction"].map(
-    direction_degrees
-)
+df["wind_shift_direction_degrees"] = df["wind_shift_direction"].map(direction_degrees)
 
 # Smallest angular change between directions
-difference = (
-    df["wind_shift_direction_degrees"] - df["wind_direction_degrees"]
-).abs()
-
+difference = (df["wind_shift_direction_degrees"] - df["wind_direction_degrees"]).abs()
 df["wind_direction_change"] = np.minimum(difference, 360 - difference)
 
 
-# Geographical region mapping
+# Geographical region mapping for the valid regions
 geographical_region_by_id = {
     # Svalbard / Arctic
     3001: "Svalbard / Arctic",
@@ -263,8 +256,7 @@ geographical_region_by_id = {
 
 df["geographical_region"] = df["RegionId"].map(geographical_region_by_id)
 
-# Due to class imbalance for Level 5 I've decided to classify the risk like this
-
+# Risk column creation
 risk= {
     1: "Low",
     2: "Medium",

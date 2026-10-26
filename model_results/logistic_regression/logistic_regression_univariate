@@ -1,0 +1,119 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4
+Relation:     warnings_winter_2023_2026_DIST_uni
+Instances:    13190
+Attributes:   10
+              ﻿rainfall_most_exposed_area
+              rainfall_average
+              wind_shift_speed
+              wind_speed
+              publish_month_sin
+              publish_month_cos
+              temperature_max
+              temperature_min
+              cloud_cover
+              risk
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Logistic Regression with ridge parameter of 1.0E-8
+Coefficients...
+                                                      Class
+Variable                                               High                 Medium
+==================================================================================
+﻿rainfall_most_exposed_area                        0.1308                  0.078
+rainfall_average                                     0.0551                -0.0004
+wind_shift_speed=No Wind                             1.7483                -0.3636
+wind_shift_speed=Moderate gale                       0.0206                 0.4909
+wind_shift_speed=Gale                                0.5254                 0.8003
+wind_shift_speed=Strong breeze                      -0.1872                 0.3677
+wind_shift_speed=Fresh breeze                       -0.6071                 0.4382
+wind_shift_speed=Storm                             157.2543              -102.3083
+wind_shift_speed=Strong gale                         1.7576                 1.2803
+wind_shift_speed=Breeze                             -0.9262                 0.2299
+wind_shift_speed=Calm/light breeze                  -2.1192                 0.1618
+wind_speed=No Wind                                   1.7483                -0.3636
+wind_speed=Strong gale                               1.3412                 0.4513
+wind_speed=Gale                                      0.9383                 0.4132
+wind_speed=Moderate gale                              0.815                 0.4249
+wind_speed=Strong breeze                             0.3547                 0.1837
+wind_speed=Fresh breeze                              -0.181                -0.1291
+wind_speed=Storm                                    30.0447                27.4249
+wind_speed=Breeze                                    -0.703                -0.2575
+wind_speed=Calm/light breeze                        -0.1752                -0.6772
+publish_month_sin                                    2.7755                 1.0957
+publish_month_cos                                    1.1374                 0.3435
+temperature_max                                     -0.1022                -0.0776
+temperature_min                                       -0.08                -0.0589
+cloud_cover=Not given                                  0.73                  0.068
+cloud_cover=Cloudy                                   0.3234                 0.1802
+cloud_cover=Partly cloudy                           -0.0902                -0.0008
+cloud_cover=Clear skies                             -0.9994                -0.4878
+Intercept                                           -3.9759                -1.1896
+
+
+Odds Ratios...
+                                                      Class
+Variable                                               High                 Medium
+==================================================================================
+﻿rainfall_most_exposed_area                        1.1397                 1.0811
+rainfall_average                                     1.0567                 0.9996
+wind_shift_speed=No Wind                             5.7447                 0.6952
+wind_shift_speed=Moderate gale                       1.0208                 1.6337
+wind_shift_speed=Gale                                1.6912                 2.2262
+wind_shift_speed=Strong breeze                       0.8293                 1.4444
+wind_shift_speed=Fresh breeze                        0.5449                   1.55
+wind_shift_speed=Storm                1.9708716428835463E68                      0
+wind_shift_speed=Strong gale                         5.7985                 3.5977
+wind_shift_speed=Breeze                              0.3961                 1.2585
+wind_shift_speed=Calm/light breeze                   0.1201                 1.1756
+wind_speed=No Wind                                   5.7447                 0.6952
+wind_speed=Strong gale                               3.8236                 1.5704
+wind_speed=Gale                                      2.5556                 1.5117
+wind_speed=Moderate gale                             2.2591                 1.5295
+wind_speed=Strong breeze                             1.4257                 1.2016
+wind_speed=Fresh breeze                              0.8344                 0.8789
+wind_speed=Storm                      1.1175498153782053E13   8.137370406487119E11
+wind_speed=Breeze                                    0.4951                  0.773
+wind_speed=Calm/light breeze                         0.8393                  0.508
+publish_month_sin                                   16.0459                 2.9914
+publish_month_cos                                    3.1185                 1.4099
+temperature_max                                      0.9028                 0.9253
+temperature_min                                      0.9232                 0.9428
+cloud_cover=Not given                                2.0751                 1.0703
+cloud_cover=Cloudy                                   1.3818                 1.1974
+cloud_cover=Partly cloudy                            0.9137                 0.9992
+cloud_cover=Clear skies                              0.3681                  0.614
+
+
+Time taken to build model: 0.64 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        8869               67.2403 %
+Incorrectly Classified Instances      4321               32.7597 %
+Kappa statistic                          0.424 
+Mean absolute error                      0.2983
+Root mean squared error                  0.386 
+Relative absolute error                 73.3365 %
+Root relative squared error             85.5872 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.498    0.044    0.749      0.498    0.598      0.534    0.872     0.705     High
+                 0.832    0.490    0.652      0.832    0.731      0.363    0.730     0.708     Medium
+                 0.495    0.082    0.690      0.495    0.577      0.465    0.840     0.656     Low
+Weighted Avg.    0.672    0.288    0.682      0.672    0.662      0.426    0.789     0.694     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1363 1324   49 |    a = High
+  424 5753  738 |    b = Medium
+   33 1753 1753 |    c = Low
+

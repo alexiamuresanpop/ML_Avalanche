@@ -1,0 +1,69 @@
+=== Run information ===
+
+Evaluator:    weka.attributeSelection.WrapperSubsetEval -B weka.classifiers.lazy.IBk -F 5 -T 0.01 -R 1 -E DEFAULT -- -K 3 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Search:       weka.attributeSelection.GreedyStepwise -T -1.7976931348623157E308 -N -1 -num-slots 1
+Relation:     warnings_winter_2023_2026_DIST
+Instances:    13190
+Attributes:   31
+              ﻿RegionName
+              geographical_region
+              risk
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              wind_direction
+              wind_shift_direction
+              wind_direction_change
+              temperature_min
+              temperature_max
+              freezing_level_masl
+              rain_snow_line_altitude_masl
+              publish_hour_sin
+              publish_hour_cos
+              publish_month_sin
+              publish_month_cos
+              wind_shift_start_sin
+              wind_shift_start_cos
+              wind_shift_end_sin
+              wind_shift_end_cos
+              freezing_level_start_sin
+              freezing_level_start_cos
+              freezing_level_end_sin
+              freezing_level_end_cos
+              rain_snow_line_start_sin
+              rain_snow_line_start_cos
+              rain_snow_line_end_sin
+              rain_snow_line_end_cos
+Evaluation mode:    evaluate on all training data
+
+
+
+=== Attribute Selection on all input data ===
+
+Search Method:
+	Greedy Stepwise (forwards).
+	Start set: no attributes
+	Merit of best subset found:    0.694
+
+Attribute Subset Evaluator (supervised, Class (nominal): 3 risk):
+	Wrapper Subset Evaluator
+	Learning scheme: weka.classifiers.lazy.IBk
+	Scheme options: -K 3 -W 0 -A weka.core.neighboursearch.LinearNNSearch -A "weka.core.EuclideanDistance -R first-last" 
+	Subset evaluation: classification accuracy
+	Number of folds for accuracy estimation: 5
+
+Selected attributes: 2,4,5,15,16,18,19,24,25,29,31 : 11
+                     geographical_region
+                     cloud_cover
+                     rainfall_most_exposed_area
+                     rain_snow_line_altitude_masl
+                     publish_hour_sin
+                     publish_month_sin
+                     publish_month_cos
+                     freezing_level_start_sin
+                     freezing_level_start_cos
+                     rain_snow_line_start_cos
+                     rain_snow_line_end_cos
+
