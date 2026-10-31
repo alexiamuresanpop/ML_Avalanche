@@ -1,6 +1,6 @@
 === Run information ===
 
-Scheme:       weka.classifiers.meta.Stacking -X 10 -M "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4" -S 1 -num-slots 1 -B "weka.classifiers.rules.JRip -F 3 -N 20.0 -O 2 -S 1" -B "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4" -B "weka.classifiers.lazy.IBk -K 3 -W 0 -A \"weka.core.neighboursearch.LinearNNSearch -A \\\"weka.core.EuclideanDistance -R first-last\\\"\""
+Scheme:       weka.classifiers.meta.Stacking -X 10 -M "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4" -S 1 -num-slots 1 -B "weka.classifiers.rules.JRip -F 3 -N 20.0 -O 2 -S 1" -B "weka.classifiers.trees.J48 -C 0.01 -M 2" -B "weka.classifiers.lazy.IBk -K 3 -W 0 -A \"weka.core.neighboursearch.LinearNNSearch -A \\\"weka.core.EuclideanDistance -R first-last\\\"\""
 Relation:     warnings_winter_2023_2026_DIST_uni
 Instances:    13190
 Attributes:   10
@@ -53,74 +53,76 @@ JRIP rules:
 Number of Rules : 24
 
 
-Logistic Regression with ridge parameter of 1.0E-8
-Coefficients...
-                                                      Class
-Variable                                               High                 Medium
-==================================================================================
-﻿rainfall_most_exposed_area                        0.1308                  0.078
-rainfall_average                                     0.0551                -0.0004
-wind_shift_speed=No Wind                             1.7483                -0.3636
-wind_shift_speed=Moderate gale                       0.0206                 0.4909
-wind_shift_speed=Gale                                0.5254                 0.8003
-wind_shift_speed=Strong breeze                      -0.1872                 0.3677
-wind_shift_speed=Fresh breeze                       -0.6071                 0.4382
-wind_shift_speed=Storm                             157.2543              -102.3083
-wind_shift_speed=Strong gale                         1.7576                 1.2803
-wind_shift_speed=Breeze                             -0.9262                 0.2299
-wind_shift_speed=Calm/light breeze                  -2.1192                 0.1618
-wind_speed=No Wind                                   1.7483                -0.3636
-wind_speed=Strong gale                               1.3412                 0.4513
-wind_speed=Gale                                      0.9383                 0.4132
-wind_speed=Moderate gale                              0.815                 0.4249
-wind_speed=Strong breeze                             0.3547                 0.1837
-wind_speed=Fresh breeze                              -0.181                -0.1291
-wind_speed=Storm                                    30.0447                27.4249
-wind_speed=Breeze                                    -0.703                -0.2575
-wind_speed=Calm/light breeze                        -0.1752                -0.6772
-publish_month_sin                                    2.7755                 1.0957
-publish_month_cos                                    1.1374                 0.3435
-temperature_max                                     -0.1022                -0.0776
-temperature_min                                       -0.08                -0.0589
-cloud_cover=Not given                                  0.73                  0.068
-cloud_cover=Cloudy                                   0.3234                 0.1802
-cloud_cover=Partly cloudy                           -0.0902                -0.0008
-cloud_cover=Clear skies                             -0.9994                -0.4878
-Intercept                                           -3.9759                -1.1896
+J48 pruned tree
+------------------
 
+﻿rainfall_most_exposed_area <= 14
+|   publish_month_cos <= -0.866025
+|   |   temperature_max <= 1: Medium (383.0/177.0)
+|   |   temperature_max > 1: Low (1536.0/396.0)
+|   publish_month_cos > -0.866025
+|   |   temperature_max <= -3: Medium (4630.0/1410.0)
+|   |   temperature_max > -3
+|   |   |   ﻿rainfall_most_exposed_area <= 1
+|   |   |   |   temperature_min <= -1
+|   |   |   |   |   publish_month_cos <= 0.866025
+|   |   |   |   |   |   publish_month_cos <= -0.5
+|   |   |   |   |   |   |   cloud_cover = Not given
+|   |   |   |   |   |   |   |   temperature_min <= -3
+|   |   |   |   |   |   |   |   |   temperature_max <= 0: Low (3.0/1.0)
+|   |   |   |   |   |   |   |   |   temperature_max > 0: Medium (21.0)
+|   |   |   |   |   |   |   |   temperature_min > -3: Low (3.0)
+|   |   |   |   |   |   |   cloud_cover = Cloudy: Medium (22.0/7.0)
+|   |   |   |   |   |   |   cloud_cover = Partly cloudy: Low (416.0/193.0)
+|   |   |   |   |   |   |   cloud_cover = Clear skies: Low (255.0/97.0)
+|   |   |   |   |   |   publish_month_cos > -0.5: Medium (601.0/269.0)
+|   |   |   |   |   publish_month_cos > 0.866025: Low (143.0/31.0)
+|   |   |   |   temperature_min > -1
+|   |   |   |   |   temperature_max <= 3: High (26.0/1.0)
+|   |   |   |   |   temperature_max > 3
+|   |   |   |   |   |   temperature_max <= 10: Medium (9.0/3.0)
+|   |   |   |   |   |   temperature_max > 10: Low (3.0)
+|   |   |   ﻿rainfall_most_exposed_area > 1
+|   |   |   |   publish_month_sin <= -0
+|   |   |   |   |   temperature_min <= -9
+|   |   |   |   |   |   ﻿rainfall_most_exposed_area <= 7
+|   |   |   |   |   |   |   temperature_max <= -1: Medium (56.0/17.0)
+|   |   |   |   |   |   |   temperature_max > -1: Low (24.0/7.0)
+|   |   |   |   |   |   ﻿rainfall_most_exposed_area > 7: Medium (41.0/8.0)
+|   |   |   |   |   temperature_min > -9: Low (213.0/82.0)
+|   |   |   |   publish_month_sin > -0: Medium (2018.0/773.0)
+﻿rainfall_most_exposed_area > 14
+|   publish_month_cos <= -0.866025
+|   |   temperature_max <= 8
+|   |   |   temperature_min <= -4: Medium (97.0/13.0)
+|   |   |   temperature_min > -4
+|   |   |   |   rainfall_average <= 10: Low (37.0/12.0)
+|   |   |   |   rainfall_average > 10: Medium (72.0/27.0)
+|   |   temperature_max > 8
+|   |   |   rainfall_average <= 18: Low (35.0)
+|   |   |   rainfall_average > 18: Medium (4.0/1.0)
+|   publish_month_cos > -0.866025
+|   |   ﻿rainfall_most_exposed_area <= 24
+|   |   |   wind_speed = No Wind: Medium (0.0)
+|   |   |   wind_speed = Strong gale: High (24.0/6.0)
+|   |   |   wind_speed = Gale: High (81.0/22.0)
+|   |   |   wind_speed = Moderate gale: High (182.0/67.0)
+|   |   |   wind_speed = Strong breeze
+|   |   |   |   ﻿rainfall_most_exposed_area <= 17
+|   |   |   |   |   temperature_min <= -8
+|   |   |   |   |   |   rainfall_average <= 4: Medium (7.0/1.0)
+|   |   |   |   |   |   rainfall_average > 4: High (69.0/29.0)
+|   |   |   |   |   temperature_min > -8: Medium (63.0/20.0)
+|   |   |   |   ﻿rainfall_most_exposed_area > 17: High (184.0/71.0)
+|   |   |   wind_speed = Fresh breeze: Medium (405.0/160.0)
+|   |   |   wind_speed = Storm: High (5.0)
+|   |   |   wind_speed = Breeze: Medium (184.0/55.0)
+|   |   |   wind_speed = Calm/light breeze: Medium (2.0)
+|   |   ﻿rainfall_most_exposed_area > 24: High (1336.0/300.0)
 
-Odds Ratios...
-                                                      Class
-Variable                                               High                 Medium
-==================================================================================
-﻿rainfall_most_exposed_area                        1.1397                 1.0811
-rainfall_average                                     1.0567                 0.9996
-wind_shift_speed=No Wind                             5.7447                 0.6952
-wind_shift_speed=Moderate gale                       1.0208                 1.6337
-wind_shift_speed=Gale                                1.6912                 2.2262
-wind_shift_speed=Strong breeze                       0.8293                 1.4444
-wind_shift_speed=Fresh breeze                        0.5449                   1.55
-wind_shift_speed=Storm                1.9708716423875285E68                      0
-wind_shift_speed=Strong gale                         5.7985                 3.5977
-wind_shift_speed=Breeze                              0.3961                 1.2585
-wind_shift_speed=Calm/light breeze                   0.1201                 1.1756
-wind_speed=No Wind                                   5.7447                 0.6952
-wind_speed=Strong gale                               3.8236                 1.5704
-wind_speed=Gale                                      2.5556                 1.5117
-wind_speed=Moderate gale                             2.2591                 1.5295
-wind_speed=Strong breeze                             1.4257                 1.2016
-wind_speed=Fresh breeze                              0.8344                 0.8789
-wind_speed=Storm                      1.1175498164814223E13   8.137370413849332E11
-wind_speed=Breeze                                    0.4951                  0.773
-wind_speed=Calm/light breeze                         0.8393                  0.508
-publish_month_sin                                   16.0459                 2.9914
-publish_month_cos                                    3.1185                 1.4099
-temperature_max                                      0.9028                 0.9253
-temperature_min                                      0.9232                 0.9428
-cloud_cover=Not given                                2.0751                 1.0703
-cloud_cover=Cloudy                                   1.3818                 1.1974
-cloud_cover=Partly cloudy                            0.9137                 0.9992
-cloud_cover=Clear skies                              0.3681                  0.614
+Number of Leaves  : 	37
+
+Size of the tree : 	64
 
 
 IB1 instance-based classifier
@@ -133,62 +135,62 @@ Meta classifier
 
 Logistic Regression with ridge parameter of 1.0E-8
 Coefficients...
-                                                  Class
-Variable                                           High   Medium
-================================================================
-weka.classifiers.rules.JRip-1:High               1.2266   0.7715
-weka.classifiers.rules.JRip-1:Medium            -0.1831  -0.0765
-weka.classifiers.rules.JRip-1:Low                -1.045  -0.6852
-weka.classifiers.functions.Logistic-2:High       3.8039    1.646
-weka.classifiers.functions.Logistic-2:Medium    -0.6812   0.3047
-weka.classifiers.functions.Logistic-2:Low       -3.4879    -1.93
-weka.classifiers.lazy.IBk-3:High                 1.9275    0.576
-weka.classifiers.lazy.IBk-3:Medium               0.1574   0.5495
-weka.classifiers.lazy.IBk-3:Low                 -1.8242  -1.0803
-Intercept                                         0.308   1.2161
+                                          Class
+Variable                                   High   Medium
+========================================================
+weka.classifiers.rules.JRip-1:High       2.0811   1.2832
+weka.classifiers.rules.JRip-1:Medium     -0.783  -0.2101
+weka.classifiers.rules.JRip-1:Low        -1.433  -1.0799
+weka.classifiers.trees.J48-2:High        2.0663   0.7327
+weka.classifiers.trees.J48-2:Medium      0.6075   0.5617
+weka.classifiers.trees.J48-2:Low        -2.4013  -1.0933
+weka.classifiers.lazy.IBk-3:High         2.7353   0.9069
+weka.classifiers.lazy.IBk-3:Medium       0.0163   0.5083
+weka.classifiers.lazy.IBk-3:Low         -2.3683  -1.3208
+Intercept                               -0.0482   1.0813
 
 
 Odds Ratios...
-                                                  Class
-Variable                                           High   Medium
-================================================================
-weka.classifiers.rules.JRip-1:High               3.4095   2.1631
-weka.classifiers.rules.JRip-1:Medium             0.8327   0.9264
-weka.classifiers.rules.JRip-1:Low                0.3517    0.504
-weka.classifiers.functions.Logistic-2:High      44.8742   5.1862
-weka.classifiers.functions.Logistic-2:Medium      0.506   1.3563
-weka.classifiers.functions.Logistic-2:Low        0.0306   0.1451
-weka.classifiers.lazy.IBk-3:High                 6.8724    1.779
-weka.classifiers.lazy.IBk-3:Medium               1.1704   1.7324
-weka.classifiers.lazy.IBk-3:Low                  0.1613   0.3395
+                                          Class
+Variable                                   High   Medium
+========================================================
+weka.classifiers.rules.JRip-1:High       8.0129   3.6082
+weka.classifiers.rules.JRip-1:Medium      0.457   0.8105
+weka.classifiers.rules.JRip-1:Low        0.2386   0.3396
+weka.classifiers.trees.J48-2:High        7.8952   2.0807
+weka.classifiers.trees.J48-2:Medium      1.8359   1.7537
+weka.classifiers.trees.J48-2:Low         0.0906   0.3351
+weka.classifiers.lazy.IBk-3:High        15.4145   2.4768
+weka.classifiers.lazy.IBk-3:Medium       1.0164   1.6624
+weka.classifiers.lazy.IBk-3:Low          0.0936   0.2669
 
 
-Time taken to build model: 18.14 seconds
+Time taken to build model: 29.9 seconds
 
 === Stratified cross-validation ===
 === Summary ===
 
-Correctly Classified Instances        9069               68.7566 %
-Incorrectly Classified Instances      4121               31.2434 %
-Kappa statistic                          0.4586
-Mean absolute error                      0.2844
-Root mean squared error                  0.3783
-Relative absolute error                 69.9223 %
-Root relative squared error             83.8855 %
+Correctly Classified Instances        9039               68.5292 %
+Incorrectly Classified Instances      4151               31.4708 %
+Kappa statistic                          0.4523
+Mean absolute error                      0.2891
+Root mean squared error                  0.3812
+Relative absolute error                 71.0832 %
+Root relative squared error             84.5272 %
 Total Number of Instances            13190     
 
 === Detailed Accuracy By Class ===
 
                  TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
-                 0.538    0.045    0.756      0.538    0.629      0.563    0.883     0.733     High
-                 0.816    0.444    0.669      0.816    0.735      0.386    0.748     0.730     Medium
-                 0.552    0.089    0.695      0.552    0.616      0.501    0.856     0.691     Low
-Weighted Avg.    0.688    0.266    0.694      0.688    0.681      0.454    0.805     0.720     
+                 0.523    0.045    0.753      0.523    0.618      0.552    0.872     0.715     High
+                 0.822    0.456    0.665      0.822    0.735      0.383    0.742     0.717     Medium
+                 0.543    0.085    0.701      0.543    0.612      0.500    0.849     0.683     Low
+Weighted Avg.    0.685    0.271    0.693      0.685    0.678      0.449    0.798     0.707     
 
 === Confusion Matrix ===
 
     a    b    c   <-- classified as
- 1472 1222   42 |    a = High
-  457 5642  816 |    b = Medium
-   17 1567 1955 |    c = Low
+ 1432 1262   42 |    a = High
+  452 5686  777 |    b = Medium
+   18 1600 1921 |    c = Low
 

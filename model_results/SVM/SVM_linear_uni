@@ -1,0 +1,168 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     warnings_winter_2023_2026_DIST_uni
+Instances:    13190
+Attributes:   10
+              ﻿rainfall_most_exposed_area
+              rainfall_average
+              wind_shift_speed
+              wind_speed
+              publish_month_sin
+              publish_month_cos
+              temperature_max
+              temperature_min
+              cloud_cover
+              risk
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: High, Medium
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -4.2325 * (normalized) ﻿rainfall_most_exposed_area
+ +      -4.8321 * (normalized) rainfall_average
+ +      -0.999  * (normalized) wind_shift_speed=No Wind
+ +       0.2818 * (normalized) wind_shift_speed=Moderate gale
+ +       0.0834 * (normalized) wind_shift_speed=Gale
+ +       0.3274 * (normalized) wind_shift_speed=Strong breeze
+ +       0.5705 * (normalized) wind_shift_speed=Fresh breeze
+ +      -1      * (normalized) wind_shift_speed=Storm
+ +      -0.6892 * (normalized) wind_shift_speed=Strong gale
+ +       0.5534 * (normalized) wind_shift_speed=Breeze
+ +       0.8718 * (normalized) wind_shift_speed=Calm/light breeze
+ +      -0.999  * (normalized) wind_speed=No Wind
+ +      -0.2832 * (normalized) wind_speed=Strong gale
+ +       0.163  * (normalized) wind_speed=Gale
+ +       0.2668 * (normalized) wind_speed=Moderate gale
+ +       0.4619 * (normalized) wind_speed=Strong breeze
+ +       0.6136 * (normalized) wind_speed=Fresh breeze
+ +      -1.1949 * (normalized) wind_speed=Storm
+ +       0.698  * (normalized) wind_speed=Breeze
+ +       0.2739 * (normalized) wind_speed=Calm/light breeze
+ +      -1.1564 * (normalized) publish_month_sin
+ +      -0.6666 * (normalized) publish_month_cos
+ +       0.3983 * (normalized) temperature_max
+ +       0.722  * (normalized) temperature_min
+ +      -0.2539 * (normalized) cloud_cover=Not given
+ +       0.0963 * (normalized) cloud_cover=Cloudy
+ +       0.1641 * (normalized) cloud_cover=Partly cloudy
+ +      -0.0065 * (normalized) cloud_cover=Clear skies
+ +       1.0387
+
+Number of kernel evaluations: 51603729 (47.285% cached)
+
+Classifier for classes: High, Low
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -8.2994 * (normalized) ﻿rainfall_most_exposed_area
+ +      -5.1335 * (normalized) rainfall_average
+ +      -1.1025 * (normalized) wind_shift_speed=No Wind
+ +       0.0284 * (normalized) wind_shift_speed=Moderate gale
+ +      -0.3072 * (normalized) wind_shift_speed=Gale
+ +       0.0435 * (normalized) wind_shift_speed=Strong breeze
+ +       0.4287 * (normalized) wind_shift_speed=Fresh breeze
+ +      -0.7849 * (normalized) wind_shift_speed=Storm
+ +      -0.6031 * (normalized) wind_shift_speed=Strong gale
+ +       0.7374 * (normalized) wind_shift_speed=Breeze
+ +       1.5597 * (normalized) wind_shift_speed=Calm/light breeze
+ +      -1.1025 * (normalized) wind_speed=No Wind
+ +      -0.5273 * (normalized) wind_speed=Strong gale
+ +      -0.2103 * (normalized) wind_speed=Gale
+ +      -0.0352 * (normalized) wind_speed=Moderate gale
+ +       0.3216 * (normalized) wind_speed=Strong breeze
+ +       0.5942 * (normalized) wind_speed=Fresh breeze
+ +      -0.4171 * (normalized) wind_speed=Storm
+ +       0.857  * (normalized) wind_speed=Breeze
+ +       0.5197 * (normalized) wind_speed=Calm/light breeze
+ +      -2.5161 * (normalized) publish_month_sin
+ +      -1.5206 * (normalized) publish_month_cos
+ +       1.8801 * (normalized) temperature_max
+ +       2.5523 * (normalized) temperature_min
+ +      -0.5543 * (normalized) cloud_cover=Not given
+ +      -0.3486 * (normalized) cloud_cover=Cloudy
+ +       0.0664 * (normalized) cloud_cover=Partly cloudy
+ +       0.8365 * (normalized) cloud_cover=Clear skies
+ +       0.222 
+
+Number of kernel evaluations: 12560419 (57.91% cached)
+
+Classifier for classes: Medium, Low
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -3.819  * (normalized) ﻿rainfall_most_exposed_area
+ +      -2.787  * (normalized) rainfall_average
+ +       0.3873 * (normalized) wind_shift_speed=No Wind
+ +      -0.1062 * (normalized) wind_shift_speed=Moderate gale
+ +      -0.174  * (normalized) wind_shift_speed=Gale
+ +      -0.0098 * (normalized) wind_shift_speed=Strong breeze
+ +      -0.1053 * (normalized) wind_shift_speed=Fresh breeze
+ +      -0.3773 * (normalized) wind_shift_speed=Strong gale
+ +       0.0992 * (normalized) wind_shift_speed=Breeze
+ +       0.2861 * (normalized) wind_shift_speed=Calm/light breeze
+ +       0.3873 * (normalized) wind_speed=No Wind
+ +      -0.2081 * (normalized) wind_speed=Strong gale
+ +      -0.174  * (normalized) wind_speed=Gale
+ +      -0.314  * (normalized) wind_speed=Moderate gale
+ +      -0.1992 * (normalized) wind_speed=Strong breeze
+ +      -0.0081 * (normalized) wind_speed=Fresh breeze
+ +       0.1409 * (normalized) wind_speed=Breeze
+ +       0.3752 * (normalized) wind_speed=Calm/light breeze
+ +      -1.5022 * (normalized) publish_month_sin
+ +      -0.8528 * (normalized) publish_month_cos
+ +       3.3259 * (normalized) temperature_max
+ +       1.2562 * (normalized) temperature_min
+ +      -0.0287 * (normalized) cloud_cover=Not given
+ +      -0.1767 * (normalized) cloud_cover=Cloudy
+ +      -0.1111 * (normalized) cloud_cover=Partly cloudy
+ +       0.3165 * (normalized) cloud_cover=Clear skies
+ -       1.5046
+
+Number of kernel evaluations: 66246264 (46.271% cached)
+
+
+
+Time taken to build model: 13.9 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        8839               67.0129 %
+Incorrectly Classified Instances      4351               32.9871 %
+Kappa statistic                          0.4099
+Mean absolute error                      0.308 
+Root mean squared error                  0.3998
+Relative absolute error                 75.7097 %
+Root relative squared error             88.6448 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.441    0.029    0.798      0.441    0.568      0.524    0.828     0.557     High
+                 0.859    0.528    0.642      0.859    0.735      0.361    0.666     0.625     Medium
+                 0.478    0.076    0.698      0.478    0.567      0.460    0.797     0.537     Low
+Weighted Avg.    0.670    0.303    0.689      0.670    0.655      0.422    0.735     0.587     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1206 1495   35 |    a = High
+  278 5942  695 |    b = Medium
+   27 1821 1691 |    c = Low
+

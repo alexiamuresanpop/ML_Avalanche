@@ -1,0 +1,1055 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.AdaBoostM1 -P 100 -S 1 -I 10 -W weka.classifiers.trees.J48 -- -B -C 0.01 -M 100
+Relation:     warnings_winter_2023_2026
+Instances:    13190
+Attributes:   23
+              ﻿RegionName
+              geographical_region
+              risk
+              publish_hour
+              publish_month
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              wind_direction
+              wind_shift_direction
+              wind_direction_change
+              wind_shift_start
+              wind_shift_end
+              temperature_min
+              temperature_max
+              freezing_level_masl
+              freezing_level_start
+              freezing_level_end
+              rain_snow_line_altitude_masl
+              rain_snow_line_start
+              rain_snow_line_end
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+AdaBoostM1: Base classifiers and their weights: 
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 14.0
+|   temperature_max <= 2.0
+|   |   publish_hour <= 14.0
+|   |   |   wind_speed = Breeze: Medium (130.0/58.0)
+|   |   |   wind_speed != Breeze
+|   |   |   |   temperature_min <= -12.0: Medium (116.0/52.0)
+|   |   |   |   temperature_min > -12.0: High (105.0/36.0)
+|   |   publish_hour > 14.0
+|   |   |   rainfall_most_exposed_area <= 8.0
+|   |   |   |   temperature_max <= -4.0: Medium (3468.0/1000.0)
+|   |   |   |   temperature_max > -4.0
+|   |   |   |   |   publish_month <= 3.0: Medium (1480.0/570.0)
+|   |   |   |   |   publish_month > 3.0
+|   |   |   |   |   |   geographical_region = Eastern Norway: Low (123.0/37.0)
+|   |   |   |   |   |   geographical_region != Eastern Norway
+|   |   |   |   |   |   |   wind_direction = N: Low (112.0/41.0)
+|   |   |   |   |   |   |   wind_direction != N
+|   |   |   |   |   |   |   |   rain_snow_line_altitude_masl <= 300.0
+|   |   |   |   |   |   |   |   |   rainfall_average <= 0.0
+|   |   |   |   |   |   |   |   |   |   temperature_max <= -1.0: Medium (188.0/86.0)
+|   |   |   |   |   |   |   |   |   |   temperature_max > -1.0: Low (186.0/83.0)
+|   |   |   |   |   |   |   |   |   rainfall_average > 0.0: Medium (256.0/78.0)
+|   |   |   |   |   |   |   |   rain_snow_line_altitude_masl > 300.0
+|   |   |   |   |   |   |   |   |   publish_month <= 4.0: Medium (241.0/111.0)
+|   |   |   |   |   |   |   |   |   publish_month > 4.0: Low (304.0/90.0)
+|   |   |   rainfall_most_exposed_area > 8.0: Medium (1278.0/416.0)
+|   temperature_max > 2.0
+|   |   publish_month <= 4.0
+|   |   |   wind_direction = NW: Low (127.0/33.0)
+|   |   |   wind_direction != NW
+|   |   |   |   wind_shift_direction = W: Low (131.0/46.0)
+|   |   |   |   wind_shift_direction != W
+|   |   |   |   |   cloud_cover = Clear skies: Low (123.0/55.0)
+|   |   |   |   |   cloud_cover != Clear skies: Medium (589.0/252.0)
+|   |   publish_month > 4.0: Low (1446.0/366.0)
+rainfall_most_exposed_area > 14.0
+|   rainfall_most_exposed_area <= 24.0
+|   |   wind_speed = Breeze: Medium (237.0/85.0)
+|   |   wind_speed != Breeze
+|   |   |   wind_speed = Fresh breeze: Medium (471.0/189.0)
+|   |   |   wind_speed != Fresh breeze
+|   |   |   |   temperature_max <= -4.0: High (164.0/35.0)
+|   |   |   |   temperature_max > -4.0
+|   |   |   |   |   publish_month <= 4.0: High (337.0/141.0)
+|   |   |   |   |   publish_month > 4.0: Medium (150.0/62.0)
+|   rainfall_most_exposed_area > 24.0
+|   |   publish_month <= 3.0: High (773.0/112.0)
+|   |   publish_month > 3.0
+|   |   |   temperature_min <= -5.0: High (362.0/90.0)
+|   |   |   temperature_min > -5.0
+|   |   |   |   rain_snow_line_start <= 0.0: Medium (148.0/61.0)
+|   |   |   |   rain_snow_line_start > 0.0: High (145.0/61.0)
+
+Number of Leaves  : 	27
+
+Size of the tree : 	53
+
+
+Weight: 0.75
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   publish_hour <= 13.0
+|   |   publish_hour <= 9.0: Medium (206.11/105.57)
+|   |   publish_hour > 9.0: High (117.59/54.27)
+|   publish_hour > 13.0
+|   |   ﻿RegionName = Jotunheimen: Medium (410.66/177.6)
+|   |   ﻿RegionName != Jotunheimen
+|   |   |   geographical_region = Svalbard / Arctic: Medium (448.36/179.28)
+|   |   |   geographical_region != Svalbard / Arctic
+|   |   |   |   ﻿RegionName = Lyngen: Medium (360.09/136.59)
+|   |   |   |   ﻿RegionName != Lyngen
+|   |   |   |   |   ﻿RegionName = Nord-Troms: Medium (351.78/127.43)
+|   |   |   |   |   ﻿RegionName != Nord-Troms
+|   |   |   |   |   |   ﻿RegionName = Indre Troms: Medium (381.9/129.95)
+|   |   |   |   |   |   ﻿RegionName != Indre Troms
+|   |   |   |   |   |   |   publish_month <= 3.0
+|   |   |   |   |   |   |   |   ﻿RegionName = Indre Sogn: Medium (150.38/56.65)
+|   |   |   |   |   |   |   |   ﻿RegionName != Indre Sogn
+|   |   |   |   |   |   |   |   |   wind_shift_speed = Calm/light breeze: Low (228.27/94.04)
+|   |   |   |   |   |   |   |   |   wind_shift_speed != Calm/light breeze
+|   |   |   |   |   |   |   |   |   |   wind_shift_speed = Breeze
+|   |   |   |   |   |   |   |   |   |   |   cloud_cover = Clear skies: Low (267.53/99.12)
+|   |   |   |   |   |   |   |   |   |   |   cloud_cover != Clear skies
+|   |   |   |   |   |   |   |   |   |   |   |   wind_speed = Breeze
+|   |   |   |   |   |   |   |   |   |   |   |   |   temperature_max <= -5.0: Medium (394.12/167.75)
+|   |   |   |   |   |   |   |   |   |   |   |   |   temperature_max > -5.0: Low (449.6/209.9)
+|   |   |   |   |   |   |   |   |   |   |   |   wind_speed != Breeze: Medium (145.61/60.58)
+|   |   |   |   |   |   |   |   |   |   wind_shift_speed != Breeze: Medium (1620.1/872.21)
+|   |   |   |   |   |   |   publish_month > 3.0
+|   |   |   |   |   |   |   |   wind_shift_speed = Moderate gale: Medium (139.21/45.23)
+|   |   |   |   |   |   |   |   wind_shift_speed != Moderate gale
+|   |   |   |   |   |   |   |   |   temperature_min <= -16.0
+|   |   |   |   |   |   |   |   |   |   freezing_level_masl <= 400.0: Medium (316.19/92.38)
+|   |   |   |   |   |   |   |   |   |   freezing_level_masl > 400.0: Low (105.45/39.55)
+|   |   |   |   |   |   |   |   |   temperature_min > -16.0: Low (2874.53/1107.74)
+rainfall_most_exposed_area > 9.0
+|   rain_snow_line_altitude_masl <= 1900.0
+|   |   rainfall_most_exposed_area <= 35.0
+|   |   |   publish_month <= 3.0
+|   |   |   |   publish_hour <= 14.0: High (165.12/32.73)
+|   |   |   |   publish_hour > 14.0
+|   |   |   |   |   wind_shift_speed = Gale: High (101.0/28.38)
+|   |   |   |   |   wind_shift_speed != Gale
+|   |   |   |   |   |   rainfall_average <= 6.0: Medium (702.31/280.77)
+|   |   |   |   |   |   rainfall_average > 6.0
+|   |   |   |   |   |   |   wind_shift_speed = Breeze: Medium (147.29/50.39)
+|   |   |   |   |   |   |   wind_shift_speed != Breeze
+|   |   |   |   |   |   |   |   wind_shift_speed = Fresh breeze
+|   |   |   |   |   |   |   |   |   wind_direction = SW: Medium (117.12/37.81)
+|   |   |   |   |   |   |   |   |   wind_direction != SW: High (172.91/77.1)
+|   |   |   |   |   |   |   |   wind_shift_speed != Fresh breeze: High (536.8/206.04)
+|   |   |   publish_month > 3.0
+|   |   |   |   temperature_min <= -9.0
+|   |   |   |   |   temperature_min <= -15.0: High (167.09/54.06)
+|   |   |   |   |   temperature_min > -15.0
+|   |   |   |   |   |   rainfall_most_exposed_area <= 12.0: Medium (127.94/48.15)
+|   |   |   |   |   |   rainfall_most_exposed_area > 12.0
+|   |   |   |   |   |   |   rain_snow_line_altitude_masl <= 300.0: High (158.61/66.88)
+|   |   |   |   |   |   |   rain_snow_line_altitude_masl > 300.0: Medium (130.59/51.63)
+|   |   |   |   temperature_min > -9.0
+|   |   |   |   |   wind_shift_speed = Breeze: Low (238.17/112.65)
+|   |   |   |   |   wind_shift_speed != Breeze: Medium (798.86/397.64)
+|   |   rainfall_most_exposed_area > 35.0: High (425.62/74.59)
+|   rain_snow_line_altitude_masl > 1900.0
+|   |   temperature_max <= 6.0: Medium (122.48/62.58)
+|   |   temperature_max > 6.0: Low (110.61/16.61)
+
+Number of Leaves  : 	34
+
+Size of the tree : 	67
+
+
+Weight: 0.38
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   publish_hour <= 13.0: High (334.8/185.7)
+|   publish_hour > 13.0
+|   |   ﻿RegionName = Jotunheimen
+|   |   |   publish_month <= 3.0: High (200.71/91.65)
+|   |   |   publish_month > 3.0: Medium (214.21/96.32)
+|   |   ﻿RegionName != Jotunheimen
+|   |   |   publish_month <= 3.0
+|   |   |   |   wind_shift_speed = Gale: High (129.88/62.91)
+|   |   |   |   wind_shift_speed != Gale
+|   |   |   |   |   rainfall_most_exposed_area <= 0.0
+|   |   |   |   |   |   freezing_level_masl <= 100.0: Medium (439.16/229.37)
+|   |   |   |   |   |   freezing_level_masl > 100.0
+|   |   |   |   |   |   |   wind_shift_speed = Breeze
+|   |   |   |   |   |   |   |   wind_direction = SE: Low (214.8/74.25)
+|   |   |   |   |   |   |   |   wind_direction != SE
+|   |   |   |   |   |   |   |   |   temperature_min <= -15.0: Medium (158.71/54.14)
+|   |   |   |   |   |   |   |   |   temperature_min > -15.0: Low (151.18/75.91)
+|   |   |   |   |   |   |   wind_shift_speed != Breeze: Low (633.35/297.51)
+|   |   |   |   |   rainfall_most_exposed_area > 0.0
+|   |   |   |   |   |   ﻿RegionName = Finnmarkskysten: Low (149.93/68.68)
+|   |   |   |   |   |   ﻿RegionName != Finnmarkskysten: Medium (2201.46/1210.37)
+|   |   |   publish_month > 3.0
+|   |   |   |   ﻿RegionName = Heiane: Low (134.25/28.46)
+|   |   |   |   ﻿RegionName != Heiane
+|   |   |   |   |   temperature_max <= -5.0: Medium (785.3/313.96)
+|   |   |   |   |   temperature_max > -5.0
+|   |   |   |   |   |   ﻿RegionName = Lyngen: Medium (158.04/63.02)
+|   |   |   |   |   |   ﻿RegionName != Lyngen
+|   |   |   |   |   |   |   temperature_max <= 11.0
+|   |   |   |   |   |   |   |   ﻿RegionName = Hardanger: Low (126.24/42.42)
+|   |   |   |   |   |   |   |   ﻿RegionName != Hardanger
+|   |   |   |   |   |   |   |   |   wind_shift_start <= 0.0
+|   |   |   |   |   |   |   |   |   |   geographical_region = Eastern Norway: Low (212.63/78.57)
+|   |   |   |   |   |   |   |   |   |   geographical_region != Eastern Norway
+|   |   |   |   |   |   |   |   |   |   |   rain_snow_line_altitude_masl <= 1500.0
+|   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_start <= 12.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_altitude_masl <= 200.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   rainfall_average <= 0.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   temperature_max <= -1.0: Low (202.32/72.56)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   temperature_max > -1.0: Medium (559.23/223.67)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   rainfall_average > 0.0: Medium (262.78/126.62)
+|   |   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_altitude_masl > 200.0: Low (592.33/247.9)
+|   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_start > 12.0: Medium (107.79/42.14)
+|   |   |   |   |   |   |   |   |   |   |   rain_snow_line_altitude_masl > 1500.0: Medium (216.58/70.02)
+|   |   |   |   |   |   |   |   |   wind_shift_start > 0.0
+|   |   |   |   |   |   |   |   |   |   rain_snow_line_start <= 0.0: Medium (334.65/131.28)
+|   |   |   |   |   |   |   |   |   |   rain_snow_line_start > 0.0: Low (282.63/137.62)
+|   |   |   |   |   |   |   temperature_max > 11.0: Low (209.72/42.0)
+rainfall_most_exposed_area > 9.0
+|   rain_snow_line_altitude_masl <= 1900.0
+|   |   publish_month <= 3.0
+|   |   |   rainfall_most_exposed_area <= 35.0
+|   |   |   |   publish_hour <= 14.0: High (151.74/40.31)
+|   |   |   |   publish_hour > 14.0
+|   |   |   |   |   wind_speed = Gale: High (109.35/35.88)
+|   |   |   |   |   wind_speed != Gale
+|   |   |   |   |   |   temperature_max <= -2.0
+|   |   |   |   |   |   |   rainfall_average <= 9.0: Medium (582.98/281.05)
+|   |   |   |   |   |   |   rainfall_average > 9.0: High (209.45/72.0)
+|   |   |   |   |   |   temperature_max > -2.0: Medium (859.66/392.25)
+|   |   |   rainfall_most_exposed_area > 35.0: High (185.14/7.65)
+|   |   publish_month > 3.0
+|   |   |   temperature_max <= -1.0
+|   |   |   |   rainfall_most_exposed_area <= 17.0: Medium (421.28/202.33)
+|   |   |   |   rainfall_most_exposed_area > 17.0: High (301.1/113.48)
+|   |   |   temperature_max > -1.0
+|   |   |   |   cloud_cover = Cloudy
+|   |   |   |   |   freezing_level_masl <= 800.0
+|   |   |   |   |   |   rainfall_average <= 7.0: Medium (102.41/56.75)
+|   |   |   |   |   |   rainfall_average > 7.0: High (381.83/179.13)
+|   |   |   |   |   freezing_level_masl > 800.0: Medium (310.6/159.37)
+|   |   |   |   cloud_cover != Cloudy: Low (334.69/162.75)
+|   rain_snow_line_altitude_masl > 1900.0
+|   |   temperature_min <= 0.0: Medium (109.18/67.83)
+|   |   temperature_min > 0.0: Low (117.9/31.35)
+
+Number of Leaves  : 	39
+
+Size of the tree : 	77
+
+
+Weight: 0.22
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   temperature_max <= 2.0
+|   |   publish_month <= 3.0
+|   |   |   ﻿RegionName = Jotunheimen: High (206.09/104.38)
+|   |   |   ﻿RegionName != Jotunheimen
+|   |   |   |   wind_shift_direction = NW: Medium (272.44/124.31)
+|   |   |   |   wind_shift_direction != NW
+|   |   |   |   |   wind_shift_speed = Breeze
+|   |   |   |   |   |   cloud_cover = Clear skies
+|   |   |   |   |   |   |   wind_shift_direction = SE: Low (146.19/50.86)
+|   |   |   |   |   |   |   wind_shift_direction != SE: Medium (138.66/59.88)
+|   |   |   |   |   |   cloud_cover != Clear skies
+|   |   |   |   |   |   |   wind_speed = Breeze
+|   |   |   |   |   |   |   |   rain_snow_line_end <= 0.0
+|   |   |   |   |   |   |   |   |   freezing_level_masl <= 200.0: Medium (222.72/116.96)
+|   |   |   |   |   |   |   |   |   freezing_level_masl > 200.0: Low (383.97/170.29)
+|   |   |   |   |   |   |   |   rain_snow_line_end > 0.0: Medium (360.63/165.06)
+|   |   |   |   |   |   |   wind_speed != Breeze: Medium (167.31/88.23)
+|   |   |   |   |   wind_shift_speed != Breeze
+|   |   |   |   |   |   wind_shift_speed = Calm/light breeze
+|   |   |   |   |   |   |   freezing_level_masl <= 200.0: Medium (108.75/44.44)
+|   |   |   |   |   |   |   freezing_level_masl > 200.0: Low (153.02/64.3)
+|   |   |   |   |   |   wind_shift_speed != Calm/light breeze
+|   |   |   |   |   |   |   ﻿RegionName = Finnmarkskysten: Low (155.71/79.9)
+|   |   |   |   |   |   |   ﻿RegionName != Finnmarkskysten
+|   |   |   |   |   |   |   |   ﻿RegionName = Trollheimen: Low (132.17/71.9)
+|   |   |   |   |   |   |   |   ﻿RegionName != Trollheimen
+|   |   |   |   |   |   |   |   |   ﻿RegionName = Helgeland: Low (119.54/60.59)
+|   |   |   |   |   |   |   |   |   ﻿RegionName != Helgeland
+|   |   |   |   |   |   |   |   |   |   ﻿RegionName = Romsdal: Low (110.2/58.13)
+|   |   |   |   |   |   |   |   |   |   ﻿RegionName != Romsdal
+|   |   |   |   |   |   |   |   |   |   |   wind_shift_speed = Fresh breeze
+|   |   |   |   |   |   |   |   |   |   |   |   rainfall_average <= 0.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   publish_month <= 2.0: Medium (278.74/141.01)
+|   |   |   |   |   |   |   |   |   |   |   |   |   publish_month > 2.0: Low (135.01/62.71)
+|   |   |   |   |   |   |   |   |   |   |   |   rainfall_average > 0.0: High (373.41/188.73)
+|   |   |   |   |   |   |   |   |   |   |   wind_shift_speed != Fresh breeze: High (808.58/381.52)
+|   |   publish_month > 3.0
+|   |   |   ﻿RegionName = Lyngen: Medium (119.11/51.58)
+|   |   |   ﻿RegionName != Lyngen
+|   |   |   |   ﻿RegionName = Indre Troms: Medium (147.06/70.8)
+|   |   |   |   ﻿RegionName != Indre Troms
+|   |   |   |   |   ﻿RegionName = Nordenskiöld Land: Medium (227.29/92.71)
+|   |   |   |   |   ﻿RegionName != Nordenskiöld Land
+|   |   |   |   |   |   ﻿RegionName = Nord-Troms: Medium (132.51/49.18)
+|   |   |   |   |   |   ﻿RegionName != Nord-Troms
+|   |   |   |   |   |   |   cloud_cover = Clear skies: Low (262.02/100.16)
+|   |   |   |   |   |   |   cloud_cover != Clear skies
+|   |   |   |   |   |   |   |   temperature_max <= -5.0: Medium (495.3/221.13)
+|   |   |   |   |   |   |   |   temperature_max > -5.0
+|   |   |   |   |   |   |   |   |   freezing_level_masl <= 200.0: Medium (192.94/80.8)
+|   |   |   |   |   |   |   |   |   freezing_level_masl > 200.0
+|   |   |   |   |   |   |   |   |   |   wind_direction = NW: Low (205.64/87.9)
+|   |   |   |   |   |   |   |   |   |   wind_direction != NW
+|   |   |   |   |   |   |   |   |   |   |   freezing_level_masl <= 900.0
+|   |   |   |   |   |   |   |   |   |   |   |   rainfall_average <= 1.0: Low (381.56/168.27)
+|   |   |   |   |   |   |   |   |   |   |   |   rainfall_average > 1.0: Medium (228.26/105.79)
+|   |   |   |   |   |   |   |   |   |   |   freezing_level_masl > 900.0: Medium (283.16/115.73)
+|   temperature_max > 2.0
+|   |   freezing_level_masl <= 1500.0
+|   |   |   temperature_max <= 8.0
+|   |   |   |   rain_snow_line_altitude_masl <= 1800.0
+|   |   |   |   |   wind_speed = Calm/light breeze: Low (124.46/42.72)
+|   |   |   |   |   wind_speed != Calm/light breeze
+|   |   |   |   |   |   publish_month <= 4.0
+|   |   |   |   |   |   |   rainfall_average <= 0.0: Medium (454.3/205.75)
+|   |   |   |   |   |   |   rainfall_average > 0.0
+|   |   |   |   |   |   |   |   rain_snow_line_altitude_masl <= 900.0: Low (112.23/57.29)
+|   |   |   |   |   |   |   |   rain_snow_line_altitude_masl > 900.0: Medium (138.62/59.49)
+|   |   |   |   |   |   publish_month > 4.0
+|   |   |   |   |   |   |   freezing_level_masl <= 900.0
+|   |   |   |   |   |   |   |   rain_snow_line_start <= 0.0: Medium (307.65/125.95)
+|   |   |   |   |   |   |   |   rain_snow_line_start > 0.0: Low (112.31/44.36)
+|   |   |   |   |   |   |   freezing_level_masl > 900.0: Low (140.58/51.78)
+|   |   |   |   rain_snow_line_altitude_masl > 1800.0: Medium (175.54/93.12)
+|   |   |   temperature_max > 8.0
+|   |   |   |   cloud_cover = Clear skies: Medium (106.06/44.18)
+|   |   |   |   cloud_cover != Clear skies: Low (302.88/105.41)
+|   |   freezing_level_masl > 1500.0: Low (102.7/15.24)
+rainfall_most_exposed_area > 9.0
+|   temperature_max <= 3.0
+|   |   rainfall_average <= 20.0
+|   |   |   publish_month <= 3.0
+|   |   |   |   rainfall_average <= 12.0
+|   |   |   |   |   wind_speed = Breeze: Medium (323.7/148.22)
+|   |   |   |   |   wind_speed != Breeze
+|   |   |   |   |   |   wind_shift_speed = Fresh breeze: Medium (434.94/208.68)
+|   |   |   |   |   |   wind_shift_speed != Fresh breeze
+|   |   |   |   |   |   |   wind_shift_direction = W: Medium (148.77/64.14)
+|   |   |   |   |   |   |   wind_shift_direction != W: High (616.65/235.16)
+|   |   |   |   rainfall_average > 12.0: High (324.51/106.59)
+|   |   |   publish_month > 3.0
+|   |   |   |   freezing_level_masl <= 600.0
+|   |   |   |   |   rainfall_average <= 7.0
+|   |   |   |   |   |   temperature_min <= -15.0: High (102.02/43.95)
+|   |   |   |   |   |   temperature_min > -15.0: Medium (243.69/127.76)
+|   |   |   |   |   rainfall_average > 7.0: High (476.07/204.06)
+|   |   |   |   freezing_level_masl > 600.0
+|   |   |   |   |   rainfall_most_exposed_area <= 14.0: Low (199.13/101.9)
+|   |   |   |   |   rainfall_most_exposed_area > 14.0: Medium (439.25/216.33)
+|   |   rainfall_average > 20.0: High (248.33/38.45)
+|   temperature_max > 3.0
+|   |   publish_month <= 3.0: High (109.53/54.17)
+|   |   publish_month > 3.0
+|   |   |   temperature_max <= 6.0
+|   |   |   |   wind_speed = Fresh breeze: Low (139.17/70.09)
+|   |   |   |   wind_speed != Fresh breeze: Medium (223.53/125.06)
+|   |   |   temperature_max > 6.0: Low (135.38/36.19)
+
+Number of Leaves  : 	55
+
+Size of the tree : 	109
+
+
+Weight: 0.24
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   publish_month <= 3.0
+|   |   ﻿RegionName = Jotunheimen: Medium (210.74/107.91)
+|   |   ﻿RegionName != Jotunheimen
+|   |   |   ﻿RegionName = Heiane: Low (189.49/78.11)
+|   |   |   ﻿RegionName != Heiane
+|   |   |   |   ﻿RegionName = Nord-Troms: High (180.12/97.54)
+|   |   |   |   ﻿RegionName != Nord-Troms
+|   |   |   |   |   publish_hour <= 16.0
+|   |   |   |   |   |   ﻿RegionName = Indre Sogn: Medium (157.15/78.35)
+|   |   |   |   |   |   ﻿RegionName != Indre Sogn
+|   |   |   |   |   |   |   geographical_region = Svalbard / Arctic: High (253.24/142.85)
+|   |   |   |   |   |   |   geographical_region != Svalbard / Arctic
+|   |   |   |   |   |   |   |   ﻿RegionName = Indre Troms: Medium (171.53/81.28)
+|   |   |   |   |   |   |   |   ﻿RegionName != Indre Troms
+|   |   |   |   |   |   |   |   |   ﻿RegionName = Lyngen: High (180.25/105.53)
+|   |   |   |   |   |   |   |   |   ﻿RegionName != Lyngen
+|   |   |   |   |   |   |   |   |   |   wind_shift_speed = Calm/light breeze
+|   |   |   |   |   |   |   |   |   |   |   temperature_max <= -7.0: Medium (108.72/47.01)
+|   |   |   |   |   |   |   |   |   |   |   temperature_max > -7.0: Low (113.07/47.87)
+|   |   |   |   |   |   |   |   |   |   wind_shift_speed != Calm/light breeze
+|   |   |   |   |   |   |   |   |   |   |   wind_speed = Breeze
+|   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_end <= 0.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   publish_month <= 2.0: Low (605.93/301.6)
+|   |   |   |   |   |   |   |   |   |   |   |   |   publish_month > 2.0: Medium (141.76/74.17)
+|   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_end > 0.0: Medium (507.24/254.9)
+|   |   |   |   |   |   |   |   |   |   |   wind_speed != Breeze
+|   |   |   |   |   |   |   |   |   |   |   |   wind_shift_direction = E: High (137.62/65.25)
+|   |   |   |   |   |   |   |   |   |   |   |   wind_shift_direction != E
+|   |   |   |   |   |   |   |   |   |   |   |   |   rainfall_most_exposed_area <= 1.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_speed = Fresh breeze: Low (328.48/138.1)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_speed != Fresh breeze
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_masl <= 100.0: High (120.37/63.87)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_masl > 100.0: Low (252.75/149.86)
+|   |   |   |   |   |   |   |   |   |   |   |   |   rainfall_most_exposed_area > 1.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   temperature_min <= -13.0: High (253.67/144.16)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   temperature_min > -13.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_end <= 6.0: Low (239.32/140.68)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_end > 6.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   temperature_max <= 1.0: Medium (246.39/127.46)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   temperature_max > 1.0: High (117.45/67.2)
+|   |   |   |   |   publish_hour > 16.0: High (35.18/7.43)
+|   publish_month > 3.0
+|   |   ﻿RegionName = Heiane: Low (128.01/31.13)
+|   |   ﻿RegionName != Heiane
+|   |   |   geographical_region = Eastern Norway: Low (386.64/135.83)
+|   |   |   geographical_region != Eastern Norway
+|   |   |   |   temperature_max <= -5.0: Medium (780.75/364.3)
+|   |   |   |   temperature_max > -5.0
+|   |   |   |   |   rain_snow_line_altitude_masl <= 2300.0
+|   |   |   |   |   |   ﻿RegionName = Jotunheimen: Medium (169.87/87.7)
+|   |   |   |   |   |   ﻿RegionName != Jotunheimen
+|   |   |   |   |   |   |   ﻿RegionName = Finnmarkskysten: Low (140.7/48.65)
+|   |   |   |   |   |   |   ﻿RegionName != Finnmarkskysten
+|   |   |   |   |   |   |   |   ﻿RegionName = Hardanger: Low (118.83/39.88)
+|   |   |   |   |   |   |   |   ﻿RegionName != Hardanger
+|   |   |   |   |   |   |   |   |   wind_shift_start <= 0.0
+|   |   |   |   |   |   |   |   |   |   freezing_level_masl <= 200.0: Medium (218.76/118.94)
+|   |   |   |   |   |   |   |   |   |   freezing_level_masl > 200.0
+|   |   |   |   |   |   |   |   |   |   |   publish_month <= 4.0
+|   |   |   |   |   |   |   |   |   |   |   |   freezing_level_end <= 6.0: Low (225.73/95.34)
+|   |   |   |   |   |   |   |   |   |   |   |   freezing_level_end > 6.0: Medium (542.18/230.15)
+|   |   |   |   |   |   |   |   |   |   |   publish_month > 4.0
+|   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_altitude_masl <= 1400.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   wind_direction = SW: Medium (209.8/86.93)
+|   |   |   |   |   |   |   |   |   |   |   |   |   wind_direction != SW: Low (640.36/290.94)
+|   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_altitude_masl > 1400.0: Medium (224.72/83.31)
+|   |   |   |   |   |   |   |   |   wind_shift_start > 0.0: Medium (571.16/294.37)
+|   |   |   |   |   rain_snow_line_altitude_masl > 2300.0: Low (129.91/35.2)
+rainfall_most_exposed_area > 9.0
+|   temperature_max <= 3.0
+|   |   geographical_region = Svalbard / Arctic: High (101.71/21.81)
+|   |   geographical_region != Svalbard / Arctic
+|   |   |   publish_month <= 3.0
+|   |   |   |   rainfall_most_exposed_area <= 35.0
+|   |   |   |   |   rainfall_most_exposed_area <= 12.0
+|   |   |   |   |   |   rain_snow_line_altitude_masl <= 400.0: Medium (414.21/219.97)
+|   |   |   |   |   |   rain_snow_line_altitude_masl > 400.0: High (220.11/104.98)
+|   |   |   |   |   rainfall_most_exposed_area > 12.0
+|   |   |   |   |   |   rain_snow_line_altitude_masl <= 700.0: High (779.18/339.57)
+|   |   |   |   |   |   rain_snow_line_altitude_masl > 700.0: Medium (348.46/155.15)
+|   |   |   |   rainfall_most_exposed_area > 35.0: High (138.1/9.77)
+|   |   |   publish_month > 3.0
+|   |   |   |   rainfall_most_exposed_area <= 14.0
+|   |   |   |   |   temperature_min <= -10.0
+|   |   |   |   |   |   wind_shift_end <= 0.0: Medium (122.26/67.27)
+|   |   |   |   |   |   wind_shift_end > 0.0: High (107.03/46.97)
+|   |   |   |   |   temperature_min > -10.0
+|   |   |   |   |   |   publish_month <= 4.0: Medium (117.08/65.64)
+|   |   |   |   |   |   publish_month > 4.0: Low (187.62/89.8)
+|   |   |   |   rainfall_most_exposed_area > 14.0
+|   |   |   |   |   freezing_level_start <= 0.0
+|   |   |   |   |   |   freezing_level_masl <= 600.0
+|   |   |   |   |   |   |   wind_shift_end <= 0.0: Medium (177.23/67.04)
+|   |   |   |   |   |   |   wind_shift_end > 0.0: High (259.72/102.73)
+|   |   |   |   |   |   freezing_level_masl > 600.0: Medium (457.23/249.97)
+|   |   |   |   |   freezing_level_start > 0.0: High (110.13/33.55)
+|   temperature_max > 3.0
+|   |   geographical_region = Northern Norway: Medium (220.43/113.51)
+|   |   geographical_region != Northern Norway: Low (391.61/194.07)
+
+Number of Leaves  : 	51
+
+Size of the tree : 	101
+
+
+Weight: 0.14
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   temperature_max <= 0.0
+|   |   publish_hour <= 14.0
+|   |   |   rain_snow_line_end <= 0.0: High (172.2/73.45)
+|   |   |   rain_snow_line_end > 0.0: Medium (120.48/64.35)
+|   |   publish_hour > 14.0
+|   |   |   wind_speed = Strong breeze
+|   |   |   |   temperature_min <= -21.0: High (106.33/51.11)
+|   |   |   |   temperature_min > -21.0
+|   |   |   |   |   rainfall_most_exposed_area <= 0.0: Low (213.09/122.44)
+|   |   |   |   |   rainfall_most_exposed_area > 0.0: Medium (469.92/255.88)
+|   |   |   wind_speed != Strong breeze
+|   |   |   |   ﻿RegionName = Finnmarkskysten: Low (277.16/117.75)
+|   |   |   |   ﻿RegionName != Finnmarkskysten
+|   |   |   |   |   wind_speed = Moderate gale
+|   |   |   |   |   |   temperature_min <= -16.0: High (150.68/78.57)
+|   |   |   |   |   |   temperature_min > -16.0: Medium (216.81/118.96)
+|   |   |   |   |   wind_speed != Moderate gale
+|   |   |   |   |   |   publish_hour <= 15.0
+|   |   |   |   |   |   |   cloud_cover = Clear skies
+|   |   |   |   |   |   |   |   temperature_max <= -5.0: Medium (497.68/252.34)
+|   |   |   |   |   |   |   |   temperature_max > -5.0: Low (250.27/84.67)
+|   |   |   |   |   |   |   cloud_cover != Clear skies
+|   |   |   |   |   |   |   |   publish_month <= 3.0
+|   |   |   |   |   |   |   |   |   wind_shift_direction = NE: Low (169.36/84.24)
+|   |   |   |   |   |   |   |   |   wind_shift_direction != NE
+|   |   |   |   |   |   |   |   |   |   rainfall_most_exposed_area <= 0.0: Medium (622.53/330.47)
+|   |   |   |   |   |   |   |   |   |   rainfall_most_exposed_area > 0.0
+|   |   |   |   |   |   |   |   |   |   |   wind_shift_direction = SE
+|   |   |   |   |   |   |   |   |   |   |   |   cloud_cover = Partly cloudy: Medium (281.49/157.84)
+|   |   |   |   |   |   |   |   |   |   |   |   cloud_cover != Partly cloudy: High (174.09/74.87)
+|   |   |   |   |   |   |   |   |   |   |   wind_shift_direction != SE
+|   |   |   |   |   |   |   |   |   |   |   |   freezing_level_masl <= 100.0: Medium (182.69/86.31)
+|   |   |   |   |   |   |   |   |   |   |   |   freezing_level_masl > 100.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_end <= 12.0: Low (510.75/282.5)
+|   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_end > 12.0: Medium (267.12/153.57)
+|   |   |   |   |   |   |   |   publish_month > 3.0
+|   |   |   |   |   |   |   |   |   geographical_region = Eastern Norway: Low (105.35/37.73)
+|   |   |   |   |   |   |   |   |   geographical_region != Eastern Norway: Medium (1132.76/530.63)
+|   |   |   |   |   |   publish_hour > 15.0: High (76.51/32.55)
+|   temperature_max > 0.0
+|   |   freezing_level_masl <= 1800.0
+|   |   |   ﻿RegionName = Heiane: Low (142.21/43.37)
+|   |   |   ﻿RegionName != Heiane
+|   |   |   |   wind_shift_direction = NE: Low (117.13/34.09)
+|   |   |   |   wind_shift_direction != NE
+|   |   |   |   |   publish_month <= 3.0
+|   |   |   |   |   |   freezing_level_masl <= 300.0: Low (135.57/64.69)
+|   |   |   |   |   |   freezing_level_masl > 300.0: Medium (470.24/256.36)
+|   |   |   |   |   publish_month > 3.0
+|   |   |   |   |   |   wind_direction = W: Low (292.25/120.87)
+|   |   |   |   |   |   wind_direction != W
+|   |   |   |   |   |   |   wind_direction = N: Low (133.75/45.73)
+|   |   |   |   |   |   |   wind_direction != N
+|   |   |   |   |   |   |   |   publish_month <= 4.0: Medium (715.29/356.91)
+|   |   |   |   |   |   |   |   publish_month > 4.0
+|   |   |   |   |   |   |   |   |   rainfall_most_exposed_area <= 1.0: Medium (514.88/216.02)
+|   |   |   |   |   |   |   |   |   rainfall_most_exposed_area > 1.0: Low (460.82/201.53)
+|   |   freezing_level_masl > 1800.0: Low (65.73/2.29)
+rainfall_most_exposed_area > 9.0
+|   temperature_min <= -3.0
+|   |   rainfall_average <= 20.0
+|   |   |   rainfall_most_exposed_area <= 18.0
+|   |   |   |   publish_month <= 3.0
+|   |   |   |   |   temperature_max <= -2.0: High (667.93/316.76)
+|   |   |   |   |   temperature_max > -2.0: Medium (502.74/260.68)
+|   |   |   |   publish_month > 3.0: Medium (899.83/513.33)
+|   |   |   rainfall_most_exposed_area > 18.0
+|   |   |   |   publish_hour <= 14.0: High (118.14/28.73)
+|   |   |   |   publish_hour > 14.0
+|   |   |   |   |   rain_snow_line_altitude_masl <= 1100.0
+|   |   |   |   |   |   temperature_max <= -4.0: High (165.51/57.71)
+|   |   |   |   |   |   temperature_max > -4.0: Medium (724.13/332.85)
+|   |   |   |   |   rain_snow_line_altitude_masl > 1100.0: High (189.36/95.39)
+|   |   rainfall_average > 20.0: High (206.46/27.83)
+|   temperature_min > -3.0
+|   |   publish_month <= 4.0
+|   |   |   temperature_max <= 3.0: Medium (126.98/59.77)
+|   |   |   temperature_max > 3.0: High (164.84/90.21)
+|   |   publish_month > 4.0
+|   |   |   rainfall_most_exposed_area <= 20.0: Low (213.08/64.6)
+|   |   |   rainfall_most_exposed_area > 20.0: Medium (165.86/93.13)
+
+Number of Leaves  : 	42
+
+Size of the tree : 	83
+
+
+Weight: 0.1
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   temperature_max <= 2.0
+|   |   wind_speed = Strong breeze
+|   |   |   temperature_max <= -9.0: High (215.17/101.91)
+|   |   |   temperature_max > -9.0: Medium (744.47/404.95)
+|   |   wind_speed != Strong breeze
+|   |   |   freezing_level_end <= 0.0: High (44.34/9.64)
+|   |   |   freezing_level_end > 0.0
+|   |   |   |   wind_speed = Moderate gale
+|   |   |   |   |   temperature_min <= -19.0: High (107.98/54.93)
+|   |   |   |   |   temperature_min > -19.0
+|   |   |   |   |   |   geographical_region = Northern Norway: Medium (156.76/84.25)
+|   |   |   |   |   |   geographical_region != Northern Norway: High (213.15/119.99)
+|   |   |   |   wind_speed != Moderate gale
+|   |   |   |   |   wind_shift_speed = Moderate gale: High (212.57/121.74)
+|   |   |   |   |   wind_shift_speed != Moderate gale
+|   |   |   |   |   |   ﻿RegionName = Finnmarkskysten
+|   |   |   |   |   |   |   rainfall_most_exposed_area <= 3.0: Low (149.47/48.88)
+|   |   |   |   |   |   |   rainfall_most_exposed_area > 3.0: Medium (107.76/49.31)
+|   |   |   |   |   |   ﻿RegionName != Finnmarkskysten
+|   |   |   |   |   |   |   publish_hour <= 15.0
+|   |   |   |   |   |   |   |   wind_shift_direction = N
+|   |   |   |   |   |   |   |   |   rain_snow_line_end <= 0.0: Medium (190.05/87.63)
+|   |   |   |   |   |   |   |   |   rain_snow_line_end > 0.0: Low (138.41/65.12)
+|   |   |   |   |   |   |   |   wind_shift_direction != N
+|   |   |   |   |   |   |   |   |   rainfall_most_exposed_area <= 0.0
+|   |   |   |   |   |   |   |   |   |   cloud_cover = Cloudy: Medium (103.31/51.77)
+|   |   |   |   |   |   |   |   |   |   cloud_cover != Cloudy
+|   |   |   |   |   |   |   |   |   |   |   wind_direction = NW: Low (149.23/53.02)
+|   |   |   |   |   |   |   |   |   |   |   wind_direction != NW
+|   |   |   |   |   |   |   |   |   |   |   |   temperature_min <= -25.0: Medium (181.62/70.6)
+|   |   |   |   |   |   |   |   |   |   |   |   temperature_min > -25.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   publish_month <= 3.0: Low (884.69/471.82)
+|   |   |   |   |   |   |   |   |   |   |   |   |   publish_month > 3.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   temperature_min <= -18.0: Medium (133.15/56.75)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   temperature_min > -18.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   geographical_region = Western Norway: Low (124.91/56.17)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   geographical_region != Western Norway
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_end <= 0.0: Medium (122.48/47.29)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_end > 0.0: Low (111.93/45.22)
+|   |   |   |   |   |   |   |   |   rainfall_most_exposed_area > 0.0
+|   |   |   |   |   |   |   |   |   |   wind_shift_speed = Calm/light breeze: Low (162.08/84.5)
+|   |   |   |   |   |   |   |   |   |   wind_shift_speed != Calm/light breeze
+|   |   |   |   |   |   |   |   |   |   |   publish_month <= 3.0
+|   |   |   |   |   |   |   |   |   |   |   |   wind_shift_direction = NE: Low (130.64/67.25)
+|   |   |   |   |   |   |   |   |   |   |   |   wind_shift_direction != NE
+|   |   |   |   |   |   |   |   |   |   |   |   |   wind_shift_direction = NW: Medium (168.25/91.13)
+|   |   |   |   |   |   |   |   |   |   |   |   |   wind_shift_direction != NW
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_shift_direction = SW
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_end <= 6.0: Low (203.8/92.18)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_end > 6.0: Medium (176.18/98.81)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_shift_direction != SW
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   publish_month <= 1.0: Medium (291.76/170.29)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   publish_month > 1.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   publish_month <= 2.0: High (350.52/157.33)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   publish_month > 2.0: Medium (299.71/173.15)
+|   |   |   |   |   |   |   |   |   |   |   publish_month > 3.0
+|   |   |   |   |   |   |   |   |   |   |   |   temperature_min <= -12.0: Medium (452.28/211.72)
+|   |   |   |   |   |   |   |   |   |   |   |   temperature_min > -12.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   wind_direction = SW: Low (120.69/57.96)
+|   |   |   |   |   |   |   |   |   |   |   |   |   wind_direction != SW
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   temperature_min <= -8.0: Medium (268.96/127.96)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   temperature_min > -8.0: Low (209.3/89.33)
+|   |   |   |   |   |   |   publish_hour > 15.0: High (89.26/44.36)
+|   temperature_max > 2.0
+|   |   rain_snow_line_altitude_masl <= 2400.0
+|   |   |   geographical_region = Northern Norway
+|   |   |   |   rain_snow_line_altitude_masl <= 900.0
+|   |   |   |   |   rain_snow_line_altitude_masl <= 0.0: Medium (324.75/138.62)
+|   |   |   |   |   rain_snow_line_altitude_masl > 0.0: Low (234.96/105.17)
+|   |   |   |   rain_snow_line_altitude_masl > 900.0: Medium (322.84/148.01)
+|   |   |   geographical_region != Northern Norway: Low (1043.89/488.33)
+|   |   rain_snow_line_altitude_masl > 2400.0: Low (106.8/21.59)
+rainfall_most_exposed_area > 9.0
+|   temperature_max <= 3.0
+|   |   rainfall_most_exposed_area <= 19.0
+|   |   |   publish_month <= 3.0
+|   |   |   |   rainfall_most_exposed_area <= 12.0: High (670.05/355.01)
+|   |   |   |   rainfall_most_exposed_area > 12.0
+|   |   |   |   |   wind_speed = Strong breeze: Medium (150.11/56.71)
+|   |   |   |   |   wind_speed != Strong breeze
+|   |   |   |   |   |   wind_shift_start <= 0.0: Medium (186.8/92.39)
+|   |   |   |   |   |   wind_shift_start > 0.0: High (175.51/72.93)
+|   |   |   publish_month > 3.0
+|   |   |   |   temperature_min <= -15.0: High (139.5/61.42)
+|   |   |   |   temperature_min > -15.0: Medium (757.76/456.16)
+|   |   rainfall_most_exposed_area > 19.0
+|   |   |   rainfall_average <= 20.0
+|   |   |   |   rain_snow_line_altitude_masl <= 1100.0
+|   |   |   |   |   publish_hour <= 14.0: High (103.36/24.62)
+|   |   |   |   |   publish_hour > 14.0
+|   |   |   |   |   |   wind_shift_speed = Breeze: Medium (118.25/49.16)
+|   |   |   |   |   |   wind_shift_speed != Breeze
+|   |   |   |   |   |   |   rain_snow_line_altitude_masl <= 100.0: High (140.99/45.81)
+|   |   |   |   |   |   |   rain_snow_line_altitude_masl > 100.0
+|   |   |   |   |   |   |   |   rain_snow_line_start <= 0.0: Medium (278.32/108.97)
+|   |   |   |   |   |   |   |   rain_snow_line_start > 0.0: High (355.62/153.55)
+|   |   |   |   rain_snow_line_altitude_masl > 1100.0: High (233.94/125.86)
+|   |   |   rainfall_average > 20.0: High (217.42/42.74)
+|   temperature_max > 3.0
+|   |   publish_month <= 3.0: High (112.49/61.04)
+|   |   publish_month > 3.0
+|   |   |   rainfall_most_exposed_area <= 20.0: Low (317.43/140.26)
+|   |   |   rainfall_most_exposed_area > 20.0: Medium (184.37/111.09)
+
+Number of Leaves  : 	53
+
+Size of the tree : 	105
+
+
+Weight: 0.08
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   temperature_max <= 2.0
+|   |   wind_speed = Strong breeze
+|   |   |   publish_month <= 2.0: High (463.59/256.4)
+|   |   |   publish_month > 2.0: Medium (499.86/277.26)
+|   |   wind_speed != Strong breeze
+|   |   |   freezing_level_end <= 0.0: High (43.39/10.05)
+|   |   |   freezing_level_end > 0.0
+|   |   |   |   wind_speed = Moderate gale
+|   |   |   |   |   rainfall_average <= 0.0: Medium (243.61/140.85)
+|   |   |   |   |   rainfall_average > 0.0
+|   |   |   |   |   |   geographical_region = Northern Norway: Medium (112.26/62.91)
+|   |   |   |   |   |   geographical_region != Northern Norway: High (124.46/53.01)
+|   |   |   |   wind_speed != Moderate gale
+|   |   |   |   |   wind_shift_speed = Moderate gale: High (214.19/126.91)
+|   |   |   |   |   wind_shift_speed != Moderate gale
+|   |   |   |   |   |   ﻿RegionName = Finnmarkskysten: Low (255.17/109.62)
+|   |   |   |   |   |   ﻿RegionName != Finnmarkskysten
+|   |   |   |   |   |   |   publish_hour <= 14.0
+|   |   |   |   |   |   |   |   wind_speed = Breeze: High (141.42/79.19)
+|   |   |   |   |   |   |   |   wind_speed != Breeze: Medium (101.3/46.47)
+|   |   |   |   |   |   |   publish_hour > 14.0
+|   |   |   |   |   |   |   |   publish_hour <= 18.0
+|   |   |   |   |   |   |   |   |   wind_shift_speed = Strong breeze
+|   |   |   |   |   |   |   |   |   |   publish_month <= 2.0: High (123.82/62.51)
+|   |   |   |   |   |   |   |   |   |   publish_month > 2.0: Medium (121.69/63.53)
+|   |   |   |   |   |   |   |   |   wind_shift_speed != Strong breeze
+|   |   |   |   |   |   |   |   |   |   ﻿RegionName = Indre Troms: Medium (241.36/128.9)
+|   |   |   |   |   |   |   |   |   |   ﻿RegionName != Indre Troms
+|   |   |   |   |   |   |   |   |   |   |   ﻿RegionName = Lyngen: Medium (208.3/109.72)
+|   |   |   |   |   |   |   |   |   |   |   ﻿RegionName != Lyngen
+|   |   |   |   |   |   |   |   |   |   |   |   publish_month <= 3.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   ﻿RegionName = Jotunheimen: Medium (137.42/69.22)
+|   |   |   |   |   |   |   |   |   |   |   |   |   ﻿RegionName != Jotunheimen
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   ﻿RegionName = Indre Sogn: Medium (110.83/53.5)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   ﻿RegionName != Indre Sogn
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rainfall_most_exposed_area <= 1.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   publish_month <= 2.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   publish_month <= 1.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_direction = SE: Low (234.79/120.31)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_direction != SE: Medium (254.72/115.61)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   publish_month > 1.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   geographical_region = Western Norway: Low (130.32/49.26)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   geographical_region != Western Norway: Medium (242.09/129.97)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   publish_month > 2.0: Low (368.81/144.42)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rainfall_most_exposed_area > 1.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_shift_direction = SE
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_shift_speed = Fresh breeze: High (109.3/55.33)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_shift_speed != Fresh breeze: Medium (137.09/80.67)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_shift_direction != SE
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rainfall_average <= 0.0: Low (106.54/53.27)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rainfall_average > 0.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_masl <= 500.0: Medium (413.25/226.95)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_masl > 500.0: Low (299.1/164.36)
+|   |   |   |   |   |   |   |   |   |   |   |   publish_month > 3.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   geographical_region = Eastern Norway: Low (145.99/52.61)
+|   |   |   |   |   |   |   |   |   |   |   |   |   geographical_region != Eastern Norway
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_masl <= 200.0: Medium (358.49/140.98)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   freezing_level_masl > 200.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   geographical_region = Western Norway
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_end <= 0.0: Low (233.25/94.14)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_end > 0.0: Medium (301.38/148.18)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   geographical_region != Western Norway
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_start <= 0.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_speed = Breeze: Medium (198.49/93.2)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   wind_speed != Breeze: Low (125.78/55.83)
+|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_start > 0.0: Low (186.34/80.63)
+|   |   |   |   |   |   |   |   publish_hour > 18.0: High (34.82/10.33)
+|   temperature_max > 2.0
+|   |   rain_snow_line_altitude_masl <= 2400.0
+|   |   |   temperature_max <= 8.0
+|   |   |   |   publish_hour <= 14.0: Medium (120.61/65.65)
+|   |   |   |   publish_hour > 14.0
+|   |   |   |   |   publish_month <= 4.0: Low (808.84/430.98)
+|   |   |   |   |   publish_month > 4.0
+|   |   |   |   |   |   wind_direction = SW: Medium (189.24/85.57)
+|   |   |   |   |   |   wind_direction != SW
+|   |   |   |   |   |   |   rain_snow_line_end <= 0.0: Low (196.58/76.09)
+|   |   |   |   |   |   |   rain_snow_line_end > 0.0: Medium (236.05/102.55)
+|   |   |   temperature_max > 8.0
+|   |   |   |   wind_direction = SE: Medium (105.42/40.28)
+|   |   |   |   wind_direction != SE: Low (266.11/98.33)
+|   |   rain_snow_line_altitude_masl > 2400.0: Low (104.38/22.5)
+rainfall_most_exposed_area > 9.0
+|   temperature_max <= 2.0
+|   |   rainfall_most_exposed_area <= 19.0
+|   |   |   temperature_max <= -4.0: High (727.78/359.99)
+|   |   |   temperature_max > -4.0: Medium (1208.12/686.11)
+|   |   rainfall_most_exposed_area > 19.0
+|   |   |   rainfall_most_exposed_area <= 35.0
+|   |   |   |   freezing_level_masl <= 1000.0
+|   |   |   |   |   rain_snow_line_altitude_masl <= 100.0: High (189.51/63.17)
+|   |   |   |   |   rain_snow_line_altitude_masl > 100.0
+|   |   |   |   |   |   rainfall_average <= 10.0: Medium (189.51/73.85)
+|   |   |   |   |   |   rainfall_average > 10.0
+|   |   |   |   |   |   |   rain_snow_line_start <= 0.0: Medium (236.09/106.13)
+|   |   |   |   |   |   |   rain_snow_line_start > 0.0: High (284.74/113.97)
+|   |   |   |   freezing_level_masl > 1000.0: High (167.52/84.66)
+|   |   |   rainfall_most_exposed_area > 35.0: High (226.34/48.62)
+|   temperature_max > 2.0
+|   |   publish_month <= 4.0
+|   |   |   rainfall_average <= 14.0: Medium (329.58/196.59)
+|   |   |   rainfall_average > 14.0: High (119.35/41.78)
+|   |   publish_month > 4.0
+|   |   |   rainfall_most_exposed_area <= 20.0: Low (267.1/105.63)
+|   |   |   rainfall_most_exposed_area > 20.0: Medium (193.92/106.66)
+
+Number of Leaves  : 	54
+
+Size of the tree : 	107
+
+
+Weight: 0.07
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   ﻿RegionName = Jotunheimen
+|   |   wind_shift_start <= 0.0: Medium (324.2/169.69)
+|   |   wind_shift_start > 0.0: High (123.32/47.62)
+|   ﻿RegionName != Jotunheimen
+|   |   ﻿RegionName = Lyngen: Medium (385.65/215.96)
+|   |   ﻿RegionName != Lyngen
+|   |   |   ﻿RegionName = Nord-Troms: Medium (360.68/184.52)
+|   |   |   ﻿RegionName != Nord-Troms
+|   |   |   |   ﻿RegionName = Indre Troms: Medium (392.37/209.65)
+|   |   |   |   ﻿RegionName != Indre Troms
+|   |   |   |   |   publish_month <= 2.0
+|   |   |   |   |   |   wind_direction_change <= 0.0
+|   |   |   |   |   |   |   ﻿RegionName = Helgeland: Low (123.29/53.34)
+|   |   |   |   |   |   |   ﻿RegionName != Helgeland
+|   |   |   |   |   |   |   |   freezing_level_start <= 0.0
+|   |   |   |   |   |   |   |   |   freezing_level_masl <= 100.0: Medium (583.65/311.55)
+|   |   |   |   |   |   |   |   |   freezing_level_masl > 100.0: Low (1288.97/721.25)
+|   |   |   |   |   |   |   |   freezing_level_start > 0.0: Medium (229.5/128.98)
+|   |   |   |   |   |   wind_direction_change > 0.0
+|   |   |   |   |   |   |   publish_month <= 1.0: Medium (193.51/99.04)
+|   |   |   |   |   |   |   publish_month > 1.0: High (184.94/80.19)
+|   |   |   |   |   publish_month > 2.0
+|   |   |   |   |   |   rainfall_most_exposed_area <= 1.0
+|   |   |   |   |   |   |   geographical_region = Western Norway
+|   |   |   |   |   |   |   |   publish_month <= 5.0: Medium (738.57/355.47)
+|   |   |   |   |   |   |   |   publish_month > 5.0: Low (166.94/74.86)
+|   |   |   |   |   |   |   geographical_region != Western Norway: Low (1542.14/704.92)
+|   |   |   |   |   |   rainfall_most_exposed_area > 1.0
+|   |   |   |   |   |   |   ﻿RegionName = Nordenskiöld Land: High (183.14/105.77)
+|   |   |   |   |   |   |   ﻿RegionName != Nordenskiöld Land
+|   |   |   |   |   |   |   |   publish_month <= 3.0
+|   |   |   |   |   |   |   |   |   rain_snow_line_altitude_masl <= 0.0: Low (135.38/57.89)
+|   |   |   |   |   |   |   |   |   rain_snow_line_altitude_masl > 0.0
+|   |   |   |   |   |   |   |   |   |   cloud_cover = Cloudy: Low (207.64/120.65)
+|   |   |   |   |   |   |   |   |   |   cloud_cover != Cloudy
+|   |   |   |   |   |   |   |   |   |   |   rain_snow_line_end <= 0.0: High (123.78/58.52)
+|   |   |   |   |   |   |   |   |   |   |   rain_snow_line_end > 0.0: Medium (173.16/91.0)
+|   |   |   |   |   |   |   |   publish_month > 3.0
+|   |   |   |   |   |   |   |   |   temperature_max <= 1.0: Medium (858.35/414.89)
+|   |   |   |   |   |   |   |   |   temperature_max > 1.0: Low (732.17/328.37)
+rainfall_most_exposed_area > 9.0
+|   publish_month <= 3.0
+|   |   rainfall_most_exposed_area <= 12.0
+|   |   |   temperature_max <= -2.0
+|   |   |   |   freezing_level_end <= 12.0
+|   |   |   |   |   geographical_region = Northern Norway: Medium (196.03/99.7)
+|   |   |   |   |   geographical_region != Northern Norway: High (108.5/43.36)
+|   |   |   |   freezing_level_end > 12.0: High (108.93/44.48)
+|   |   |   temperature_max > -2.0: Medium (280.16/167.14)
+|   |   rainfall_most_exposed_area > 12.0
+|   |   |   wind_speed = Strong breeze
+|   |   |   |   rainfall_most_exposed_area <= 20.0: Medium (235.16/92.92)
+|   |   |   |   rainfall_most_exposed_area > 20.0: High (152.68/52.84)
+|   |   |   wind_speed != Strong breeze: High (967.21/413.27)
+|   publish_month > 3.0
+|   |   temperature_min <= -4.0
+|   |   |   rainfall_most_exposed_area <= 19.0
+|   |   |   |   temperature_min <= -15.0: High (138.93/65.67)
+|   |   |   |   temperature_min > -15.0
+|   |   |   |   |   rainfall_average <= 6.0: Low (334.69/195.66)
+|   |   |   |   |   rainfall_average > 6.0
+|   |   |   |   |   |   freezing_level_masl <= 600.0: High (227.02/115.79)
+|   |   |   |   |   |   freezing_level_masl > 600.0: Medium (132.83/80.93)
+|   |   |   rainfall_most_exposed_area > 19.0
+|   |   |   |   rainfall_most_exposed_area <= 35.0: Medium (446.13/223.5)
+|   |   |   |   rainfall_most_exposed_area > 35.0: High (101.69/24.98)
+|   |   temperature_min > -4.0
+|   |   |   temperature_max <= 6.0
+|   |   |   |   publish_month <= 4.0: High (195.9/108.76)
+|   |   |   |   publish_month > 4.0
+|   |   |   |   |   rain_snow_line_start <= 6.0: Low (274.44/126.9)
+|   |   |   |   |   rain_snow_line_start > 6.0: Medium (117.79/68.97)
+|   |   |   temperature_max > 6.0: Low (120.56/41.17)
+
+Number of Leaves  : 	38
+
+Size of the tree : 	75
+
+
+Weight: 0.03
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 8.0
+|   ﻿RegionName = Jotunheimen
+|   |   wind_shift_start <= 0.0: Medium (318.23/167.14)
+|   |   wind_shift_start > 0.0: High (117.39/47.54)
+|   ﻿RegionName != Jotunheimen
+|   |   temperature_max <= 2.0
+|   |   |   publish_hour <= 14.0: High (326.8/188.1)
+|   |   |   publish_hour > 14.0
+|   |   |   |   ﻿RegionName = Lyngen
+|   |   |   |   |   wind_direction = SE: High (107.64/48.78)
+|   |   |   |   |   wind_direction != SE: Medium (163.55/89.93)
+|   |   |   |   ﻿RegionName != Lyngen
+|   |   |   |   |   ﻿RegionName = Indre Troms: Medium (302.52/167.31)
+|   |   |   |   |   ﻿RegionName != Indre Troms
+|   |   |   |   |   |   publish_month <= 2.0
+|   |   |   |   |   |   |   freezing_level_start <= 0.0
+|   |   |   |   |   |   |   |   wind_direction_change <= 0.0
+|   |   |   |   |   |   |   |   |   ﻿RegionName = Helgeland: Low (111.22/46.12)
+|   |   |   |   |   |   |   |   |   ﻿RegionName != Helgeland
+|   |   |   |   |   |   |   |   |   |   freezing_level_masl <= 100.0: Medium (584.47/310.23)
+|   |   |   |   |   |   |   |   |   |   freezing_level_masl > 100.0
+|   |   |   |   |   |   |   |   |   |   |   wind_direction = SW: Low (247.29/115.21)
+|   |   |   |   |   |   |   |   |   |   |   wind_direction != SW
+|   |   |   |   |   |   |   |   |   |   |   |   wind_shift_speed = Fresh breeze: Low (191.61/102.66)
+|   |   |   |   |   |   |   |   |   |   |   |   wind_shift_speed != Fresh breeze: Medium (797.52/444.56)
+|   |   |   |   |   |   |   |   wind_direction_change > 0.0
+|   |   |   |   |   |   |   |   |   publish_month <= 1.0: Medium (169.72/87.3)
+|   |   |   |   |   |   |   |   |   publish_month > 1.0: High (155.47/69.7)
+|   |   |   |   |   |   |   freezing_level_start > 0.0
+|   |   |   |   |   |   |   |   cloud_cover = Cloudy: High (130.1/57.7)
+|   |   |   |   |   |   |   |   cloud_cover != Cloudy: Medium (140.52/67.02)
+|   |   |   |   |   |   publish_month > 2.0
+|   |   |   |   |   |   |   wind_shift_direction = NW
+|   |   |   |   |   |   |   |   rainfall_average <= 1.0: Low (224.05/78.59)
+|   |   |   |   |   |   |   |   rainfall_average > 1.0: Medium (145.03/62.64)
+|   |   |   |   |   |   |   wind_shift_direction != NW
+|   |   |   |   |   |   |   |   ﻿RegionName = Finnmarkskysten: Low (222.15/91.52)
+|   |   |   |   |   |   |   |   ﻿RegionName != Finnmarkskysten
+|   |   |   |   |   |   |   |   |   rainfall_most_exposed_area <= 1.0
+|   |   |   |   |   |   |   |   |   |   freezing_level_masl <= 200.0: Medium (367.85/191.88)
+|   |   |   |   |   |   |   |   |   |   freezing_level_masl > 200.0
+|   |   |   |   |   |   |   |   |   |   |   temperature_max <= 0.0
+|   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_altitude_masl <= 0.0: Low (268.96/96.14)
+|   |   |   |   |   |   |   |   |   |   |   |   rain_snow_line_altitude_masl > 0.0
+|   |   |   |   |   |   |   |   |   |   |   |   |   publish_month <= 3.0: Low (163.87/70.34)
+|   |   |   |   |   |   |   |   |   |   |   |   |   publish_month > 3.0: Medium (180.91/78.51)
+|   |   |   |   |   |   |   |   |   |   |   temperature_max > 0.0: Medium (236.33/110.85)
+|   |   |   |   |   |   |   |   |   rainfall_most_exposed_area > 1.0
+|   |   |   |   |   |   |   |   |   |   publish_month <= 3.0
+|   |   |   |   |   |   |   |   |   |   |   rain_snow_line_end <= 0.0: High (208.72/106.15)
+|   |   |   |   |   |   |   |   |   |   |   rain_snow_line_end > 0.0: Medium (290.57/172.82)
+|   |   |   |   |   |   |   |   |   |   publish_month > 3.0
+|   |   |   |   |   |   |   |   |   |   |   temperature_min <= -12.0: Medium (317.22/153.44)
+|   |   |   |   |   |   |   |   |   |   |   temperature_min > -12.0
+|   |   |   |   |   |   |   |   |   |   |   |   publish_month <= 4.0: Medium (190.3/90.53)
+|   |   |   |   |   |   |   |   |   |   |   |   publish_month > 4.0: Low (286.08/138.82)
+|   |   temperature_max > 2.0
+|   |   |   publish_month <= 4.0
+|   |   |   |   cloud_cover = Clear skies: Medium (171.79/75.25)
+|   |   |   |   cloud_cover != Clear skies
+|   |   |   |   |   geographical_region = Northern Norway
+|   |   |   |   |   |   rainfall_average <= 0.0: Low (117.24/56.32)
+|   |   |   |   |   |   rainfall_average > 0.0: High (129.93/73.79)
+|   |   |   |   |   geographical_region != Northern Norway
+|   |   |   |   |   |   wind_speed = Fresh breeze: Medium (129.86/55.43)
+|   |   |   |   |   |   wind_speed != Fresh breeze: Low (349.9/174.4)
+|   |   |   publish_month > 4.0
+|   |   |   |   geographical_region = Northern Norway
+|   |   |   |   |   rain_snow_line_start <= 0.0: Medium (394.05/164.72)
+|   |   |   |   |   rain_snow_line_start > 0.0: Low (174.31/62.5)
+|   |   |   |   geographical_region != Northern Norway: Low (445.34/168.16)
+rainfall_most_exposed_area > 8.0
+|   temperature_min <= -4.0
+|   |   rainfall_most_exposed_area <= 19.0
+|   |   |   publish_month <= 3.0
+|   |   |   |   rainfall_most_exposed_area <= 12.0: High (711.43/390.07)
+|   |   |   |   rainfall_most_exposed_area > 12.0
+|   |   |   |   |   wind_speed = Strong breeze: Medium (138.62/55.61)
+|   |   |   |   |   wind_speed != Strong breeze: High (339.56/166.09)
+|   |   |   publish_month > 3.0
+|   |   |   |   rainfall_average <= 6.0
+|   |   |   |   |   temperature_min <= -9.0: Medium (251.09/128.57)
+|   |   |   |   |   temperature_min > -9.0: Low (227.92/110.57)
+|   |   |   |   rainfall_average > 6.0
+|   |   |   |   |   freezing_level_masl <= 600.0: High (277.85/136.86)
+|   |   |   |   |   freezing_level_masl > 600.0: Medium (139.87/85.98)
+|   |   rainfall_most_exposed_area > 19.0
+|   |   |   rainfall_average <= 20.0
+|   |   |   |   wind_shift_speed = Breeze: Medium (131.43/56.3)
+|   |   |   |   wind_shift_speed != Breeze
+|   |   |   |   |   temperature_max <= -5.0: High (110.93/33.21)
+|   |   |   |   |   temperature_max > -5.0
+|   |   |   |   |   |   freezing_level_start <= 0.0
+|   |   |   |   |   |   |   wind_direction_change <= 0.0
+|   |   |   |   |   |   |   |   geographical_region = Northern Norway
+|   |   |   |   |   |   |   |   |   rain_snow_line_start <= 0.0: Medium (124.75/53.31)
+|   |   |   |   |   |   |   |   |   rain_snow_line_start > 0.0: High (109.3/43.67)
+|   |   |   |   |   |   |   |   geographical_region != Northern Norway: Medium (210.33/91.24)
+|   |   |   |   |   |   |   wind_direction_change > 0.0: High (242.59/114.89)
+|   |   |   |   |   |   freezing_level_start > 0.0: High (129.89/48.19)
+|   |   |   rainfall_average > 20.0: High (156.63/18.98)
+|   temperature_min > -4.0
+|   |   publish_month <= 4.0
+|   |   |   rainfall_most_exposed_area <= 20.0
+|   |   |   |   wind_shift_direction = SW: High (174.55/95.79)
+|   |   |   |   wind_shift_direction != SW: Medium (132.56/73.92)
+|   |   |   rainfall_most_exposed_area > 20.0: High (190.26/76.03)
+|   |   publish_month > 4.0
+|   |   |   geographical_region = Northern Norway: Medium (174.59/81.91)
+|   |   |   geographical_region != Northern Norway: Low (337.39/137.78)
+
+Number of Leaves  : 	56
+
+Size of the tree : 	111
+
+
+Weight: 0.1
+
+Number of performed Iterations: 10
+
+
+Time taken to build model: 2.51 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        9105               69.0296 %
+Incorrectly Classified Instances      4085               30.9704 %
+Kappa statistic                          0.4613
+Mean absolute error                      0.3211
+Root mean squared error                  0.3844
+Relative absolute error                 78.9324 %
+Root relative squared error             85.2416 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.519    0.047    0.743      0.519    0.611      0.544    0.837     0.697     High
+                 0.826    0.450    0.669      0.826    0.740      0.394    0.752     0.734     Medium
+                 0.557    0.080    0.719      0.557    0.628      0.521    0.856     0.712     Low
+Weighted Avg.    0.690    0.267    0.698      0.690    0.683      0.459    0.797     0.720     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1420 1282   34 |    a = High
+  463 5714  738 |    b = Medium
+   29 1539 1971 |    c = Low
+

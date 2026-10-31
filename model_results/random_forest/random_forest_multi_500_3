@@ -1,0 +1,55 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 500 -num-slots 1 -K 3 -M 1.0 -V 0.001 -S 1 -B
+Relation:     warnings_winter_2023_2026_multivariate
+Instances:    13190
+Attributes:   10
+              risk
+              publish_hour
+              publish_month
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              temperature_max
+              freezing_level_masl
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 500 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 3 -M 1.0 -V 0.001 -S 1 -B -do-not-check-capabilities
+
+Time taken to build model: 24.07 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        9196               69.7195 %
+Incorrectly Classified Instances      3994               30.2805 %
+Kappa statistic                          0.4864
+Mean absolute error                      0.2613
+Root mean squared error                  0.375 
+Relative absolute error                 64.2391 %
+Root relative squared error             83.1549 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.583    0.056    0.730      0.583    0.648      0.574    0.890     0.744     High
+                 0.786    0.384    0.693      0.786    0.737      0.410    0.762     0.746     Medium
+                 0.612    0.103    0.684      0.612    0.646      0.528    0.863     0.714     Low
+Weighted Avg.    0.697    0.241    0.699      0.697    0.694      0.475    0.816     0.737     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1594 1080   62 |    a = High
+  542 5437  936 |    b = Medium
+   47 1327 2165 |    c = Low
+

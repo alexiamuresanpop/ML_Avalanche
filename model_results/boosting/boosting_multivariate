@@ -1,0 +1,442 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.meta.AdaBoostM1 -P 100 -S 1 -I 10 -W weka.classifiers.trees.J48 -- -B -C 0.01 -M 100
+Relation:     warnings_winter_2023_2026_multivariate
+Instances:    13190
+Attributes:   10
+              risk
+              publish_hour
+              publish_month
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              temperature_max
+              freezing_level_masl
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+AdaBoostM1: Base classifiers and their weights: 
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 14.0
+|   temperature_max <= 2.0
+|   |   rainfall_most_exposed_area <= 8.0
+|   |   |   temperature_max <= -4.0: Medium (3598.0/1051.0)
+|   |   |   temperature_max > -4.0
+|   |   |   |   publish_month <= 3.0: Medium (1542.0/609.0)
+|   |   |   |   publish_month > 3.0
+|   |   |   |   |   publish_month <= 4.0
+|   |   |   |   |   |   rainfall_most_exposed_area <= 1.0
+|   |   |   |   |   |   |   wind_shift_speed = Breeze: Low (166.0/72.0)
+|   |   |   |   |   |   |   wind_shift_speed != Breeze: Medium (160.0/72.0)
+|   |   |   |   |   |   rainfall_most_exposed_area > 1.0: Medium (363.0/153.0)
+|   |   |   |   |   publish_month > 4.0
+|   |   |   |   |   |   freezing_level_masl <= 300.0: Medium (268.0/118.0)
+|   |   |   |   |   |   freezing_level_masl > 300.0: Low (544.0/180.0)
+|   |   rainfall_most_exposed_area > 8.0: Medium (1346.0/454.0)
+|   temperature_max > 2.0
+|   |   publish_month <= 4.0
+|   |   |   rainfall_average <= 0.0
+|   |   |   |   publish_month <= 3.0: Medium (117.0/50.0)
+|   |   |   |   publish_month > 3.0: Low (477.0/203.0)
+|   |   |   rainfall_average > 0.0: Medium (376.0/167.0)
+|   |   publish_month > 4.0: Low (1446.0/366.0)
+rainfall_most_exposed_area > 14.0
+|   temperature_max <= 3.0
+|   |   rainfall_most_exposed_area <= 24.0
+|   |   |   wind_speed = Breeze: Medium (191.0/56.0)
+|   |   |   wind_speed != Breeze
+|   |   |   |   wind_speed = Fresh breeze: Medium (407.0/148.0)
+|   |   |   |   wind_speed != Fresh breeze: High (594.0/240.0)
+|   |   rainfall_most_exposed_area > 24.0: High (1212.0/271.0)
+|   temperature_max > 3.0
+|   |   rainfall_most_exposed_area <= 33.0
+|   |   |   publish_month <= 4.0: Medium (118.0/65.0)
+|   |   |   publish_month > 4.0: Low (156.0/73.0)
+|   |   rainfall_most_exposed_area > 33.0: High (109.0/39.0)
+
+Number of Leaves  : 	19
+
+Size of the tree : 	37
+
+
+Weight: 0.7
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   publish_hour <= 13.0
+|   |   publish_hour <= 9.0: Medium (214.73/114.99)
+|   |   publish_hour > 9.0: High (136.69/52.51)
+|   publish_hour > 13.0
+|   |   temperature_max <= -1.0
+|   |   |   cloud_cover = Clear skies
+|   |   |   |   temperature_max <= -5.0
+|   |   |   |   |   freezing_level_masl <= 200.0: Medium (317.31/123.27)
+|   |   |   |   |   freezing_level_masl > 200.0: Low (307.03/152.19)
+|   |   |   |   temperature_max > -5.0: Low (250.72/89.21)
+|   |   |   cloud_cover != Clear skies: Medium (4078.79/1854.73)
+|   |   temperature_max > -1.0
+|   |   |   publish_month <= 3.0
+|   |   |   |   rainfall_average <= 0.0: Low (449.66/213.64)
+|   |   |   |   rainfall_average > 0.0: Medium (460.04/242.03)
+|   |   |   publish_month > 3.0
+|   |   |   |   temperature_max <= 10.0
+|   |   |   |   |   freezing_level_masl <= 300.0: Low (355.76/123.05)
+|   |   |   |   |   freezing_level_masl > 300.0
+|   |   |   |   |   |   rainfall_most_exposed_area <= 0.0: Medium (891.76/398.78)
+|   |   |   |   |   |   rainfall_most_exposed_area > 0.0
+|   |   |   |   |   |   |   freezing_level_masl <= 700.0
+|   |   |   |   |   |   |   |   temperature_max <= 4.0: Low (360.23/163.73)
+|   |   |   |   |   |   |   |   temperature_max > 4.0: Medium (153.89/61.45)
+|   |   |   |   |   |   |   freezing_level_masl > 700.0: Low (640.82/259.82)
+|   |   |   |   temperature_max > 10.0: Low (326.82/57.12)
+rainfall_most_exposed_area > 9.0
+|   temperature_max <= 6.0
+|   |   publish_hour <= 14.0: High (401.24/84.05)
+|   |   publish_hour > 14.0
+|   |   |   publish_month <= 3.0
+|   |   |   |   rainfall_average <= 12.0
+|   |   |   |   |   rainfall_average <= 6.0: Medium (732.31/300.59)
+|   |   |   |   |   rainfall_average > 6.0
+|   |   |   |   |   |   wind_shift_speed = Breeze: Medium (108.05/37.55)
+|   |   |   |   |   |   wind_shift_speed != Breeze
+|   |   |   |   |   |   |   wind_shift_speed = Fresh breeze: Medium (221.39/96.14)
+|   |   |   |   |   |   |   wind_shift_speed != Fresh breeze: High (410.54/162.15)
+|   |   |   |   rainfall_average > 12.0: High (437.97/113.46)
+|   |   |   publish_month > 3.0
+|   |   |   |   temperature_max <= -1.0
+|   |   |   |   |   rainfall_most_exposed_area <= 17.0: Medium (404.48/183.35)
+|   |   |   |   |   rainfall_most_exposed_area > 17.0
+|   |   |   |   |   |   temperature_max <= -3.0: High (144.78/45.81)
+|   |   |   |   |   |   temperature_max > -3.0: Medium (137.32/62.96)
+|   |   |   |   temperature_max > -1.0
+|   |   |   |   |   rainfall_most_exposed_area <= 20.0
+|   |   |   |   |   |   wind_shift_speed = Breeze: Low (176.45/78.8)
+|   |   |   |   |   |   wind_shift_speed != Breeze: Medium (490.95/223.03)
+|   |   |   |   |   rainfall_most_exposed_area > 20.0
+|   |   |   |   |   |   freezing_level_masl <= 700.0: High (168.08/75.91)
+|   |   |   |   |   |   freezing_level_masl > 700.0: Medium (282.38/108.03)
+|   temperature_max > 6.0: Low (129.79/43.58)
+
+Number of Leaves  : 	28
+
+Size of the tree : 	55
+
+
+Weight: 0.33
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   publish_hour <= 13.0: High (358.24/179.9)
+|   publish_hour > 13.0
+|   |   publish_month <= 3.0
+|   |   |   wind_speed = Breeze
+|   |   |   |   wind_shift_speed = Breeze
+|   |   |   |   |   temperature_max <= -5.0: Medium (785.8/376.19)
+|   |   |   |   |   temperature_max > -5.0: Low (683.14/317.57)
+|   |   |   |   wind_shift_speed != Breeze: Medium (261.62/132.94)
+|   |   |   wind_speed != Breeze
+|   |   |   |   wind_shift_speed = Calm/light breeze
+|   |   |   |   |   temperature_max <= -8.0: Medium (129.22/57.02)
+|   |   |   |   |   temperature_max > -8.0: Low (153.27/54.73)
+|   |   |   |   wind_shift_speed != Calm/light breeze
+|   |   |   |   |   temperature_max <= 2.0
+|   |   |   |   |   |   rainfall_most_exposed_area <= 1.0
+|   |   |   |   |   |   |   publish_month <= 2.0
+|   |   |   |   |   |   |   |   wind_shift_speed = Fresh breeze: Medium (261.06/134.88)
+|   |   |   |   |   |   |   |   wind_shift_speed != Fresh breeze
+|   |   |   |   |   |   |   |   |   freezing_level_masl <= 100.0: High (180.2/85.04)
+|   |   |   |   |   |   |   |   |   freezing_level_masl > 100.0
+|   |   |   |   |   |   |   |   |   |   cloud_cover = Partly cloudy: Medium (144.18/76.99)
+|   |   |   |   |   |   |   |   |   |   cloud_cover != Partly cloudy: High (144.09/75.86)
+|   |   |   |   |   |   |   publish_month > 2.0: Low (217.49/109.61)
+|   |   |   |   |   |   rainfall_most_exposed_area > 1.0
+|   |   |   |   |   |   |   freezing_level_masl <= 800.0: Medium (879.73/478.67)
+|   |   |   |   |   |   |   freezing_level_masl > 800.0: High (230.42/119.11)
+|   |   |   |   |   temperature_max > 2.0: Low (150.73/82.5)
+|   |   publish_month > 3.0
+|   |   |   temperature_max <= 8.0
+|   |   |   |   wind_speed = Calm/light breeze: Low (314.24/121.62)
+|   |   |   |   wind_speed != Calm/light breeze
+|   |   |   |   |   publish_month <= 4.0: Medium (1427.05/741.42)
+|   |   |   |   |   publish_month > 4.0
+|   |   |   |   |   |   freezing_level_masl <= 1200.0
+|   |   |   |   |   |   |   freezing_level_masl <= 900.0
+|   |   |   |   |   |   |   |   publish_month <= 11.0
+|   |   |   |   |   |   |   |   |   freezing_level_masl <= 600.0: Low (538.95/249.51)
+|   |   |   |   |   |   |   |   |   freezing_level_masl > 600.0: Medium (274.5/116.89)
+|   |   |   |   |   |   |   |   publish_month > 11.0
+|   |   |   |   |   |   |   |   |   freezing_level_masl <= 500.0: Medium (734.82/284.84)
+|   |   |   |   |   |   |   |   |   freezing_level_masl > 500.0: Low (194.41/74.21)
+|   |   |   |   |   |   |   freezing_level_masl > 900.0: Low (278.71/82.91)
+|   |   |   |   |   |   freezing_level_masl > 1200.0: Medium (158.64/66.44)
+|   |   |   temperature_max > 8.0: Low (497.94/154.73)
+rainfall_most_exposed_area > 9.0
+|   rainfall_most_exposed_area <= 35.0
+|   |   publish_month <= 3.0
+|   |   |   publish_hour <= 14.0: High (158.58/34.05)
+|   |   |   publish_hour > 14.0
+|   |   |   |   wind_speed = Breeze: Medium (329.74/129.18)
+|   |   |   |   wind_speed != Breeze
+|   |   |   |   |   cloud_cover = Partly cloudy: Medium (294.95/138.01)
+|   |   |   |   |   cloud_cover != Partly cloudy: High (1151.33/536.49)
+|   |   publish_month > 3.0
+|   |   |   temperature_max <= -1.0
+|   |   |   |   temperature_max <= -4.0: High (328.22/135.34)
+|   |   |   |   temperature_max > -4.0: Medium (352.07/148.46)
+|   |   |   temperature_max > -1.0
+|   |   |   |   publish_month <= 4.0
+|   |   |   |   |   freezing_level_masl <= 800.0: High (196.09/102.13)
+|   |   |   |   |   freezing_level_masl > 800.0: Medium (165.9/99.42)
+|   |   |   |   publish_month > 4.0
+|   |   |   |   |   rainfall_most_exposed_area <= 19.0
+|   |   |   |   |   |   cloud_cover = Cloudy: Medium (245.29/113.33)
+|   |   |   |   |   |   cloud_cover != Cloudy: Low (176.93/65.09)
+|   |   |   |   |   rainfall_most_exposed_area > 19.0: Medium (373.32/139.06)
+|   rainfall_most_exposed_area > 35.0: High (419.15/95.6)
+
+Number of Leaves  : 	35
+
+Size of the tree : 	69
+
+
+Weight: 0.21
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   publish_month <= 3.0
+|   |   rainfall_most_exposed_area <= 0.0
+|   |   |   freezing_level_masl <= 100.0: Medium (456.97/249.06)
+|   |   |   freezing_level_masl > 100.0: Low (1287.92/688.55)
+|   |   rainfall_most_exposed_area > 0.0
+|   |   |   publish_hour <= 14.0: High (122.63/50.12)
+|   |   |   publish_hour > 14.0
+|   |   |   |   wind_shift_speed = Breeze
+|   |   |   |   |   wind_speed = Breeze
+|   |   |   |   |   |   freezing_level_masl <= 100.0: Medium (166.62/72.55)
+|   |   |   |   |   |   freezing_level_masl > 100.0
+|   |   |   |   |   |   |   rainfall_average <= 1.0: Medium (342.08/177.07)
+|   |   |   |   |   |   |   rainfall_average > 1.0: Low (319.55/178.25)
+|   |   |   |   |   wind_speed != Breeze: Medium (160.12/76.53)
+|   |   |   |   wind_shift_speed != Breeze
+|   |   |   |   |   wind_speed = Calm/light breeze: Low (105.75/61.93)
+|   |   |   |   |   wind_speed != Calm/light breeze
+|   |   |   |   |   |   wind_shift_speed = Fresh breeze: Medium (750.48/436.6)
+|   |   |   |   |   |   wind_shift_speed != Fresh breeze
+|   |   |   |   |   |   |   wind_shift_speed = Strong breeze
+|   |   |   |   |   |   |   |   wind_speed = Strong breeze: Medium (221.35/109.62)
+|   |   |   |   |   |   |   |   wind_speed != Strong breeze: High (126.61/65.51)
+|   |   |   |   |   |   |   wind_shift_speed != Strong breeze: High (385.1/202.93)
+|   publish_month > 3.0
+|   |   publish_hour <= 13.0: Medium (182.19/106.04)
+|   |   publish_hour > 13.0
+|   |   |   wind_speed = Moderate gale: Medium (180.65/80.02)
+|   |   |   wind_speed != Moderate gale
+|   |   |   |   temperature_max <= -5.0
+|   |   |   |   |   rainfall_most_exposed_area <= 4.0
+|   |   |   |   |   |   freezing_level_masl <= 400.0: Medium (494.24/198.85)
+|   |   |   |   |   |   freezing_level_masl > 400.0: Low (148.9/69.83)
+|   |   |   |   |   rainfall_most_exposed_area > 4.0: Medium (127.4/45.71)
+|   |   |   |   temperature_max > -5.0: Low (3449.68/1621.92)
+rainfall_most_exposed_area > 9.0
+|   rainfall_most_exposed_area <= 35.0
+|   |   publish_hour <= 14.0: High (257.04/107.81)
+|   |   publish_hour > 14.0
+|   |   |   wind_speed = Gale: High (184.42/68.24)
+|   |   |   wind_speed != Gale
+|   |   |   |   temperature_max <= -2.0
+|   |   |   |   |   rainfall_average <= 7.0: Medium (697.4/334.9)
+|   |   |   |   |   rainfall_average > 7.0: High (569.37/241.87)
+|   |   |   |   temperature_max > -2.0: Medium (2053.75/1018.58)
+|   rainfall_most_exposed_area > 35.0: High (399.78/106.68)
+
+Number of Leaves  : 	24
+
+Size of the tree : 	47
+
+
+Weight: 0.07
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   temperature_max <= 2.0
+|   |   publish_hour <= 14.0: High (341.48/176.48)
+|   |   publish_hour > 14.0
+|   |   |   publish_month <= 3.0: Medium (4049.95/2361.99)
+|   |   |   publish_month > 3.0
+|   |   |   |   temperature_max <= -5.0: Medium (817.62/373.25)
+|   |   |   |   temperature_max > -5.0
+|   |   |   |   |   rainfall_average <= 0.0: Low (848.08/367.77)
+|   |   |   |   |   rainfall_average > 0.0: Medium (877.15/461.49)
+|   temperature_max > 2.0
+|   |   temperature_max <= 11.0
+|   |   |   freezing_level_masl <= 1000.0: Medium (1327.8/642.92)
+|   |   |   freezing_level_masl > 1000.0: Low (550.84/243.15)
+|   |   temperature_max > 11.0: Low (224.35/47.71)
+rainfall_most_exposed_area > 9.0
+|   publish_month <= 3.0
+|   |   rainfall_most_exposed_area <= 35.0
+|   |   |   publish_hour <= 14.0: High (148.41/39.34)
+|   |   |   publish_hour > 14.0
+|   |   |   |   rainfall_most_exposed_area <= 12.0
+|   |   |   |   |   wind_shift_speed = Breeze: Medium (156.36/70.16)
+|   |   |   |   |   wind_shift_speed != Breeze
+|   |   |   |   |   |   wind_shift_speed = Fresh breeze: Medium (209.88/99.46)
+|   |   |   |   |   |   wind_shift_speed != Fresh breeze: High (269.97/122.79)
+|   |   |   |   rainfall_most_exposed_area > 12.0
+|   |   |   |   |   temperature_max <= -5.0: High (201.7/79.4)
+|   |   |   |   |   temperature_max > -5.0
+|   |   |   |   |   |   wind_speed = Breeze: Medium (107.77/48.77)
+|   |   |   |   |   |   wind_speed != Breeze
+|   |   |   |   |   |   |   wind_shift_speed = Fresh breeze: Medium (231.55/99.9)
+|   |   |   |   |   |   |   wind_shift_speed != Fresh breeze
+|   |   |   |   |   |   |   |   rainfall_most_exposed_area <= 20.0: Medium (357.5/155.22)
+|   |   |   |   |   |   |   |   rainfall_most_exposed_area > 20.0: High (237.29/92.67)
+|   |   rainfall_most_exposed_area > 35.0: High (172.18/8.3)
+|   publish_month > 3.0
+|   |   temperature_max <= -1.0
+|   |   |   rainfall_most_exposed_area <= 26.0: Medium (611.19/323.03)
+|   |   |   rainfall_most_exposed_area > 26.0: High (113.62/30.75)
+|   |   temperature_max > -1.0
+|   |   |   temperature_max <= 6.0: Medium (1206.52/644.92)
+|   |   |   temperature_max > 6.0: Low (128.8/47.48)
+
+Number of Leaves  : 	22
+
+Size of the tree : 	43
+
+
+Weight: 0.02
+
+J48 pruned tree
+------------------
+
+rainfall_most_exposed_area <= 9.0
+|   temperature_max <= 2.0
+|   |   publish_hour <= 14.0: High (341.61/178.05)
+|   |   publish_hour > 14.0
+|   |   |   publish_month <= 3.0
+|   |   |   |   cloud_cover = Clear skies
+|   |   |   |   |   wind_shift_speed = Breeze: Low (346.6/167.3)
+|   |   |   |   |   wind_shift_speed != Breeze: Medium (353.29/197.09)
+|   |   |   |   cloud_cover != Clear skies
+|   |   |   |   |   wind_speed = Breeze
+|   |   |   |   |   |   publish_month <= 1.0
+|   |   |   |   |   |   |   temperature_max <= -10.0: Medium (170.12/73.55)
+|   |   |   |   |   |   |   temperature_max > -10.0: Low (293.38/154.46)
+|   |   |   |   |   |   publish_month > 1.0
+|   |   |   |   |   |   |   cloud_cover = Partly cloudy
+|   |   |   |   |   |   |   |   freezing_level_masl <= 500.0: Low (411.74/222.71)
+|   |   |   |   |   |   |   |   freezing_level_masl > 500.0: Medium (218.06/114.47)
+|   |   |   |   |   |   |   cloud_cover != Partly cloudy: Medium (242.95/142.92)
+|   |   |   |   |   wind_speed != Breeze
+|   |   |   |   |   |   wind_shift_speed = Calm/light breeze: Low (185.74/92.52)
+|   |   |   |   |   |   wind_shift_speed != Calm/light breeze
+|   |   |   |   |   |   |   rainfall_most_exposed_area <= 1.0
+|   |   |   |   |   |   |   |   cloud_cover = Partly cloudy
+|   |   |   |   |   |   |   |   |   temperature_max <= -7.0
+|   |   |   |   |   |   |   |   |   |   wind_speed = Fresh breeze: Medium (109.25/56.33)
+|   |   |   |   |   |   |   |   |   |   wind_speed != Fresh breeze: High (127.7/72.51)
+|   |   |   |   |   |   |   |   |   temperature_max > -7.0: Low (283.56/143.72)
+|   |   |   |   |   |   |   |   cloud_cover != Partly cloudy: High (200.72/108.14)
+|   |   |   |   |   |   |   rainfall_most_exposed_area > 1.0
+|   |   |   |   |   |   |   |   wind_shift_speed = Breeze: Medium (131.38/65.65)
+|   |   |   |   |   |   |   |   wind_shift_speed != Breeze: High (981.7/560.8)
+|   |   |   publish_month > 3.0
+|   |   |   |   wind_speed = Moderate gale: Medium (143.77/74.34)
+|   |   |   |   wind_speed != Moderate gale
+|   |   |   |   |   temperature_max <= -5.0
+|   |   |   |   |   |   rainfall_most_exposed_area <= 4.0
+|   |   |   |   |   |   |   freezing_level_masl <= 400.0: Medium (488.59/206.03)
+|   |   |   |   |   |   |   freezing_level_masl > 400.0: Low (148.5/71.37)
+|   |   |   |   |   |   rainfall_most_exposed_area > 4.0: Medium (126.04/47.75)
+|   |   |   |   |   temperature_max > -5.0
+|   |   |   |   |   |   rainfall_average <= 0.0: Low (823.39/353.96)
+|   |   |   |   |   |   rainfall_average > 0.0
+|   |   |   |   |   |   |   freezing_level_masl <= 200.0: Medium (102.59/43.46)
+|   |   |   |   |   |   |   freezing_level_masl > 200.0
+|   |   |   |   |   |   |   |   publish_month <= 4.0: Low (311.41/162.06)
+|   |   |   |   |   |   |   |   publish_month > 4.0
+|   |   |   |   |   |   |   |   |   wind_shift_speed = Fresh breeze: Low (108.7/53.15)
+|   |   |   |   |   |   |   |   |   wind_shift_speed != Fresh breeze
+|   |   |   |   |   |   |   |   |   |   wind_speed = Breeze: Low (149.85/69.64)
+|   |   |   |   |   |   |   |   |   |   wind_speed != Breeze: Medium (138.98/56.42)
+|   temperature_max > 2.0
+|   |   temperature_max <= 11.0
+|   |   |   freezing_level_masl <= 1000.0: Medium (1327.53/648.63)
+|   |   |   freezing_level_masl > 1000.0: Low (550.31/245.31)
+|   |   temperature_max > 11.0: Low (223.23/48.13)
+rainfall_most_exposed_area > 9.0
+|   publish_month <= 3.0
+|   |   rainfall_most_exposed_area <= 35.0
+|   |   |   publish_hour <= 14.0: High (147.81/39.69)
+|   |   |   publish_hour > 14.0
+|   |   |   |   wind_speed = Breeze: Medium (325.31/148.23)
+|   |   |   |   wind_speed != Breeze
+|   |   |   |   |   wind_shift_speed = Fresh breeze: Medium (496.7/236.42)
+|   |   |   |   |   wind_shift_speed != Fresh breeze
+|   |   |   |   |   |   rainfall_most_exposed_area <= 20.0
+|   |   |   |   |   |   |   wind_speed = Strong breeze: Medium (304.11/140.25)
+|   |   |   |   |   |   |   wind_speed != Strong breeze: High (390.3/174.61)
+|   |   |   |   |   |   rainfall_most_exposed_area > 20.0: High (253.66/93.5)
+|   |   rainfall_most_exposed_area > 35.0: High (170.83/8.37)
+|   publish_month > 3.0
+|   |   temperature_max <= -1.0
+|   |   |   rainfall_most_exposed_area <= 26.0: Medium (611.55/325.9)
+|   |   |   rainfall_most_exposed_area > 26.0: High (113.17/31.02)
+|   |   temperature_max > -1.0
+|   |   |   temperature_max <= 6.0: Medium (1207.34/650.64)
+|   |   |   temperature_max > 6.0: Low (128.52/47.9)
+
+Number of Leaves  : 	39
+
+Size of the tree : 	77
+
+
+Weight: 0.08
+
+Number of performed Iterations: 6
+
+
+Time taken to build model: 0.45 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        8815               66.8309 %
+Incorrectly Classified Instances      4375               33.1691 %
+Kappa statistic                          0.4238
+Mean absolute error                      0.3448
+Root mean squared error                  0.3982
+Relative absolute error                 84.7613 %
+Root relative squared error             88.2935 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.490    0.050    0.722      0.490    0.584      0.514    0.809     0.665     High
+                 0.804    0.466    0.655      0.804    0.722      0.352    0.731     0.713     Medium
+                 0.541    0.097    0.673      0.541    0.600      0.479    0.821     0.671     Low
+Weighted Avg.    0.668    0.281    0.674      0.668    0.661      0.420    0.772     0.692     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1342 1336   58 |    a = High
+  483 5558  874 |    b = Medium
+   35 1589 1915 |    c = Low
+

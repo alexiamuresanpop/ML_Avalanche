@@ -1,0 +1,392 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.functions.SMO -C 1.0 -L 0.001 -P 1.0E-12 -N 0 -V -1 -W 1 -K "weka.classifiers.functions.supportVector.PolyKernel -E 1.0 -C 250007" -calibrator "weka.classifiers.functions.Logistic -R 1.0E-8 -M -1 -num-decimal-places 4"
+Relation:     warnings_winter_2023_2026_DIST
+Instances:    13190
+Attributes:   31
+              ﻿RegionName
+              geographical_region
+              risk
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              wind_direction
+              wind_shift_direction
+              wind_direction_change
+              temperature_min
+              temperature_max
+              freezing_level_masl
+              rain_snow_line_altitude_masl
+              publish_hour_sin
+              publish_hour_cos
+              publish_month_sin
+              publish_month_cos
+              wind_shift_start_sin
+              wind_shift_start_cos
+              wind_shift_end_sin
+              wind_shift_end_cos
+              freezing_level_start_sin
+              freezing_level_start_cos
+              freezing_level_end_sin
+              freezing_level_end_cos
+              rain_snow_line_start_sin
+              rain_snow_line_start_cos
+              rain_snow_line_end_sin
+              rain_snow_line_end_cos
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+SMO
+
+Kernel used:
+  Linear Kernel: K(x,y) = <x,y>
+
+Classifier for classes: High, Medium
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.123  * (normalized) ﻿RegionName=Svalbard øst
+ +      -0.1223 * (normalized) ﻿RegionName=Svalbard vest
+ +       0.1683 * (normalized) ﻿RegionName=Nordenskiöld Land
+ +      -0.3369 * (normalized) ﻿RegionName=Svalbard sør
+ +      -0      * (normalized) ﻿RegionName=Øst-Finnmark
+ +       0.3495 * (normalized) ﻿RegionName=Finnmarkskysten
+ +       0.1098 * (normalized) ﻿RegionName=Vest-Finnmark
+ +      -0.2771 * (normalized) ﻿RegionName=Nord-Troms
+ +      -0.3709 * (normalized) ﻿RegionName=Lyngen
+ +      -0.2545 * (normalized) ﻿RegionName=Tromsø
+ +      -0.1265 * (normalized) ﻿RegionName=Sør-Troms
+ +      -0.1431 * (normalized) ﻿RegionName=Indre Troms
+ +       0.2971 * (normalized) ﻿RegionName=Lofoten og Vesterålen
+ +       0.0408 * (normalized) ﻿RegionName=Ofoten
+ +      -0.0317 * (normalized) ﻿RegionName=Salten
+ +       0.0755 * (normalized) ﻿RegionName=Svartisen
+ +       0.3697 * (normalized) ﻿RegionName=Helgeland
+ +      -0.0663 * (normalized) ﻿RegionName=Nord-Trøndelag
+ +       0.0134 * (normalized) ﻿RegionName=Trollheimen
+ +       0.0587 * (normalized) ﻿RegionName=Romsdal
+ +       0.0586 * (normalized) ﻿RegionName=Sunnmøre
+ +       0.2353 * (normalized) ﻿RegionName=Indre Fjordane
+ +      -0.5205 * (normalized) ﻿RegionName=Jotunheimen
+ +      -0.2202 * (normalized) ﻿RegionName=Indre Sogn
+ +       0.1084 * (normalized) ﻿RegionName=Voss
+ +      -0.0251 * (normalized) ﻿RegionName=Hallingdal
+ +       0.3157 * (normalized) ﻿RegionName=Hardanger
+ +       0.0226 * (normalized) ﻿RegionName=Vest-Telemark
+ +       0.3947 * (normalized) ﻿RegionName=Heiane
+ +      -0.4139 * (normalized) geographical_region=Svalbard / Arctic
+ +       0.0386 * (normalized) geographical_region=Northern Norway
+ +      -0.0663 * (normalized) geographical_region=Trøndelag
+ +       0.0493 * (normalized) geographical_region=Western Norway
+ +      -0.0024 * (normalized) geographical_region=Eastern Norway
+ +       0.3947 * (normalized) geographical_region=Southern Norway
+ +      -0.2769 * (normalized) cloud_cover=Not given
+ +       0.0537 * (normalized) cloud_cover=Cloudy
+ +       0.1442 * (normalized) cloud_cover=Partly cloudy
+ +       0.0789 * (normalized) cloud_cover=Clear skies
+ +      -5.2147 * (normalized) rainfall_most_exposed_area
+ +      -4.7657 * (normalized) rainfall_average
+ +      -0.6485 * (normalized) wind_speed=No Wind
+ +      -0.4011 * (normalized) wind_speed=Strong gale
+ +       0.0921 * (normalized) wind_speed=Gale
+ +       0.1233 * (normalized) wind_speed=Moderate gale
+ +       0.3716 * (normalized) wind_speed=Strong breeze
+ +       0.5624 * (normalized) wind_speed=Fresh breeze
+ +      -1.0488 * (normalized) wind_speed=Storm
+ +       0.7142 * (normalized) wind_speed=Breeze
+ +       0.2348 * (normalized) wind_speed=Calm/light breeze
+ +      -0.6485 * (normalized) wind_shift_speed=No Wind
+ +       0.2131 * (normalized) wind_shift_speed=Moderate gale
+ +       0.0812 * (normalized) wind_shift_speed=Gale
+ +       0.2122 * (normalized) wind_shift_speed=Strong breeze
+ +       0.5019 * (normalized) wind_shift_speed=Fresh breeze
+ +      -1.0912 * (normalized) wind_shift_speed=Storm
+ +      -0.6514 * (normalized) wind_shift_speed=Strong gale
+ +       0.473  * (normalized) wind_shift_speed=Breeze
+ +       0.9097 * (normalized) wind_shift_speed=Calm/light breeze
+ +       0.0316 * (normalized) wind_direction=No Wind
+ +       0.0517 * (normalized) wind_direction=SE
+ +      -0.2433 * (normalized) wind_direction=E
+ +       0.16   * (normalized) wind_direction=S
+ +      -0.039  * (normalized) wind_direction=SW
+ +       0.1735 * (normalized) wind_direction=NE
+ +       0.1163 * (normalized) wind_direction=N
+ +      -0.0647 * (normalized) wind_direction=NW
+ +      -0.1862 * (normalized) wind_direction=W
+ +       0.0316 * (normalized) wind_shift_direction=No Wind
+ +      -0.1465 * (normalized) wind_shift_direction=SE
+ +      -0.0329 * (normalized) wind_shift_direction=E
+ +      -0.1466 * (normalized) wind_shift_direction=S
+ +       0.0575 * (normalized) wind_shift_direction=SW
+ +      -0.0137 * (normalized) wind_shift_direction=NE
+ +      -0.0488 * (normalized) wind_shift_direction=N
+ +       0.2486 * (normalized) wind_shift_direction=W
+ +       0.0509 * (normalized) wind_shift_direction=NW
+ +      -0.2778 * (normalized) wind_direction_change
+ +       0.4726 * (normalized) temperature_min
+ +       0.5008 * (normalized) temperature_max
+ +       0.0743 * (normalized) freezing_level_masl
+ +      -0.0626 * (normalized) rain_snow_line_altitude_masl
+ +      -1.1626 * (normalized) publish_hour_sin
+ +      -0.1688 * (normalized) publish_hour_cos
+ +      -1.413  * (normalized) publish_month_sin
+ +      -0.9223 * (normalized) publish_month_cos
+ +       0.1612 * (normalized) wind_shift_start_sin
+ +       0.1147 * (normalized) wind_shift_start_cos
+ +      -0.1603 * (normalized) wind_shift_end_sin
+ +       0.1138 * (normalized) wind_shift_end_cos
+ +       0.0433 * (normalized) freezing_level_start_sin
+ +      -0.0102 * (normalized) freezing_level_start_cos
+ +       0.029  * (normalized) freezing_level_end_sin
+ +      -0.1299 * (normalized) freezing_level_end_cos
+ +       0.0271 * (normalized) rain_snow_line_start_sin
+ +       0.054  * (normalized) rain_snow_line_start_cos
+ +       0.0925 * (normalized) rain_snow_line_end_sin
+ +      -0.0656 * (normalized) rain_snow_line_end_cos
+ +       1.7836
+
+Number of kernel evaluations: 227351055 (31.09% cached)
+
+Classifier for classes: High, Low
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.3758 * (normalized) ﻿RegionName=Svalbard øst
+ +      -0.3759 * (normalized) ﻿RegionName=Svalbard vest
+ +       0.6121 * (normalized) ﻿RegionName=Nordenskiöld Land
+ +      -0.9529 * (normalized) ﻿RegionName=Svalbard sør
+ +       1.0946 * (normalized) ﻿RegionName=Finnmarkskysten
+ +       0.2032 * (normalized) ﻿RegionName=Vest-Finnmark
+ +      -1.04   * (normalized) ﻿RegionName=Nord-Troms
+ +      -1.0775 * (normalized) ﻿RegionName=Lyngen
+ +      -0.0842 * (normalized) ﻿RegionName=Tromsø
+ +       0.0184 * (normalized) ﻿RegionName=Sør-Troms
+ +      -1.1639 * (normalized) ﻿RegionName=Indre Troms
+ +       0.9372 * (normalized) ﻿RegionName=Lofoten og Vesterålen
+ +       0.3573 * (normalized) ﻿RegionName=Ofoten
+ +       0.2696 * (normalized) ﻿RegionName=Salten
+ +       0.0402 * (normalized) ﻿RegionName=Svartisen
+ +       0.6421 * (normalized) ﻿RegionName=Helgeland
+ +      -0.2244 * (normalized) ﻿RegionName=Nord-Trøndelag
+ +       0.579  * (normalized) ﻿RegionName=Trollheimen
+ +       0.7485 * (normalized) ﻿RegionName=Romsdal
+ +       0.4421 * (normalized) ﻿RegionName=Sunnmøre
+ +       0.3421 * (normalized) ﻿RegionName=Indre Fjordane
+ +      -1.7535 * (normalized) ﻿RegionName=Jotunheimen
+ +      -0.5054 * (normalized) ﻿RegionName=Indre Sogn
+ +      -0.0075 * (normalized) ﻿RegionName=Voss
+ +       0.1029 * (normalized) ﻿RegionName=Hallingdal
+ +       0.2778 * (normalized) ﻿RegionName=Hardanger
+ +       0.1067 * (normalized) ﻿RegionName=Vest-Telemark
+ +       0.7873 * (normalized) ﻿RegionName=Heiane
+ +      -1.0924 * (normalized) geographical_region=Svalbard / Arctic
+ +       0.1969 * (normalized) geographical_region=Northern Norway
+ +      -0.2244 * (normalized) geographical_region=Trøndelag
+ +       0.1229 * (normalized) geographical_region=Western Norway
+ +       0.2096 * (normalized) geographical_region=Eastern Norway
+ +       0.7873 * (normalized) geographical_region=Southern Norway
+ +      -0.6238 * (normalized) cloud_cover=Not given
+ +      -0.2475 * (normalized) cloud_cover=Cloudy
+ +       0.0931 * (normalized) cloud_cover=Partly cloudy
+ +       0.7781 * (normalized) cloud_cover=Clear skies
+ +      -8.2244 * (normalized) rainfall_most_exposed_area
+ +      -5.3375 * (normalized) rainfall_average
+ +       0.0711 * (normalized) wind_speed=No Wind
+ +      -0.1295 * (normalized) wind_speed=Strong gale
+ +      -0.3853 * (normalized) wind_speed=Gale
+ +      -0.1127 * (normalized) wind_speed=Moderate gale
+ +       0.0401 * (normalized) wind_speed=Strong breeze
+ +       0.4005 * (normalized) wind_speed=Fresh breeze
+ +      -1      * (normalized) wind_speed=Storm
+ +       0.7058 * (normalized) wind_speed=Breeze
+ +       0.4099 * (normalized) wind_speed=Calm/light breeze
+ +       0.0711 * (normalized) wind_shift_speed=No Wind
+ +      -0.1603 * (normalized) wind_shift_speed=Moderate gale
+ +      -0.4151 * (normalized) wind_shift_speed=Gale
+ +      -0.1489 * (normalized) wind_shift_speed=Strong breeze
+ +       0.2124 * (normalized) wind_shift_speed=Fresh breeze
+ +      -0.0844 * (normalized) wind_shift_speed=Storm
+ +      -1.0047 * (normalized) wind_shift_speed=Strong gale
+ +       0.4353 * (normalized) wind_shift_speed=Breeze
+ +       1.0946 * (normalized) wind_shift_speed=Calm/light breeze
+ +       0.0711 * (normalized) wind_direction=No Wind
+ +       0.3219 * (normalized) wind_direction=SE
+ +      -0.1129 * (normalized) wind_direction=E
+ +       0.316  * (normalized) wind_direction=S
+ +      -0.0588 * (normalized) wind_direction=SW
+ +      -0      * (normalized) wind_direction=NE
+ +      -0.1012 * (normalized) wind_direction=N
+ +      -0.0807 * (normalized) wind_direction=NW
+ +      -0.3553 * (normalized) wind_direction=W
+ +       0.0711 * (normalized) wind_shift_direction=No Wind
+ +      -0.4363 * (normalized) wind_shift_direction=SE
+ +      -0.2281 * (normalized) wind_shift_direction=E
+ +      -0.1465 * (normalized) wind_shift_direction=S
+ +       0.0389 * (normalized) wind_shift_direction=SW
+ +       0.3225 * (normalized) wind_shift_direction=NE
+ +       0.1026 * (normalized) wind_shift_direction=N
+ +       0.3388 * (normalized) wind_shift_direction=W
+ +      -0.063  * (normalized) wind_shift_direction=NW
+ +      -0.3619 * (normalized) wind_direction_change
+ +       1.1774 * (normalized) temperature_min
+ +       1.3068 * (normalized) temperature_max
+ +       1.9551 * (normalized) freezing_level_masl
+ +      -0.0185 * (normalized) rain_snow_line_altitude_masl
+ +      -2.3535 * (normalized) publish_hour_sin
+ +      -1.9177 * (normalized) publish_hour_cos
+ +      -2.8349 * (normalized) publish_month_sin
+ +      -2.0018 * (normalized) publish_month_cos
+ +       0.2403 * (normalized) wind_shift_start_sin
+ +       0.3877 * (normalized) wind_shift_start_cos
+ +      -0.2952 * (normalized) wind_shift_end_sin
+ +       0.4426 * (normalized) wind_shift_end_cos
+ +      -0.4202 * (normalized) freezing_level_start_sin
+ +       0.5081 * (normalized) freezing_level_start_cos
+ +       0.3031 * (normalized) freezing_level_end_sin
+ +      -0.0778 * (normalized) freezing_level_end_cos
+ +       0.1768 * (normalized) rain_snow_line_start_sin
+ +      -0.0809 * (normalized) rain_snow_line_start_cos
+ +      -0.259  * (normalized) rain_snow_line_end_sin
+ +       0.0012 * (normalized) rain_snow_line_end_cos
+ +       1.3883
+
+Number of kernel evaluations: 39156716 (49.3% cached)
+
+Classifier for classes: Medium, Low
+
+BinarySMO
+
+Machine linear: showing attribute weights, not support vectors.
+
+        -0.469  * (normalized) ﻿RegionName=Nordenskiöld Land
+ +       0.8037 * (normalized) ﻿RegionName=Finnmarkskysten
+ +      -0.0476 * (normalized) ﻿RegionName=Vest-Finnmark
+ +      -0.6527 * (normalized) ﻿RegionName=Nord-Troms
+ +      -0.6044 * (normalized) ﻿RegionName=Lyngen
+ +      -0.1026 * (normalized) ﻿RegionName=Tromsø
+ +       0.0193 * (normalized) ﻿RegionName=Sør-Troms
+ +      -0.7919 * (normalized) ﻿RegionName=Indre Troms
+ +       0.4931 * (normalized) ﻿RegionName=Lofoten og Vesterålen
+ +       0.1469 * (normalized) ﻿RegionName=Ofoten
+ +       0.1326 * (normalized) ﻿RegionName=Salten
+ +       0.1316 * (normalized) ﻿RegionName=Svartisen
+ +       0.4602 * (normalized) ﻿RegionName=Helgeland
+ +       0.1622 * (normalized) ﻿RegionName=Trollheimen
+ +       0.1982 * (normalized) ﻿RegionName=Romsdal
+ +       0.1463 * (normalized) ﻿RegionName=Sunnmøre
+ +       0.0843 * (normalized) ﻿RegionName=Indre Fjordane
+ +      -1.101  * (normalized) ﻿RegionName=Jotunheimen
+ +      -0.0845 * (normalized) ﻿RegionName=Indre Sogn
+ +       0.1158 * (normalized) ﻿RegionName=Voss
+ +       0.1714 * (normalized) ﻿RegionName=Hallingdal
+ +       0.3726 * (normalized) ﻿RegionName=Hardanger
+ +       0.0504 * (normalized) ﻿RegionName=Vest-Telemark
+ +       0.3651 * (normalized) ﻿RegionName=Heiane
+ +      -0.469  * (normalized) geographical_region=Svalbard / Arctic
+ +      -0.0119 * (normalized) geographical_region=Northern Norway
+ +      -0.1061 * (normalized) geographical_region=Western Norway
+ +       0.2218 * (normalized) geographical_region=Eastern Norway
+ +       0.3651 * (normalized) geographical_region=Southern Norway
+ +      -0.1447 * (normalized) cloud_cover=Not given
+ +      -0.092  * (normalized) cloud_cover=Cloudy
+ +      -0.0553 * (normalized) cloud_cover=Partly cloudy
+ +       0.292  * (normalized) cloud_cover=Clear skies
+ +      -5.6523 * (normalized) rainfall_most_exposed_area
+ +      -2.8975 * (normalized) rainfall_average
+ +       0.914  * (normalized) wind_speed=No Wind
+ +      -0.357  * (normalized) wind_speed=Strong gale
+ +      -0.3189 * (normalized) wind_speed=Gale
+ +      -0.4254 * (normalized) wind_speed=Moderate gale
+ +      -0.2396 * (normalized) wind_speed=Strong breeze
+ +       0.0278 * (normalized) wind_speed=Fresh breeze
+ +       0.1908 * (normalized) wind_speed=Breeze
+ +       0.2082 * (normalized) wind_speed=Calm/light breeze
+ +       0.914  * (normalized) wind_shift_speed=No Wind
+ +      -0.2671 * (normalized) wind_shift_speed=Moderate gale
+ +      -0.3245 * (normalized) wind_shift_speed=Gale
+ +      -0.0657 * (normalized) wind_shift_speed=Strong breeze
+ +      -0.1702 * (normalized) wind_shift_speed=Fresh breeze
+ +      -0.2648 * (normalized) wind_shift_speed=Strong gale
+ +      -0.0982 * (normalized) wind_shift_speed=Breeze
+ +       0.2765 * (normalized) wind_shift_speed=Calm/light breeze
+ +      -0.086  * (normalized) wind_direction=No Wind
+ +       0.1737 * (normalized) wind_direction=SE
+ +       0.0499 * (normalized) wind_direction=E
+ +       0.021  * (normalized) wind_direction=S
+ +      -0.0796 * (normalized) wind_direction=SW
+ +      -0.1942 * (normalized) wind_direction=NE
+ +       0.1659 * (normalized) wind_direction=N
+ +      -0.0135 * (normalized) wind_direction=NW
+ +      -0.0372 * (normalized) wind_direction=W
+ +      -0.086  * (normalized) wind_shift_direction=No Wind
+ +      -0.1898 * (normalized) wind_shift_direction=SE
+ +      -0.3608 * (normalized) wind_shift_direction=E
+ +       0.0567 * (normalized) wind_shift_direction=S
+ +       0.0801 * (normalized) wind_shift_direction=SW
+ +       0.2205 * (normalized) wind_shift_direction=NE
+ +       0.0661 * (normalized) wind_shift_direction=N
+ +       0.1399 * (normalized) wind_shift_direction=W
+ +       0.0733 * (normalized) wind_shift_direction=NW
+ +      -0.0284 * (normalized) wind_direction_change
+ +       1.0842 * (normalized) temperature_min
+ +       2.0385 * (normalized) temperature_max
+ +       1.2354 * (normalized) freezing_level_masl
+ +       0.073  * (normalized) rain_snow_line_altitude_masl
+ +      -0.7281 * (normalized) publish_hour_sin
+ +      -1.0487 * (normalized) publish_hour_cos
+ +      -1.8089 * (normalized) publish_month_sin
+ +      -1.0978 * (normalized) publish_month_cos
+ +       0.0172 * (normalized) wind_shift_start_sin
+ +       0.158  * (normalized) wind_shift_start_cos
+ +      -0.0256 * (normalized) wind_shift_end_sin
+ +       0.1664 * (normalized) wind_shift_end_cos
+ +      -0.5644 * (normalized) freezing_level_start_sin
+ +       0.3073 * (normalized) freezing_level_start_cos
+ +       0.187  * (normalized) freezing_level_end_sin
+ +       0.0798 * (normalized) freezing_level_end_cos
+ +       0.3388 * (normalized) rain_snow_line_start_sin
+ +       0.0604 * (normalized) rain_snow_line_start_cos
+ +      -0.3995 * (normalized) rain_snow_line_end_sin
+ +       0.1211 * (normalized) rain_snow_line_end_cos
+ -       0.7661
+
+Number of kernel evaluations: 284874958 (29.878% cached)
+
+
+
+Time taken to build model: 134.64 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        9100               68.9917 %
+Incorrectly Classified Instances      4090               31.0083 %
+Kappa statistic                          0.4534
+Mean absolute error                      0.301 
+Root mean squared error                  0.3909
+Relative absolute error                 73.9866 %
+Root relative squared error             86.6745 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.485    0.032    0.799      0.485    0.604      0.554    0.846     0.580     High
+                 0.849    0.478    0.662      0.849    0.744      0.395    0.686     0.641     Medium
+                 0.537    0.079    0.715      0.537    0.614      0.507    0.826     0.574     Low
+Weighted Avg.    0.690    0.278    0.705      0.690    0.680      0.458    0.757     0.611     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1328 1379   29 |    a = High
+  316 5870  729 |    b = Medium
+   18 1619 1902 |    c = Low
+

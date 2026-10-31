@@ -1,0 +1,68 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.RandomForest -P 100 -I 100 -num-slots 1 -K 5 -M 1.0 -V 0.001 -S 1 -B
+Relation:     warnings_winter_2023_2026
+Instances:    13190
+Attributes:   23
+              ﻿RegionName
+              geographical_region
+              risk
+              publish_hour
+              publish_month
+              cloud_cover
+              rainfall_most_exposed_area
+              rainfall_average
+              wind_speed
+              wind_shift_speed
+              wind_direction
+              wind_shift_direction
+              wind_direction_change
+              wind_shift_start
+              wind_shift_end
+              temperature_min
+              temperature_max
+              freezing_level_masl
+              freezing_level_start
+              freezing_level_end
+              rain_snow_line_altitude_masl
+              rain_snow_line_start
+              rain_snow_line_end
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+RandomForest
+
+Bagging with 100 iterations and base learner
+
+weka.classifiers.trees.RandomTree -K 5 -M 1.0 -V 0.001 -S 1 -B -do-not-check-capabilities
+
+Time taken to build model: 1.59 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances        9385               71.1524 %
+Incorrectly Classified Instances      3805               28.8476 %
+Kappa statistic                          0.5024
+Mean absolute error                      0.2765
+Root mean squared error                  0.3647
+Relative absolute error                 67.9809 %
+Root relative squared error             80.8588 %
+Total Number of Instances            13190     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.527    0.044    0.760      0.527    0.622      0.558    0.890     0.740     High
+                 0.830    0.406    0.693      0.830    0.755      0.438    0.784     0.776     Medium
+                 0.624    0.083    0.733      0.624    0.674      0.571    0.894     0.765     Low
+Weighted Avg.    0.712    0.244    0.717      0.712    0.706      0.498    0.835     0.765     
+
+=== Confusion Matrix ===
+
+    a    b    c   <-- classified as
+ 1441 1234   61 |    a = High
+  436 5736  743 |    b = Medium
+   19 1312 2208 |    c = Low
+
