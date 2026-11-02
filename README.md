@@ -29,7 +29,7 @@ The project follows these main steps:
 
 The experiments compare different classifiers and feature selection strategies to assess their impact on classification performance.
 
-See **[path to report]** for the model comparison and final conclusions.
+See report for the model comparison and final conclusions.
 
 ## Tools
 
