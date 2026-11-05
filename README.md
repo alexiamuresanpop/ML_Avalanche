@@ -21,6 +21,7 @@ The project follows these main steps:
 |---|---|
 | `[trying_out]` | Initial files for testing the API functioning |
 | `[dataset_creation]` | Data extraction from the NVE API and dataset creation |
+| `[exploratory_analysis]` | IInitial exploratory analysis of the dataset |
 | `[feature_selection_results]` | Features selected for the different methods |
 | `[avalanche_dataset]` | Final datasets used for the models (_DIST for k-NN and Logistic Regression) |
 | `[model_results]` | Model evaluation and performance metrics from WEKA (and Python for k-NN) |
